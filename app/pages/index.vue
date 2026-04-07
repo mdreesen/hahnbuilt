@@ -1,3 +1,17 @@
+<script setup>
+const projects = [
+  { title: 'The Summit Estate', type: 'Residential', img: 'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&q=80' },
+  { title: 'Ironwood Plaza', type: 'Commercial', img: 'https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&q=80' }
+];
+
+useHead({
+  title: 'Hahn Built | Main',
+  meta: [
+    { name: 'Home', content: 'Hahn Built Home.' },
+  ],
+});
+</script>
+
 <template>
   <div>
 
@@ -38,10 +52,3 @@
 
   </div>
 </template>
-
-<script setup>
-const projects = [
-  { title: 'The Summit Estate', type: 'Residential', img: 'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&q=80' },
-  { title: 'Ironwood Plaza', type: 'Commercial', img: 'https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&q=80' }
-];
-</script>

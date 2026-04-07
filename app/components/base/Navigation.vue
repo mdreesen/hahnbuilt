@@ -2,9 +2,10 @@
 const isOpen = ref(false);
 
 const navLinks = [
-  { name: 'About', href: '#process' },
-  { name: 'Projects', href: '#projects' },
-  { name: 'Contact', href: '#process' },
+  { name: 'Main', href: '/' },
+  { name: 'About', href: '/about' },
+  { name: 'Projects', href: '/projects' },
+  { name: 'Contact', href: '/contact' },
 ];
 
 watch(isOpen, (val) => {
@@ -17,18 +18,19 @@ watch(isOpen, (val) => {
   <nav v-gsap.from="{ y: -100, opacity: 0, duration: 1.2, ease: 'expo.out' }"
     class="fixed w-full z-100 px-6 py-6 md:px-12 md:py-10 flex justify-between items-center">
     <div class="relative z-110">
-      <!-- <img src="/hahn-built-logo.png" alt="Hahn Built" class="w-32 md:w-48 h-auto" /> -->
-      <NuxtImg class="w-32 md:w-48 h-auto" src="/images/logo_transparent.webp" format="webp" preload loading="eager"
-        fetch-priority="high" />
+      <nuxt-link to="/">
+        <NuxtImg class="w-32 md:w-48 h-auto" src="/images/logo_transparent.webp" format="webp" preload loading="eager"
+          fetch-priority="high" />
+      </nuxt-link>
     </div>
 
     <div class="hidden md:flex items-center gap-12">
       <ul class="flex gap-10">
         <li v-for="link in navLinks" :key="link.name">
-          <a :href="link.href"
-            class="text-[10px] font-black uppercase tracking-[0.2em] text-zinc-400 hover:text-orange-600 transition-colors duration-300">
+          <nuxt-link :to="link.href"
+            class="text-[20px] font-black uppercase tracking-[0.2em] text-zinc-400 hover:text-orange-600 transition-colors duration-300">
             {{ link.name }}
-          </a>
+          </nuxt-link>
         </li>
       </ul>
       <a href="#contact"
@@ -67,11 +69,17 @@ watch(isOpen, (val) => {
         </div>
 
         <div class="grow flex flex-col justify-center px-8 gap-8">
-          <a v-for="(link, index) in navLinks" :key="link.name" :href="link.href" @click="isOpen = false"
+          <!-- <a v-for="(link, index) in navLinks" :key="link.name" :href="link.href" @click="isOpen = false"
             v-gsap.from="{ x: -50, opacity: 0, delay: 0.2 + (index * 0.1) }"
             class="text-6xl font-black uppercase italic tracking-tighter leading-none">
             {{ link.name }}
-          </a>
+          </a> -->
+
+          <nuxt-link v-for="(link, index) in navLinks" :to="link.href" :key="link.name" @click="isOpen = false"
+            v-gsap.from="{ x: -50, opacity: 0, delay: 0.2 + (index * 0.1) }"
+            class="text-[30px] font-black uppercase tracking-[0.2em] text-zinc-400 hover:text-orange-600 transition-colors duration-300">
+            {{ link.name }}
+          </nuxt-link>
         </div>
 
         <div v-gsap.from="{ y: 50, opacity: 0, delay: 0.5 }" class="p-8 pb-16">
