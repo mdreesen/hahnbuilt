@@ -14,6 +14,11 @@ type HydrationStrategies = {
 type LazyComponent<T> = DefineComponent<HydrationStrategies, {}, {}, {}, {}, {}, {}, { hydrated: () => void }> & T
 
 interface _GlobalComponents {
+  AppDescription: typeof import("../../app/components/app/Description.vue")['default']
+  AppFaq: typeof import("../../app/components/app/Faq.vue")['default']
+  AppHero: typeof import("../../app/components/app/Hero.vue")['default']
+  AppProjects: typeof import("../../app/components/app/Projects.vue")['default']
+  BaseFooter: typeof import("../../app/components/base/Footer.vue")['default']
   BaseNavigation: typeof import("../../app/components/base/Navigation.vue")['default']
   UColorModeAvatar: typeof import("../../node_modules/@nuxt/ui/dist/runtime/components/color-mode/ColorModeAvatar.vue")['default']
   UColorModeButton: typeof import("../../node_modules/@nuxt/ui/dist/runtime/components/color-mode/ColorModeButton.vue")['default']
@@ -168,6 +173,11 @@ interface _GlobalComponents {
   Icon: typeof import("../../node_modules/@nuxt/icon/dist/runtime/components/index")['default']
   ColorScheme: typeof import("../../node_modules/@nuxtjs/color-mode/dist/runtime/component.vue3.vue")['default']
   NuxtIsland: typeof import("../../node_modules/nuxt/dist/app/components/nuxt-island")['default']
+  LazyAppDescription: LazyComponent<typeof import("../../app/components/app/Description.vue")['default']>
+  LazyAppFaq: LazyComponent<typeof import("../../app/components/app/Faq.vue")['default']>
+  LazyAppHero: LazyComponent<typeof import("../../app/components/app/Hero.vue")['default']>
+  LazyAppProjects: LazyComponent<typeof import("../../app/components/app/Projects.vue")['default']>
+  LazyBaseFooter: LazyComponent<typeof import("../../app/components/base/Footer.vue")['default']>
   LazyBaseNavigation: LazyComponent<typeof import("../../app/components/base/Navigation.vue")['default']>
   LazyUColorModeAvatar: LazyComponent<typeof import("../../node_modules/@nuxt/ui/dist/runtime/components/color-mode/ColorModeAvatar.vue")['default']>
   LazyUColorModeButton: LazyComponent<typeof import("../../node_modules/@nuxt/ui/dist/runtime/components/color-mode/ColorModeButton.vue")['default']>

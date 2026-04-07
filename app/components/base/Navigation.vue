@@ -15,7 +15,7 @@ watch(isOpen, (val) => {
 
 <template>
   <nav v-gsap.from="{ y: -100, opacity: 0, duration: 1.2, ease: 'expo.out' }"
-    class="fixed w-full z-100 px-6 py-6 md:px-12 md:py-10 flex justify-between items-center mix-blend-difference">
+    class="fixed w-full z-100 px-6 py-6 md:px-12 md:py-10 flex justify-between items-center">
     <div class="relative z-110">
       <!-- <img src="/hahn-built-logo.png" alt="Hahn Built" class="w-32 md:w-48 h-auto" /> -->
       <NuxtImg class="w-32 md:w-48 h-auto" src="/images/logo_transparent.webp" format="webp" preload loading="eager"
@@ -54,7 +54,7 @@ watch(isOpen, (val) => {
       duration: 0.6,
       ease: 'expo.inOut'
     }">
-      <div v-if="isOpen" class="fixed h-full min-h-screen inset-0 bg-black z-200 flex flex-col md:hidden">
+      <div v-if="isOpen" class="fixed min-h-screen inset-0 bg-black z-200 flex flex-col md:hidden">
         <div class="flex justify-between items-center px-8 py-10">
           <!-- <img src="/hahn-built-logo.png" alt="Hahn Built" class="w-32 h-auto" /> -->
           <button @click="isOpen = false" class="text-white p-2">
