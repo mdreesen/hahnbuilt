@@ -2,9 +2,9 @@
 const isOpen = ref(false);
 
 const navLinks = [
+  { name: 'About', href: '#process' },
   { name: 'Projects', href: '#projects' },
-  { name: 'Process', href: '#process' },
-  { name: 'About', href: '#about' },
+  { name: 'Contact', href: '#process' },
 ];
 
 watch(isOpen, (val) => {

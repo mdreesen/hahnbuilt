@@ -29,10 +29,8 @@ const toggle = (i: number) => {
   <section class="bg-[#0c0c0c] text-white py-32 px-10">
     <div class="max-w-4xl mx-auto">
       
-      <div class="mb-20 text-center md:text-left">
-        <h2 class="text-6xl md:text-8xl font-black uppercase italic tracking-tighter leading-none mb-6">
-          Common <span class="text-orange-600">Questions.</span>
-        </h2>
+      <div class="mb-20">
+        <baseHeader textOne="Common" textTwo="Questions" />
         <div class="h-1 w-24 bg-orange-600 hidden md:block"></div>
       </div>
 

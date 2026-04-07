@@ -18,7 +18,9 @@ interface _GlobalComponents {
   AppFaq: typeof import("../../app/components/app/Faq.vue")['default']
   AppHero: typeof import("../../app/components/app/Hero.vue")['default']
   AppProjects: typeof import("../../app/components/app/Projects.vue")['default']
+  BaseCard: typeof import("../../app/components/base/Card.vue")['default']
   BaseFooter: typeof import("../../app/components/base/Footer.vue")['default']
+  BaseHeader: typeof import("../../app/components/base/Header.vue")['default']
   BaseNavigation: typeof import("../../app/components/base/Navigation.vue")['default']
   UColorModeAvatar: typeof import("../../node_modules/@nuxt/ui/dist/runtime/components/color-mode/ColorModeAvatar.vue")['default']
   UColorModeButton: typeof import("../../node_modules/@nuxt/ui/dist/runtime/components/color-mode/ColorModeButton.vue")['default']
@@ -177,7 +179,9 @@ interface _GlobalComponents {
   LazyAppFaq: LazyComponent<typeof import("../../app/components/app/Faq.vue")['default']>
   LazyAppHero: LazyComponent<typeof import("../../app/components/app/Hero.vue")['default']>
   LazyAppProjects: LazyComponent<typeof import("../../app/components/app/Projects.vue")['default']>
+  LazyBaseCard: LazyComponent<typeof import("../../app/components/base/Card.vue")['default']>
   LazyBaseFooter: LazyComponent<typeof import("../../app/components/base/Footer.vue")['default']>
+  LazyBaseHeader: LazyComponent<typeof import("../../app/components/base/Header.vue")['default']>
   LazyBaseNavigation: LazyComponent<typeof import("../../app/components/base/Navigation.vue")['default']>
   LazyUColorModeAvatar: LazyComponent<typeof import("../../node_modules/@nuxt/ui/dist/runtime/components/color-mode/ColorModeAvatar.vue")['default']>
   LazyUColorModeButton: LazyComponent<typeof import("../../node_modules/@nuxt/ui/dist/runtime/components/color-mode/ColorModeButton.vue")['default']>
