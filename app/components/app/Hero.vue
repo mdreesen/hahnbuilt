@@ -14,8 +14,7 @@
 
         <p v-gsap.from="{ opacity: 0, x: -50, duration: 1, delay: 0.8 }"
           class="mt-10 max-w-xl text-zinc-400 font-medium leading-relaxed text-lg">
-          Precision-engineered residential and commercial structures. Hahn Built combines rigorous design with
-          industrial strength.
+          Advanced concrete solutions for residential and commercial developments. At Hahn Built, we bridge the gap between architectural vision and structural permanence.
         </p>
       </div>
 
