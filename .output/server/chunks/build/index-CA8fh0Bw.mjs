@@ -1,5 +1,32 @@
+import { b as __nuxt_component_0$1 } from './server.mjs';
 import { resolveDirective, mergeProps, useSSRContext } from 'vue';
-import { ssrRenderAttrs, ssrGetDirectiveProps, ssrRenderList, ssrRenderAttr, ssrInterpolate } from 'vue/server-renderer';
+import { ssrRenderAttrs, ssrGetDirectiveProps, ssrRenderComponent, ssrRenderList, ssrRenderAttr, ssrInterpolate } from 'vue/server-renderer';
+import '../nitro/nitro.mjs';
+import 'node:http';
+import 'node:https';
+import 'node:events';
+import 'node:buffer';
+import 'node:fs';
+import 'node:path';
+import 'node:crypto';
+import 'node:url';
+import '@iconify/utils';
+import 'consola';
+import 'ipx';
+import 'vue-router';
+import '@iconify/vue';
+import 'tailwindcss/colors';
+import 'perfect-debounce';
+import '@vue/shared';
+import '@vueuse/core';
+import '@vueuse/shared';
+import 'tailwind-variants';
+import '@iconify/utils/lib/css/icon';
+import '../routes/renderer.mjs';
+import 'vue-bundle-renderer/runtime';
+import 'unhead/server';
+import 'devalue';
+import 'unhead/utils';
 
 const _sfc_main = {
   __name: "index",
@@ -10,8 +37,9 @@ const _sfc_main = {
       { title: "Ironwood Plaza", type: "Commercial", img: "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&q=80" }
     ];
     return (_ctx, _push, _parent, _attrs) => {
+      const _component_NuxtImg = __nuxt_component_0$1;
       const _directive_gsap = resolveDirective("gsap");
-      _push(`<div${ssrRenderAttrs(mergeProps({ class: "bg-[#0c0c0c] text-[#eaeaea] min-h-screen selection:bg-orange-600 overflow-x-hidden" }, _attrs))}><section class="h-screen flex flex-col justify-center px-12 relative overflow-hidden"><div class="z-10"><h1${ssrRenderAttrs(mergeProps({ class: "text-[clamp(4.5rem,18vw,14rem)] font-black leading-[0.80] uppercase tracking-tighter italic" }, ssrGetDirectiveProps(_ctx, _directive_gsap, {
+      _push(`<div${ssrRenderAttrs(_attrs)}><section class="h-screen flex flex-col justify-center px-12 relative overflow-hidden"><div class="z-10"><h1${ssrRenderAttrs(mergeProps({ class: "text-[clamp(4.5rem,18vw,14rem)] font-black leading-[0.80] uppercase tracking-tighter italic" }, ssrGetDirectiveProps(_ctx, _directive_gsap, {
         y: 100,
         opacity: 0,
         duration: 1.5,
@@ -24,7 +52,16 @@ const _sfc_main = {
           scrub: true
         },
         scale: 1.2
-      }, void 0, { to: true })))}><img src="https://images.unsplash.com/photo-1541888946425-d81bb19480c5?auto=format&amp;fit=crop&amp;q=80" class="w-full h-full object-cover"></div></section><section id="projects" class="py-32 px-12"><div class="grid grid-cols-1 md:grid-cols-2 gap-12"><!--[-->`);
+      }, void 0, { to: true })))}><img src="https://images.unsplash.com/photo-1541888946425-d81bb19480c5?auto=format&amp;fit=crop&amp;q=80" class="w-full h-full object-cover">`);
+      _push(ssrRenderComponent(_component_NuxtImg, {
+        class: "w-45",
+        src: "/images/home_three.webp",
+        format: "webp",
+        preload: "",
+        loading: "eager",
+        "fetch-priority": "high"
+      }, null, _parent));
+      _push(`</div></section><section id="projects" class="py-32 px-12"><div class="grid grid-cols-1 md:grid-cols-2 gap-12"><!--[-->`);
       ssrRenderList(projects, (project, index) => {
         _push(`<div${ssrRenderAttrs(mergeProps({
           key: index,
@@ -52,4 +89,4 @@ _sfc_main.setup = (props, ctx) => {
 };
 
 export { _sfc_main as default };
-//# sourceMappingURL=index-DKVVTEfR.mjs.map
+//# sourceMappingURL=index-CA8fh0Bw.mjs.map

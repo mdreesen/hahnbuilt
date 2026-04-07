@@ -52,7 +52,7 @@ const __nuxt_component_0 = /* @__PURE__ */ Object.assign(_export_sfc(_sfc_main$1
 const _sfc_main = {};
 function _sfc_ssrRender(_ctx, _push, _parent, _attrs) {
   const _component_baseNavigation = __nuxt_component_0;
-  _push(`<div${ssrRenderAttrs(_attrs)}>`);
+  _push(`<div${ssrRenderAttrs(mergeProps({ class: "bg-[#0c0c0c] text-[#eaeaea] min-h-screen selection:bg-orange-600 overflow-x-hidden" }, _attrs))}>`);
   _push(ssrRenderComponent(_component_baseNavigation, null, null, _parent));
   ssrRenderSlot(_ctx.$slots, "default", {}, null, _push, _parent);
   _push(`</div>`);
@@ -66,4 +66,4 @@ _sfc_main.setup = (props, ctx) => {
 const _default = /* @__PURE__ */ _export_sfc(_sfc_main, [["ssrRender", _sfc_ssrRender]]);
 
 export { _default as default };
-//# sourceMappingURL=default-DzYF0ZwJ.mjs.map
+//# sourceMappingURL=default-BvwCeaYZ.mjs.map
