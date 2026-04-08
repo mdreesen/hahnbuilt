@@ -1,10 +1,20 @@
 <script setup lang="ts">
-useHead({
+// useHead({
+//     title: 'Hahn Built | About',
+//     meta: [
+//         { name: 'About', content: 'Hahn Built About.' },
+//     ],
+// });
+useSeoMeta({
   title: 'Hahn Built | About',
-  meta: [
-    { name: 'About', content: 'Hahn Built About.' },
-  ],
-});
+  description: 'About Hahn Built',
+  // Optional Open Graph / Facebook
+  ogDescription: 'About Hahn Built',
+  ogTitle: 'Hahn Built | About',
+  ogImage: '/images/logo.webp',
+  // Optional Twitter
+//   twitterCard: 'summary_large_image',
+})
 
 const stats = [
     { label: 'PSI Strength', value: '4500+' },
@@ -37,9 +47,7 @@ const qualityPoints = [
                 <div v-gsap.from="{ opacity: 0, x: -50, duration: 1 }">
                     <span class="text-orange-600 font-mono text-xs tracking-[0.3em] uppercase mb-4 block">The
                         Mandate</span>
-                    <h1 class="text-5xl md:text-7xl font-black uppercase italic leading-[0.85] tracking-tighter mb-8">
-                        Built to <br /> <span class="text-zinc-800">Outlast.</span>
-                    </h1>
+                    <baseHeader text="Built to<br><span class='text-orange-600'>Outlast.</span>" />
                     <p class="text-zinc-400 text-xl leading-relaxed max-w-lg">
                         In Montana, the environment is the ultimate inspector. At Hahn Built, we don't just pour
                         concrete; we engineer foundations that withstand the shifting frost and heavy loads of the

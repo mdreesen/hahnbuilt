@@ -49,9 +49,7 @@ const setBg = (img: string) => activeBg.value = img;
     <div class="max-w-7xl mx-auto px-10 relative z-10">
       <header class="mb-24">
         <span class="text-orange-600 font-mono text-xs tracking-[0.3em] uppercase mb-4 block">Archive</span>
-        <h1 class="text-5xl md:text-7xl font-black uppercase italic leading-none tracking-tighter">
-          <span>Projects</span>
-        </h1>
+        <baseHeader text="Projects" />
       </header>
 
       <div class="flex flex-col border-t border-white/10">

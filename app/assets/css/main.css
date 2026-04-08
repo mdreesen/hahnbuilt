@@ -1,2 +1,7 @@
 @import "tailwindcss";
 @import "@nuxt/ui";
+
+* {
+    --tw-backdrop-blur: none;
+    --ui-bg: black;
+}

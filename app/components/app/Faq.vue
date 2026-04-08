@@ -30,8 +30,7 @@ const toggle = (i: number) => {
     <div class="max-w-4xl mx-auto">
       
       <div class="mb-20">
-        <baseHeader textOne="Common" textTwo="Questions" />
-        <div class="h-1 w-24 bg-orange-600 hidden md:block"></div>
+        <baseHeaderSection text="Common<br><span class='text-orange-600'>Questions</span>" />
       </div>
 
       <div class="border-t border-white/10">

@@ -37,9 +37,7 @@ const submitManifest = async () => {
     <div class="max-w-7xl mx-auto relative z-10">
       <header class="mb-24">
         <span class="text-orange-600 font-mono text-xs tracking-[0.3em] uppercase mb-4 block">Intake</span>
-        <h1 class="text-5xl md:text-7xl  font-black uppercase italic leading-[0.85] tracking-tighter mb-8">
-          <span>Contact</span>
-        </h1>
+        <baseHeader text="Contact" />
       </header>
 
       <div class="grid grid-cols-1 lg:grid-cols-12 gap-20">

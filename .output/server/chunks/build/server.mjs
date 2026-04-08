@@ -1,5 +1,5 @@
-import process from 'node:process';globalThis._importMeta_=globalThis._importMeta_||{url:"file:///_entry.js",env:process.env};import { defineComponent, shallowRef, h, resolveComponent, computed, ref, useAttrs, useTemplateRef, mergeProps, hasInjectionContext, inject, unref, getCurrentInstance, defineAsyncComponent, createElementBlock, provide, cloneVNode, toRefs, Comment, useSSRContext, shallowReactive, Suspense, Fragment, createApp, watch, nextTick, onServerPrefetch, useModel, withCtx, renderSlot, createVNode, openBlock, createBlock, createTextVNode, toDisplayString, createCommentVNode, mergeModels, resolveDynamicComponent, toRef, renderList, useId, onErrorCaptured, reactive, effectScope, camelize, useSlots, withModifiers, normalizeProps, guardReactiveProps, watchEffect, normalizeStyle, getCurrentScope, isRef, markRaw, Teleport, toHandlerKey, toValue, isReadonly, isShallow, isReactive, toRaw } from 'vue';
-import { s as serialize, k as parseQuery, l as hasProtocol, j as joinURL, m as parseURL, n as encodePath, o as decodePath, w as withQuery, q as isScriptProtocol, r as withTrailingSlash, t as withoutTrailingSlash, v as sanitizeStatusCode, x as defu, y as getContext, z as withLeadingSlash, $ as $fetch$1, A as baseURL, B as defuFn, C as klona, e as createError$1, D as isEqual, E as executeAsync, F as hash, G as encodeParam } from '../nitro/nitro.mjs';
+import process from 'node:process';globalThis._importMeta_=globalThis._importMeta_||{url:"file:///_entry.js",env:process.env};import { defineComponent, computed, h, shallowRef, getCurrentInstance, provide, cloneVNode, createElementBlock, hasInjectionContext, inject, resolveComponent, ref, useAttrs, useTemplateRef, mergeProps, onServerPrefetch, unref, defineAsyncComponent, toValue, reactive, toRefs, Comment, useSSRContext, shallowReactive, Suspense, Fragment, createApp, watch, nextTick, useModel, withCtx, renderSlot, createVNode, openBlock, createBlock, createTextVNode, toDisplayString, createCommentVNode, mergeModels, resolveDynamicComponent, toRef, renderList, useId, onErrorCaptured, effectScope, camelize, useSlots, withModifiers, normalizeProps, guardReactiveProps, watchEffect, normalizeStyle, getCurrentScope, isRef, markRaw, Teleport, toHandlerKey, isReadonly, isShallow, isReactive, toRaw } from 'vue';
+import { s as serialize, k as parseQuery, l as klona, m as hasProtocol, j as joinURL, n as parseURL, o as encodePath, q as decodePath, r as defuFn, w as withQuery, t as isScriptProtocol, v as getContext, x as withTrailingSlash, y as withoutTrailingSlash, z as sanitizeStatusCode, A as defu, B as withLeadingSlash, $ as $fetch$1, C as baseURL, D as hash, e as createError$1, E as isEqual, F as executeAsync, G as encodeParam } from '../nitro/nitro.mjs';
 import { useRoute as useRoute$1, RouterView, createMemoryHistory, createRouter, START_LOCATION } from 'vue-router';
 import { Icon, getIcon, loadIcon as loadIcon$1, _api, addAPIProvider, setCustomIconsLoader } from '@iconify/vue';
 import colors from 'tailwindcss/colors';
@@ -10,7 +10,7 @@ import { unrefElement, defaultWindow, reactiveOmit, reactivePick, onKeyStroke, u
 import { isClient, useTimeoutFn, useTimeout } from '@vueuse/shared';
 import { createTV } from 'tailwind-variants';
 import { getIconCSS } from '@iconify/utils/lib/css/icon';
-import { u as useHead$1, h as headSymbol } from '../routes/renderer.mjs';
+import { u as useSeoMeta$1, a as useHead$1, h as headSymbol } from '../routes/renderer.mjs';
 import 'node:http';
 import 'node:https';
 import 'node:events';
@@ -25,6 +25,7 @@ import 'ipx';
 import 'vue-bundle-renderer/runtime';
 import 'unhead/server';
 import 'devalue';
+import 'unhead/plugins';
 import 'unhead/utils';
 
 //#region src/utils.ts
@@ -14032,9 +14033,24 @@ function getRouteRules(arg) {
 }
 const _routes = [
   {
+    name: "about",
+    path: "/about",
+    component: () => import('./about-Ddnmra8u.mjs')
+  },
+  {
+    name: "contact",
+    path: "/contact",
+    component: () => import('./contact-BL9EdIdh.mjs')
+  },
+  {
+    name: "projects",
+    path: "/projects",
+    component: () => import('./projects-D6YcS2gd.mjs')
+  },
+  {
     name: "index",
     path: "/",
-    component: () => import('./index-CA8fh0Bw.mjs')
+    component: () => import('./index-DBD1n6qY.mjs')
   }
 ];
 const _wrapInTransition = (props, children) => {
@@ -14393,6 +14409,10 @@ function injectHead(nuxtApp) {
 function useHead(input, options = {}) {
   const head = options.head || injectHead(options.nuxt);
   return useHead$1(input, { head, ...options });
+}
+function useSeoMeta(input, options = {}) {
+  const head = options.head || injectHead(options.nuxt);
+  return useSeoMeta$1(input, { head, ...options });
 }
 function definePayloadReducer(name, reduce) {
   {
@@ -15420,7 +15440,7 @@ defineComponent({
   }
 });
 const clientOnlySymbol = /* @__PURE__ */ Symbol.for("nuxt:client-only");
-defineComponent({
+const __nuxt_component_0$4 = defineComponent({
   name: "ClientOnly",
   inheritAttrs: false,
   props: ["fallback", "placeholder", "placeholderTag", "fallbackTag"],
@@ -21639,7 +21659,7 @@ _sfc_main$3.setup = (props, ctx) => {
 };
 const __nuxt_component_0 = Object.assign(_sfc_main$3, { __name: "UApp" });
 const layouts = {
-  default: defineAsyncComponent(() => import('./default-BvwCeaYZ.mjs').then((m) => m.default || m))
+  default: defineAsyncComponent(() => import('./default-BnF1eIn0.mjs').then((m) => m.default || m))
 };
 const routeRulesMatcher = _routeRulesMatcher;
 const LayoutLoader = defineComponent({
@@ -22022,5 +22042,5 @@ let entry;
 }
 const entry_default = ((ssrContext) => entry(ssrContext));
 
-export { _export_sfc as _, __nuxt_component_0$3 as a, __nuxt_component_0$1 as b, entry_default as default, useHead as u };
+export { _export_sfc as _, __nuxt_component_0$3 as a, useSeoMeta as b, __nuxt_component_0$1 as c, __nuxt_component_0$2 as d, entry_default as default, __nuxt_component_0$4 as e, useRoute as f, useHead as u };
 //# sourceMappingURL=server.mjs.map
