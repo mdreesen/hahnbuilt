@@ -8,7 +8,7 @@ const faqs = [
   },
   {
     q: "What is your typical service area?",
-    a: "Based in Evergreen, we primarily serve the Flathead Valley, including Kalispell, Whitefish, Columbia Falls, and Bigfork. For large-scale commercial builds, we extend across Western Montana."
+    a: "Based in Kalispell, we primarily serve the Flathead Valley, including Kalispell, Whitefish, Columbia Falls, and Bigfork. For large-scale commercial builds, we extend across Western Montana."
   },
   {
     q: "Are you licensed and insured in Montana?",

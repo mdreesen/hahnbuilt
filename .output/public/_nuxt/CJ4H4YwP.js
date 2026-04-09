@@ -1,0 +1,1 @@
+import{f as t,o as n,c as o}from"./3ls6ZwFV.js";const s=["innerHTML"],c=t({__name:"Description",props:{text:{type:String,default:"One"}},setup(e){return(a,r)=>(n(),o("p",{class:"text-zinc-400 text-xl leading-relaxed max-w-lg",innerHTML:e.text},null,8,s))}}),i=Object.assign(c,{__name:"BaseDescription"});export{i as _};

@@ -1,32 +1,23 @@
 <script setup lang="ts">
-// useHead({
-//     title: 'Hahn Built | About',
-//     meta: [
-//         { name: 'About', content: 'Hahn Built About.' },
-//     ],
-// });
 useSeoMeta({
-  title: 'Hahn Built | About',
-  description: 'About Hahn Built',
-  // Optional Open Graph / Facebook
-  ogDescription: 'About Hahn Built',
-  ogTitle: 'Hahn Built | About',
-  ogImage: '/images/logo.webp',
-  // Optional Twitter
-//   twitterCard: 'summary_large_image',
+    title: 'Hahn Built | About',
+    description: 'About Hahn Built',
+    ogDescription: 'About Hahn Built',
+    ogTitle: 'Hahn Built | About',
+    ogImage: '/images/logo.webp',
 })
 
 const stats = [
     { label: 'PSI Strength', value: '4500+' },
     { label: 'Licensed In', value: 'Montana' },
-    { label: 'Core Team', value: 'Evergreen' },
+    { label: 'Core Team', value: 'Kalispell' },
     { label: 'Years Experience', value: '15+' }
 ];
 
 const qualityPoints = [
     {
         title: "Thermal Management",
-        desc: "In Evergreen, the frost line is a moving target. We use specialized air-entrained admixtures to prevent internal pressure during Montana winters."
+        desc: "In Kalispell, the frost line is a moving target. We use specialized air-entrained admixtures to prevent internal pressure during Montana winters."
     },
     {
         title: "Laser Precision",
@@ -48,11 +39,10 @@ const qualityPoints = [
                     <span class="text-orange-600 font-mono text-xs tracking-[0.3em] uppercase mb-4 block">The
                         Mandate</span>
                     <baseHeader text="Built to<br><span class='text-orange-600'>Outlast.</span>" />
-                    <p class="text-zinc-400 text-xl leading-relaxed max-w-lg">
-                        In Montana, the environment is the ultimate inspector. At Hahn Built, we don't just pour
+
+                    <baseDescription text="In Montana, the environment is the ultimate inspector. At Hahn Built, we don't just pour
                         concrete; we engineer foundations that withstand the shifting frost and heavy loads of the
-                        Flathead Valley.
-                    </p>
+                        Flathead Valley." />
                 </div>
 
                 <div v-gsap.from="{ opacity: 0, scale: 0.9, duration: 1.5 }"
@@ -74,11 +64,10 @@ const qualityPoints = [
             <section class="grid grid-cols-1 lg:grid-cols-12 gap-10 items-end">
                 <div class="lg:col-span-4">
                     <h2 class="text-4xl font-black uppercase italic tracking-tight mb-6">Our Bedrock</h2>
-                    <p class="text-zinc-500 leading-relaxed">
-                        Hahn Built was founded on the principle that a project is only as good as its base. We
+                    <baseDescription text="Hahn Built was founded on the principle that a project is only as good as its base. We
                         specialize in high-spec commercial foundations and custom residential flatwork where precision
-                        isn't optional—it's the standard.
-                    </p>
+                        isn't optional—it's the standard." />
+
                 </div>
 
                 <div class="lg:col-span-8">
@@ -98,8 +87,9 @@ const qualityPoints = [
                         <div class="max-w-xs">
                             <h4 class="text-orange-600 font-mono text-[10px] uppercase mb-4 tracking-widest">02.
                                 Durability</h4>
-                            <p class="text-sm text-zinc-400">Mixed specifically for the local climate to prevent
-                                cracking and structural failure.</p>
+
+                            <baseDescription text="Mixed specifically for the local climate to prevent
+                                cracking and structural failure." />
                         </div>
                     </div>
                 </div>
@@ -128,17 +118,12 @@ const qualityPoints = [
                             </div>
                             <div
                                 class="absolute -bottom-6 -right-6 bg-orange-600 text-black p-6 max-w-50 hidden md:block">
-                                <p class="text-[10px] font-black uppercase tracking-tight leading-none">
-                                    Verified 4500 PSI mix design for extreme freeze-thaw resistance.
-                                </p>
+                                <baseDescription
+                                    text="Verified 4500 PSI mix design for extreme freeze-thaw resistance." />
                             </div>
                         </div>
 
                         <div class="lg:col-span-7">
-                            <!-- <h2
-                                class="text-6xl md:text-8xl font-black uppercase italic leading-[0.85] tracking-tighter mb-12">
-                                The Bedrock <br /> <span class="text-zinc-800">Standard.</span>
-                            </h2> -->
                             <baseHeader textOne="Our" textTwo="Standards" />
 
 
@@ -155,9 +140,7 @@ const qualityPoints = [
                                             class="text-xl font-black uppercase italic tracking-tight mb-2 group-hover:text-orange-600 transition-colors">
                                             {{ point.title }}
                                         </h4>
-                                        <p class="text-zinc-500 text-sm leading-relaxed max-w-md">
-                                            {{ point.desc }}
-                                        </p>
+                                        <baseDescription :text="point.desc" />
                                     </div>
                                 </div>
                             </div>

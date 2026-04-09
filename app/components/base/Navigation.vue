@@ -21,7 +21,7 @@ const items = computed<NavigationMenuItem[]>(() => [{
     <UHeader mode="slideover" class="fixed w-full border-none bg-transparent">
       <template #title>
         <NuxtLink to="/" class="flex items-center text-2xl font-extrabold h-10">
-          <baseImage source="/images/logo_transparent.webp" :style="'h-25 md:h-14 w-auto object-contain'"
+          <baseImage source="/images/logo_transparent.webp" :style="'h-25 w-auto object-contain'"
             alt="Hahn Built Logo" />
         </NuxtLink>
       </template>

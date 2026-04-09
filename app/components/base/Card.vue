@@ -28,12 +28,10 @@ const props = defineProps({
         </div>
 
         <div class="flex flex-col items-center">
-        <h3 class="text-xl font-black uppercase italic mb-4 tracking-tight">
-            {{ title }}
-        </h3>
-        <p class="text-zinc-500 leading-relaxed group-hover:text-zinc-300 transition-colors">
-            {{ description }}
-        </p>
-    </div>
+            <h3 class="text-xl font-black uppercase italic mb-4 tracking-tight">
+                {{ title }}
+            </h3>
+            <baseDescription :text="description" />
+        </div>
     </div>
 </template>

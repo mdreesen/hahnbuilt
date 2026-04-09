@@ -20,6 +20,7 @@ interface _GlobalComponents {
   AppProjects: typeof import("../../app/components/app/Projects.vue")['default']
   AppRecentProjects: typeof import("../../app/components/app/RecentProjects.vue")['default']
   BaseCard: typeof import("../../app/components/base/Card.vue")['default']
+  BaseDescription: typeof import("../../app/components/base/Description.vue")['default']
   BaseFooter: typeof import("../../app/components/base/Footer.vue")['default']
   BaseHeader: typeof import("../../app/components/base/Header.vue")['default']
   BaseHeaderSection: typeof import("../../app/components/base/HeaderSection.vue")['default']
@@ -185,6 +186,7 @@ interface _GlobalComponents {
   LazyAppProjects: LazyComponent<typeof import("../../app/components/app/Projects.vue")['default']>
   LazyAppRecentProjects: LazyComponent<typeof import("../../app/components/app/RecentProjects.vue")['default']>
   LazyBaseCard: LazyComponent<typeof import("../../app/components/base/Card.vue")['default']>
+  LazyBaseDescription: LazyComponent<typeof import("../../app/components/base/Description.vue")['default']>
   LazyBaseFooter: LazyComponent<typeof import("../../app/components/base/Footer.vue")['default']>
   LazyBaseHeader: LazyComponent<typeof import("../../app/components/base/Header.vue")['default']>
   LazyBaseHeaderSection: LazyComponent<typeof import("../../app/components/base/HeaderSection.vue")['default']>

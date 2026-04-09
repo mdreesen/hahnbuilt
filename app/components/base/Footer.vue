@@ -15,11 +15,11 @@
           <baseImage source="/images/logo_transparent.webp" :style="'w-48 mb-8'" alt="Hahn Built transparent logo" />
 
           <p class="text-zinc-500 max-w-sm mb-8 leading-relaxed">
-            Specializing in high-performance concrete structures across the Flathead Valley. From Evergreen to the
+            Specializing in high-performance concrete structures across the Flathead Valley. From Kalispell to the
             peaks, we build the bedrock of Montana.
           </p>
           <div class="flex flex-col gap-2 font-mono text-xs uppercase tracking-widest text-orange-600">
-            <span>Evergreen, Montana</span>
+            <span>Kalispell, Montana</span>
             <span>Licensed • Bonded • Insured</span>
           </div>
         </div>

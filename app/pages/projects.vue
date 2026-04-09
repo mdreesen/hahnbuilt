@@ -1,10 +1,11 @@
 <script setup lang="ts">
-useHead({
+useSeoMeta({
   title: 'Hahn Built | Projects',
-  meta: [
-    { name: 'Projects', content: 'Hahn Built Projects.' },
-  ],
-});
+  description: 'Projects for Hahn Built',
+  ogDescription: 'Projects for Hahn Built',
+  ogTitle: 'Hahn Built | Projects',
+  ogImage: '/images/logo.webp',
+})
 
 const projects = [
   { 

@@ -10,12 +10,9 @@
       }">
         <baseHeader text="Built to<br><span class='text-orange-600'>Endure.</span>" />
       </div>
-
-      <p v-gsap.from="{ opacity: 0, x: -50, duration: 1, delay: 0.8 }"
-        class="mt-10 max-w-xl text-zinc-400 font-medium leading-relaxed text-lg">
-        Advanced concrete solutions for residential and commercial developments. At Hahn Built, we bridge the gap
-        between architectural vision and structural permanence.
-      </p>
+      <baseDescription v-gsap.from="{ opacity: 0, x: -50, duration: 1, delay: 0.8 }"
+       text="Advanced concrete solutions for residential and commercial developments. At Hahn Built, we bridge the gap
+        between architectural vision and structural permanence." />
     </div>
 
     <div v-gsap.to="{

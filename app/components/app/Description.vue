@@ -28,7 +28,7 @@ const services = [
         <div class="max-w-7xl mx-auto">
             <div class="mb-24">
                 <baseHeaderSection text="Everything<br><span class='text-orange-600'>You Need</span>" />
-                <p class="mt-8 max-w-2xl text-zinc-500 text-lg leading-relaxed">
+                <p class="mt-8 max-w-2xl text-zinc-200 text-lg leading-relaxed">
                     From massive commercial foundations to custom architectural flatwork, Hahn Built delivers structural
                     concrete that serves as the literal bedrock of Montana.
                 </p>
