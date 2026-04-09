@@ -89,7 +89,7 @@ const _sfc_main = /* @__PURE__ */ defineComponent({
         }, null, _parent));
         _push(`</div>`);
       });
-      _push(`<!--]--></section><section class="grid grid-cols-1 lg:grid-cols-12 gap-10 items-end"><div class="lg:col-span-4"><h2 class="text-4xl font-black uppercase italic tracking-tight mb-6">Our Bedrock</h2><p class="text-zinc-500 leading-relaxed"> Hahn Built was founded on the principle that a project is only as good as its base. We specialize in high-spec commercial foundations and custom residential flatwork where precision isn&#39;t optional—it&#39;s the standard. </p></div><div class="lg:col-span-8"><div${ssrRenderAttrs(_temp0 = mergeProps({ class: "blueprint-img h-px bg-orange-600 mb-10" }, ssrGetDirectiveProps(_ctx, _directive_gsap, {
+      _push(`<!--]--></section><section class="grid grid-cols-1 lg:grid-cols-12 gap-10 items-end"><div class="lg:col-span-4"><h2 class="text-4xl font-black uppercase italic tracking-tight mb-6">Our Bedrock</h2><p class="text-zinc-400 leading-relaxed"> Hahn Built was founded on the principle that a project is only as good as its base. We specialize in high-spec commercial foundations and custom residential flatwork where precision isn&#39;t optional—it&#39;s the standard. </p></div><div class="lg:col-span-8"><div${ssrRenderAttrs(_temp0 = mergeProps({ class: "blueprint-img h-px bg-orange-600 mb-10" }, ssrGetDirectiveProps(_ctx, _directive_gsap, {
         scrollTrigger: { trigger: ".blueprint-img", start: "top 80%" },
         width: "0%",
         duration: 1.5,
@@ -109,7 +109,7 @@ const _sfc_main = /* @__PURE__ */ defineComponent({
           x: 30,
           opacity: 0,
           delay: i * 0.2
-        }, void 0, { from: true })))}><div class="text-orange-600 font-mono text-lg pt-1">/0${ssrInterpolate(i + 1)}</div><div><h4 class="text-xl font-black uppercase italic tracking-tight mb-2 group-hover:text-orange-600 transition-colors">${ssrInterpolate(point.title)}</h4><p class="text-zinc-500 text-sm leading-relaxed max-w-md">${ssrInterpolate(point.desc)}</p></div></div>`);
+        }, void 0, { from: true })))}><div class="text-orange-600 font-mono text-lg pt-1">/0${ssrInterpolate(i + 1)}</div><div><h4 class="text-xl font-black uppercase italic tracking-tight mb-2 group-hover:text-orange-600 transition-colors">${ssrInterpolate(point.title)}</h4><p class="text-zinc-400 text-sm leading-relaxed max-w-md">${ssrInterpolate(point.desc)}</p></div></div>`);
       });
       _push(`<!--]--></div></div></div></div></section></div></div>`);
     };

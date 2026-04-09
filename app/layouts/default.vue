@@ -7,9 +7,11 @@ useHead({
 </script>
 
 <template>
-  <div  class="bg-[#0c0c0c] text-[#eaeaea] min-h-screen selection:bg-orange-600 overflow-x-hidden">
+  <div class="bg-[#0c0c0c] text-white min-h-screen selection:bg-orange-600 overflow-x-hidden">
     <baseNavigation />
-    <slot />
+    <main>
+      <slot />
+    </main>
     <baseFooter />
   </div>
 </template>

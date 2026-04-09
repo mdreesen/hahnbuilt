@@ -39,7 +39,7 @@ const setBg = (img: string) => activeBg.value = img;
 </script>
 
 <template>
-  <div class="bg-[#0c0c0c] min-h-screen text-white pt-40 pb-20 relative overflow-hidden">
+  <div class="min-h-screen text-white pt-40 pb-20 relative overflow-hidden">
     
     <!-- Large Background Preview (The "Ghost" Image) -->
     <div class="fixed inset-0 z-0 transition-all duration-1000 ease-in-out opacity-20 grayscale pointer-events-none">
@@ -62,7 +62,7 @@ const setBg = (img: string) => activeBg.value = img;
         >
           <div class="grid grid-cols-1 md:grid-cols-12 items-center gap-8">
             
-            <div class="md:col-span-1 font-mono text-zinc-600 group-hover:text-orange-600 transition-colors">
+            <div class="md:col-span-1 font-mono text-zinc-400 group-hover:text-orange-600 transition-colors">
               {{ project.id }}
             </div>
 
@@ -75,12 +75,12 @@ const setBg = (img: string) => activeBg.value = img;
               </p>
             </div>
 
-            <div class="md:col-span-3 text-zinc-500 text-sm font-bold uppercase tracking-widest">
+            <div class="md:col-span-3 text-zinc-400 text-sm font-bold uppercase tracking-widest">
               {{ project.type }}
             </div>
 
             <div class="md:col-span-3 text-right hidden md:block">
-              <span class="text-[10px] font-mono text-zinc-700 leading-none uppercase">
+              <span class="text-[10px] font-mono text-zinc-400 leading-none uppercase">
                 Technical Specs:<br />
                 <span class="text-zinc-400">{{ project.specs }}</span>
               </span>
@@ -90,7 +90,7 @@ const setBg = (img: string) => activeBg.value = img;
         </div>
       </div>
 
-      <footer class="mt-32 border-t border-white/5 pt-10 flex justify-between items-center text-zinc-600 font-mono text-[10px] uppercase tracking-widest">
+      <footer class="mt-32 border-t border-white/5 pt-10 flex justify-between items-center text-zinc-400 font-mono text-[10px] uppercase tracking-widest">
         <span>Verified Structural Builds</span>
         <span>Montana Licensed #XXXXX</span>
       </footer>

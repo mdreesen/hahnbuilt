@@ -56,7 +56,7 @@ const qualityPoints = [
 
             <section class="grid grid-cols-2 md:grid-cols-4 gap-1 border-y border-white/10 mb-32 bg-white/10">
                 <div v-for="stat in stats" :key="stat.label"
-                    class="bg-[#0c0c0c] py-16 flex justify-center items-center text-center group">
+                    class="py-16 flex justify-center items-center text-center group">
                     <baseCard :title="stat.label" :description="stat.value" />
                 </div>
             </section>
@@ -95,7 +95,7 @@ const qualityPoints = [
                 </div>
             </section>
 
-            <section class="bg-[#0c0c0c] text-white py-32 px-10 border-y border-white/5 relative overflow-hidden">
+            <section class="text-white py-32 px-10 border-y border-white/5 relative overflow-hidden">
 
                 <div
                     class="absolute top-10 right-10 font-mono text-[10px] text-zinc-800 uppercase tracking-[0.5em] hidden lg:block">

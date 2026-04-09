@@ -38,7 +38,7 @@ const _sfc_main = /* @__PURE__ */ defineComponent({
         if (__props.icon) {
           _push(ssrRenderComponent(_component_Icon, {
             name: __props.icon,
-            class: "w-5 h-5 text-zinc-500 group-hover:text-orange-600"
+            class: "w-5 h-5 text-zinc-400 group-hover:text-orange-600"
           }, null, _parent));
         } else {
           _push(`<!---->`);

@@ -141,7 +141,7 @@ const _sfc_main$2 = {
       const _directive_gsap = resolveDirective("gsap");
       _push(`<section${ssrRenderAttrs(mergeProps({ class: "bg-[#0c0c0c] text-white py-32 px-10 border-t border-white/5" }, _attrs))}><div class="max-w-7xl mx-auto"><div class="mb-24">`);
       _push(ssrRenderComponent(_component_baseHeaderSection, { text: "Everything<br><span class='text-orange-600'>You Need</span>" }, null, _parent));
-      _push(`<p class="mt-8 max-w-2xl text-zinc-500 text-lg leading-relaxed"> From massive commercial foundations to custom architectural flatwork, Hahn Built delivers structural concrete that serves as the literal bedrock of Montana. </p></div><div class="grid grid-cols-1 md:grid-cols-2 border-l border-t border-white/10"><!--[-->`);
+      _push(`<p class="mt-8 max-w-2xl text-zinc-400 text-lg leading-relaxed"> From massive commercial foundations to custom architectural flatwork, Hahn Built delivers structural concrete that serves as the literal bedrock of Montana. </p></div><div class="grid grid-cols-1 md:grid-cols-2 border-l border-t border-white/10"><!--[-->`);
       ssrRenderList(services, (item, index) => {
         _push(`<div${ssrRenderAttrs(mergeProps({
           key: index,

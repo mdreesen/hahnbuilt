@@ -28,7 +28,7 @@ const submitManifest = async () => {
 </script>
 
 <template>
-  <div class="bg-[#0c0c0c] min-h-screen text-white pt-40 pb-20 px-10 relative overflow-hidden">
+  <div class="min-h-screen text-white pt-40 pb-20 px-10 relative overflow-hidden">
 
     <div class="absolute inset-0 z-0 opacity-10 pointer-events-none">
       <div class="absolute top-0 left-1/4 w-px h-full bg-white"></div>
@@ -49,19 +49,19 @@ const submitManifest = async () => {
 
               <div class="grid grid-cols-1 md:grid-cols-2 gap-10">
                 <div class="space-y-2">
-                  <label class="text-[10px] font-mono uppercase tracking-widest text-zinc-500">Principal Name</label>
+                  <label class="text-[10px] font-mono uppercase tracking-widest text-zinc-400">Principal Name</label>
                   <input v-model="formData.name" type="text" placeholder="Full Name"
                     class="w-full bg-transparent border-b border-white/10 py-4 outline-none focus:border-orange-600 transition-colors font-bold uppercase italic" />
                 </div>
                 <div class="space-y-2">
-                  <label class="text-[10px] font-mono uppercase tracking-widest text-zinc-500">Contact Email</label>
+                  <label class="text-[10px] font-mono uppercase tracking-widest text-zinc-400">Contact Email</label>
                   <input v-model="formData.email" type="email" placeholder="Email Address"
                     class="w-full bg-transparent border-b border-white/10 py-4 outline-none focus:border-orange-600 transition-colors font-bold uppercase italic" />
                 </div>
               </div>
 
               <div class="space-y-4">
-                <label class="text-[10px] font-mono uppercase tracking-widest text-zinc-500 block">Structural
+                <label class="text-[10px] font-mono uppercase tracking-widest text-zinc-400 block">Structural
                   Category</label>
                 <div class="flex flex-wrap gap-4">
                   <button v-for="type in ['Residential', 'Commercial', 'Civil', 'Other']" :key="type"
@@ -74,7 +74,7 @@ const submitManifest = async () => {
               </div>
 
               <div class="space-y-2">
-                <label class="text-[10px] font-mono uppercase tracking-widest text-zinc-500">Project Details</label>
+                <label class="text-[10px] font-mono uppercase tracking-widest text-zinc-400">Project Details</label>
                 <textarea v-model="formData.details" rows="4"
                   placeholder="Briefly describe the structural requirements..."
                   class="w-full bg-transparent border border-white/10 p-6 outline-none focus:border-orange-600 transition-colors font-medium text-zinc-400"></textarea>
@@ -113,7 +113,7 @@ const submitManifest = async () => {
                 <a href="tel:4063002052">(406) 300-2052</a>
               </p>
               <baseDescription :text="`<a href='tel:4063002052'>(406) 300-2052</a>`" />
-              <p class="text-sm text-zinc-500 mt-2 font-mono uppercase">Mon — Fri / 07:00 — 17:00</p>
+              <p class="text-sm text-zinc-400 mt-2 font-mono uppercase">Mon — Fri / 07:00 — 17:00</p>
             </div>
           </div>
 

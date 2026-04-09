@@ -35,7 +35,7 @@ const _sfc_main = /* @__PURE__ */ defineComponent({
         if (__props.icon) {
           _push(ssrRenderComponent(_component_Icon, {
             name: __props.icon,
-            class: "w-5 h-5 text-zinc-500 group-hover:text-orange-600"
+            class: "w-5 h-5 text-zinc-400 group-hover:text-orange-600"
           }, null, _parent));
         } else {
           _push(`<!---->`);
@@ -44,7 +44,7 @@ const _sfc_main = /* @__PURE__ */ defineComponent({
       } else {
         _push(`<!---->`);
       }
-      _push(`<div class="flex flex-col items-center"><h3 class="text-xl font-black uppercase italic mb-4 tracking-tight">${ssrInterpolate(__props.title)}</h3><p class="text-zinc-500 leading-relaxed group-hover:text-zinc-300 transition-colors">${ssrInterpolate(__props.description)}</p></div></div>`);
+      _push(`<div class="flex flex-col items-center"><h3 class="text-xl font-black uppercase italic mb-4 tracking-tight">${ssrInterpolate(__props.title)}</h3><p class="text-zinc-400 leading-relaxed group-hover:text-zinc-300 transition-colors">${ssrInterpolate(__props.description)}</p></div></div>`);
     };
   }
 });

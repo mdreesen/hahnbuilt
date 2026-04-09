@@ -26,7 +26,7 @@ const toggle = (i: number) => {
 </script>
 
 <template>
-  <section class="bg-[#0c0c0c] text-white py-32 px-10">
+  <section class="text-white py-32 px-10">
     <div class="max-w-4xl mx-auto">
       
       <div class="mb-20">
@@ -44,7 +44,7 @@ const toggle = (i: number) => {
             class="w-full py-10 flex items-center justify-between text-left group transition-all"
           >
             <div class="flex items-center gap-8">
-              <span class="font-mono text-zinc-700 group-hover:text-orange-600 transition-colors">
+              <span class="font-mono text-zinc-400 group-hover:text-orange-600 transition-colors">
                 {{ (i + 1).toString().padStart(2, '0') }}
               </span>
               <span class="text-xl md:text-2xl font-bold uppercase tracking-tight group-hover:translate-x-2 transition-transform duration-500">
@@ -61,7 +61,7 @@ const toggle = (i: number) => {
           <div 
             v-show="activeIndex === i"
             v-gsap.from="{ height: 0, opacity: 0, duration: 0.5, ease: 'power4.out' }"
-            class="pb-10 pl-16 md:pl-24 pr-10"
+            class="pb-10 pl-8 md:pl-18 pr-5"
           >
             <p class="text-zinc-400 text-lg leading-relaxed max-w-2xl border-l-2 border-orange-600/30 pl-6">
               {{ faq.a }}

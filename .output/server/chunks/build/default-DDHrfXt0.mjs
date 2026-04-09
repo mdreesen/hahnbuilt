@@ -118,7 +118,7 @@ function _sfc_ssrRender(_ctx, _push, _parent, _attrs) {
     style: "w-48 mb-8",
     alt: "Hahn Built transparent logo"
   }, null, _parent));
-  _push(`<p class="text-zinc-500 max-w-sm mb-8 leading-relaxed"> Specializing in high-performance concrete structures across the Flathead Valley. From Kalispell to the peaks, we build the bedrock of Montana. </p><div class="flex flex-col gap-2 font-mono text-xs uppercase tracking-widest text-orange-600"><span>Kalispell, Montana</span><span>Licensed • Bonded • Insured</span></div></div><div class="md:col-span-2"><span class="text-xs font-black uppercase tracking-[0.2em] mb-8 text-zinc-300">Navigation</span><ul class="flex flex-col gap-4 text-sm font-bold uppercase italic tracking-tight"><li>`);
+  _push(`<p class="text-zinc-400 max-w-sm mb-8 leading-relaxed"> Specializing in high-performance concrete structures across the Flathead Valley. From Kalispell to the peaks, we build the bedrock of Montana. </p><div class="flex flex-col gap-2 font-mono text-xs uppercase tracking-widest text-orange-600"><span>Kalispell, Montana</span><span>Licensed • Bonded • Insured</span></div></div><div class="md:col-span-2"><span class="text-xs font-black uppercase tracking-[0.2em] mb-8 text-zinc-300">Navigation</span><ul class="flex flex-col gap-4 text-sm font-bold uppercase italic tracking-tight"><li>`);
   _push(ssrRenderComponent(_component_baseLink, {
     to: "/about",
     style: "hover:text-orange-600 transition",
@@ -136,7 +136,7 @@ function _sfc_ssrRender(_ctx, _push, _parent, _attrs) {
     style: "hover:text-orange-600 transition",
     text: "Contact"
   }, null, _parent));
-  _push(`</li></ul></div><div class="md:col-span-3"><div class="p-8 bg-zinc-900/50 border border-white/10 rounded-2xl"><span class="text-xs font-black uppercase tracking-widest mb-4">Ready to Manifest?</span><p class="text-xs text-zinc-500 mb-6">Launch our interactive project manifest to get a rapid structural estimate.</p><button class="w-full py-3 bg-white text-black text-[10px] font-black uppercase tracking-widest hover:bg-orange-600 transition-colors"> Start Manifest </button></div></div></div><div class="pt-10 border-t border-white/5 flex flex-col md:row items-center justify-between gap-6"><p class="text-[10px] font-mono text-zinc-600 uppercase tracking-widest"> © 2026 Hahn Built Construction Co. All Rights Reserved. </p><div class="flex gap-8 text-[10px] font-mono text-zinc-600 uppercase tracking-widest"><span class="text-zinc-800">Site by White Raven</span></div></div></div></footer>`);
+  _push(`</li></ul></div><div class="md:col-span-3"><div class="p-8 bg-zinc-900/50 border border-white/10 rounded-2xl"><span class="text-xs font-black uppercase tracking-widest mb-4">Ready to Manifest?</span><p class="text-xs text-zinc-400 mb-6">Launch our interactive project manifest to get a rapid structural estimate.</p><button class="w-full py-3 bg-white text-black text-[10px] font-black uppercase tracking-widest hover:bg-orange-600 transition-colors"> Start Manifest </button></div></div></div><div class="pt-10 border-t border-white/5 flex flex-col md:row items-center justify-between gap-6"><p class="text-[10px] font-mono text-zinc-400 uppercase tracking-widest"> © 2026 Hahn Built Construction Co. All Rights Reserved. </p><div class="flex gap-8 text-[10px] font-mono text-zinc-400 uppercase tracking-widest"><span class="text-zinc-800">Site by White Raven</span></div></div></div></footer>`);
 }
 const _sfc_setup$1 = _sfc_main$1.setup;
 _sfc_main$1.setup = (props, ctx) => {
