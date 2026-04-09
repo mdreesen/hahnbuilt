@@ -20,17 +20,11 @@ useHead({
 
     <appHero />
 
-    <section>
       <appRecentProjects />
-    </section>
 
-    <section>
       <appDescription />
-    </section>
 
-    <section>
       <appFaq />
-    </section>
 
   </div>
 </template>
