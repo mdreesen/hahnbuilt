@@ -53,10 +53,10 @@ const setBg = (img: string) => activeBg.value = img;
               </div>
 
               <div class="md:col-span-5">
-                <h3
+                <span
                   class="text-4xl md:text-6xl font-black uppercase italic tracking-tighter group-hover:translate-x-4 transition-transform duration-500">
                   {{ project.title }}
-                </h3>
+                </span>
               </div>
 
               <div class="md:col-span-3 text-right hidden md:block">
