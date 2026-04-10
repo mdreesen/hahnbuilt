@@ -73,7 +73,7 @@ useSeoMeta({
             <section class="text-white border-y border-white/5 relative overflow-hidden">
 
                 <div
-                    class="absolute top-10 right-10 font-mono text-[10px] text-zinc-500 uppercase tracking-[0.5em] hidden lg:block">
+                    class="absolute top-10 right-10 font-mono text-[10px] text-zinc-400 uppercase tracking-[0.5em] hidden lg:block">
                     Spec: ASTM C94/C94M-22a
                 </div>
 
