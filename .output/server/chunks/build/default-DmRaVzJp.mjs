@@ -75,7 +75,7 @@ function _sfc_ssrRender(_ctx, _push, _parent, _attrs) {
     name: "skill-icons:instagram",
     class: "w-15 h-15 text-zinc-400 group-hover:text-orange-600"
   }, null, _parent));
-  _push(`</a></div></div></div><div class="pt-10 border-t border-white/5 flex flex-col md:row items-center justify-between gap-6"><p class="text-[10px] font-mono text-zinc-400 uppercase tracking-widest"> © ${ssrInterpolate((/* @__PURE__ */ new Date()).getFullYear())} Hahn Built Construction Co. All Rights Reserved. </p><div class="flex gap-8 text-[10px] font-mono text-zinc-400 uppercase tracking-widest"><a href="https://www.mdreesen.com/" class="text-zinc-400 hover:underline">Site by White Raven Development</a></div></div></div></footer>`);
+  _push(`</a></div></div></div><div class="pt-10 border-t border-white/5 flex flex-col md:row items-center justify-between gap-6"><p class="text-[10px] font-mono text-zinc-400 uppercase tracking-widest"> © ${ssrInterpolate((/* @__PURE__ */ new Date()).getFullYear())} Hahn Built Construction Co. All Rights Reserved. </p><div class="flex gap-8 text-[10px] font-mono text-zinc-400 uppercase tracking-widest"><a href="https://www.mdreesen.com/" name="White Raven Development" class="text-zinc-400 hover:underline">Site by White Raven Development</a></div></div></div></footer>`);
 }
 const _sfc_setup$1 = _sfc_main$1.setup;
 _sfc_main$1.setup = (props, ctx) => {
@@ -113,4 +113,4 @@ _sfc_main.setup = (props, ctx) => {
 };
 
 export { _sfc_main as default };
-//# sourceMappingURL=default-CAdjXIea.mjs.map
+//# sourceMappingURL=default-DmRaVzJp.mjs.map

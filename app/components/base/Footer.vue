@@ -33,7 +33,7 @@
           © {{ new Date().getFullYear() }} Hahn Built Construction Co. All Rights Reserved.
         </p>
         <div class="flex gap-8 text-[10px] font-mono text-zinc-400 uppercase tracking-widest">
-          <a href="https://www.mdreesen.com/" class="text-zinc-400 hover:underline">Site by White Raven Development</a>
+          <a href="https://www.mdreesen.com/" name="White Raven Development" class="text-zinc-400 hover:underline">Site by White Raven Development</a>
         </div>
       </div>
     </div>
