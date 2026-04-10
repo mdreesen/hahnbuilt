@@ -111,7 +111,7 @@ const submitManifest = async () => {
               <div>
                 <span class="text-orange-600 font-mono text-[10px] uppercase tracking-[0.3em] mb-6">Direct Line</span>
                 <p class="text-3xl font-bold uppercase italic leading-tight hover:text-orange-600 transition-colors">
-                  <a href="tel:4063002052">(406) 300-2052</a>
+                  <a href="tel:4063002052" aria-label="Phone number for Hahn Built">(406) 300-2052</a>
                 </p>
                 <baseDescription :text="`<a href='tel:4063002052'>(406) 300-2052</a>`" />
                 <p class="text-sm text-zinc-400 mt-2 font-mono uppercase">Mon — Fri / 07:00 — 17:00</p>

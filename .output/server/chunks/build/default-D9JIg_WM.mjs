@@ -70,12 +70,12 @@ function _sfc_ssrRender(_ctx, _push, _parent, _attrs) {
     style: "w-48 mb-8",
     alt: "Hahn Built transparent logo"
   }, null, _parent));
-  _push(`<p class="text-zinc-400 max-w-sm mb-8 leading-relaxed"> Specializing in high-performance concrete structures across the Flathead Valley. From Kalispell to the peaks, we build the bedrock of Montana. </p><div class="flex flex-col gap-2 font-mono text-xs uppercase tracking-widest text-orange-600"><span>Kalispell, Montana</span><span>Licensed • Bonded • Insured</span></div></div><div class="flex flex-col gap-10"><span class="text-xs uppercase tracking-widest">Connect</span><div><a href="https://www.instagram.com/hahnbuilt/" name="instagram">`);
+  _push(`<p class="text-zinc-400 max-w-sm mb-8 leading-relaxed"> Specializing in high-performance concrete structures across the Flathead Valley. From Kalispell to the peaks, we build the bedrock of Montana. </p><div class="flex flex-col gap-2 font-mono text-xs uppercase tracking-widest text-orange-600"><span>Kalispell, Montana</span><span>Licensed • Bonded • Insured</span></div></div><div class="flex flex-col gap-10"><span class="text-xs uppercase tracking-widest">Connect</span><div><a href="https://www.instagram.com/hahnbuilt/" name="instagram" aria-label="Instagram link for Hahn Built">`);
   _push(ssrRenderComponent(_component_Icon, {
     name: "skill-icons:instagram",
     class: "w-15 h-15 text-zinc-400 group-hover:text-orange-600"
   }, null, _parent));
-  _push(`</a></div></div></div><div class="pt-10 border-t border-white/5 flex flex-col md:row items-center justify-between gap-6"><p class="text-[10px] font-mono text-zinc-400 uppercase tracking-widest"> © ${ssrInterpolate((/* @__PURE__ */ new Date()).getFullYear())} Hahn Built Construction Co. All Rights Reserved. </p><div class="flex gap-8 text-[10px] font-mono text-zinc-400 uppercase tracking-widest"><a href="https://www.mdreesen.com/" name="White Raven Development" class="text-zinc-400 hover:underline">Site by White Raven Development</a></div></div></div></footer>`);
+  _push(`</a></div></div></div><div class="pt-10 border-t border-white/5 flex flex-col md:row items-center justify-between gap-6"><p class="text-[10px] font-mono text-zinc-400 uppercase tracking-widest"> © ${ssrInterpolate((/* @__PURE__ */ new Date()).getFullYear())} Hahn Built Construction Co. All Rights Reserved. </p><div class="flex gap-8 text-[10px] font-mono text-zinc-400 uppercase tracking-widest"><a href="https://www.mdreesen.com/" name="White Raven Development" aria-label="Link for White Raven Development" class="text-zinc-400 hover:underline">Site by White Raven Development</a></div></div></div></footer>`);
 }
 const _sfc_setup$1 = _sfc_main$1.setup;
 _sfc_main$1.setup = (props, ctx) => {
@@ -113,4 +113,4 @@ _sfc_main.setup = (props, ctx) => {
 };
 
 export { _sfc_main as default };
-//# sourceMappingURL=default-DmRaVzJp.mjs.map
+//# sourceMappingURL=default-D9JIg_WM.mjs.map

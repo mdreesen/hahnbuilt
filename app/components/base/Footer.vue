@@ -20,7 +20,7 @@
         <div class="flex flex-col gap-10">
           <span class="text-xs uppercase tracking-widest">Connect</span>
           <div>
-            <a href="https://www.instagram.com/hahnbuilt/" name="instagram">
+            <a href="https://www.instagram.com/hahnbuilt/" name="instagram" aria-label="Instagram link for Hahn Built">
               <Icon name="skill-icons:instagram" class="w-15 h-15 text-zinc-400 group-hover:text-orange-600" />
             </a>
           </div>
@@ -33,7 +33,7 @@
           © {{ new Date().getFullYear() }} Hahn Built Construction Co. All Rights Reserved.
         </p>
         <div class="flex gap-8 text-[10px] font-mono text-zinc-400 uppercase tracking-widest">
-          <a href="https://www.mdreesen.com/" name="White Raven Development" class="text-zinc-400 hover:underline">Site by White Raven Development</a>
+          <a href="https://www.mdreesen.com/" name="White Raven Development" aria-label="Link for White Raven Development" class="text-zinc-400 hover:underline">Site by White Raven Development</a>
         </div>
       </div>
     </div>
