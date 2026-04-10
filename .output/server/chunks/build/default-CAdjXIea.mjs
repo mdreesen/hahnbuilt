@@ -70,7 +70,7 @@ function _sfc_ssrRender(_ctx, _push, _parent, _attrs) {
     style: "w-48 mb-8",
     alt: "Hahn Built transparent logo"
   }, null, _parent));
-  _push(`<p class="text-zinc-400 max-w-sm mb-8 leading-relaxed"> Specializing in high-performance concrete structures across the Flathead Valley. From Kalispell to the peaks, we build the bedrock of Montana. </p><div class="flex flex-col gap-2 font-mono text-xs uppercase tracking-widest text-orange-600"><span>Kalispell, Montana</span><span>Licensed • Bonded • Insured</span></div></div><div class="flex flex-col gap-10"><span class="text-xs uppercase tracking-widest">Connect</span><div><a href="https://www.instagram.com/hahnbuilt/">`);
+  _push(`<p class="text-zinc-400 max-w-sm mb-8 leading-relaxed"> Specializing in high-performance concrete structures across the Flathead Valley. From Kalispell to the peaks, we build the bedrock of Montana. </p><div class="flex flex-col gap-2 font-mono text-xs uppercase tracking-widest text-orange-600"><span>Kalispell, Montana</span><span>Licensed • Bonded • Insured</span></div></div><div class="flex flex-col gap-10"><span class="text-xs uppercase tracking-widest">Connect</span><div><a href="https://www.instagram.com/hahnbuilt/" name="instagram">`);
   _push(ssrRenderComponent(_component_Icon, {
     name: "skill-icons:instagram",
     class: "w-15 h-15 text-zinc-400 group-hover:text-orange-600"
@@ -113,4 +113,4 @@ _sfc_main.setup = (props, ctx) => {
 };
 
 export { _sfc_main as default };
-//# sourceMappingURL=default-eZA2EdXn.mjs.map
+//# sourceMappingURL=default-CAdjXIea.mjs.map

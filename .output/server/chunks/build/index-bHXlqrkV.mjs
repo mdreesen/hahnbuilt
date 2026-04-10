@@ -54,21 +54,21 @@ const _sfc_main = /* @__PURE__ */ defineComponent({
       const _component_baseHeaderSection = __nuxt_component_0;
       const _component_baseDescription = __nuxt_component_1;
       const _component_baseImage = __nuxt_component_0$1;
-      _push(`<section${ssrRenderAttrs(mergeProps({ class: "py-24 px-6 md:px-12 border-t border-zinc-800" }, _attrs))} data-v-0976fb26><header class="mb-20" data-v-0976fb26>`);
-      _push(ssrRenderComponent(_component_baseHeaderSection, { text: "Project<br><span class='text-orange-600'>Portfolio</span>" }, null, _parent));
+      _push(`<section${ssrRenderAttrs(mergeProps({ class: "py-24 px-6 md:px-12 border-t border-zinc-800" }, _attrs))} data-v-05262f3d><header class="mb-20" data-v-05262f3d>`);
+      _push(ssrRenderComponent(_component_baseHeaderSection, { text: "Project<br><span class='text-orange-600'>Portfolio</span><br>Setup" }, null, _parent));
       _push(ssrRenderComponent(_component_baseDescription, { text: "From residential foundations to complex commercial scale, Hahn Built structures defines endurance with setup." }, null, _parent));
-      _push(`</header><div class="columns-1 sm:columns-2 lg:columns-3 xl:columns-4 gap-8 space-y-8" data-v-0976fb26><!--[-->`);
+      _push(`</header><div class="columns-1 sm:columns-2 lg:columns-3 xl:columns-4 gap-8 space-y-8" data-v-05262f3d><!--[-->`);
       ssrRenderList(projects, (project) => {
-        _push(`<div class="break-inside-avoid group relative overflow-hidden bg-zinc-900 border border-zinc-800 rounded-sm shadow-xl transition-all duration-300 hover:border-orange-600/30 hover:-translate-y-2 hover:shadow-2xl hover:shadow-orange-600/5" data-v-0976fb26><div class="${ssrRenderClass([
+        _push(`<div class="break-inside-avoid group relative overflow-hidden bg-zinc-900 border border-zinc-800 rounded-sm shadow-xl transition-all duration-300 hover:border-orange-600/30 hover:-translate-y-2 hover:shadow-2xl hover:shadow-orange-600/5" data-v-05262f3d><div class="${ssrRenderClass([
           "relative overflow-hidden",
           project.span === "high" ? "aspect-3/4.5" : project.span === "mid" ? "aspect-square" : "aspect-4/3"
-        ])}" data-v-0976fb26>`);
+        ])}" data-v-05262f3d>`);
         _push(ssrRenderComponent(_component_baseImage, {
           source: project.img,
           style: `w-full h-full object-cover transition-all duration-700 group-hover:grayscale-0 group-hover:scale-110`,
           alt: "Setup Concrete image"
         }, null, _parent));
-        _push(`<div class="absolute inset-0 bg-linear-to-t from-black via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-8" data-v-0976fb26><span class="text-orange-500 font-mono text-xs uppercase tracking-widest mb-2" data-v-0976fb26>Hahn Built Verified</span></div> 1/div&gt; <div class="p-5 flex justify-between items-center bg-zinc-900 border-t border-zinc-800" data-v-0976fb26><span class="font-bold text-xs uppercase tracking-[0.2em] text-zinc-400 group-hover:text-white transition-colors duration-300" data-v-0976fb26>${ssrInterpolate(project.title)}</span><div class="w-8 h-0.5 bg-zinc-700 group-hover:w-16 group-hover:bg-orange-600 transition-all duration-300" data-v-0976fb26></div></div></div></div>`);
+        _push(`<div class="absolute inset-0 bg-linear-to-t from-black via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-8" data-v-05262f3d><span class="text-orange-500 font-mono text-xs uppercase tracking-widest mb-2" data-v-05262f3d>Hahn Built Verified</span></div> 1/div&gt; <div class="p-5 flex justify-between items-center bg-zinc-900 border-t border-zinc-800" data-v-05262f3d><span class="font-bold text-xs uppercase tracking-[0.2em] text-zinc-400 group-hover:text-white transition-colors duration-300" data-v-05262f3d>${ssrInterpolate(project.title)}</span><div class="w-8 h-0.5 bg-zinc-700 group-hover:w-16 group-hover:bg-orange-600 transition-all duration-300" data-v-05262f3d></div></div></div></div>`);
       });
       _push(`<!--]--></div></section>`);
     };
@@ -80,7 +80,7 @@ _sfc_main.setup = (props, ctx) => {
   (ssrContext.modules || (ssrContext.modules = /* @__PURE__ */ new Set())).add("pages/projects/setup/index.vue");
   return _sfc_setup ? _sfc_setup(props, ctx) : void 0;
 };
-const index = /* @__PURE__ */ _export_sfc(_sfc_main, [["__scopeId", "data-v-0976fb26"]]);
+const index = /* @__PURE__ */ _export_sfc(_sfc_main, [["__scopeId", "data-v-05262f3d"]]);
 
 export { index as default };
-//# sourceMappingURL=index-DZqxKqyU.mjs.map
+//# sourceMappingURL=index-bHXlqrkV.mjs.map

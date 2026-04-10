@@ -21,7 +21,7 @@ const projects = [
   <section class="py-24 px-6 md:px-12 border-t border-zinc-800">
 
     <header class="mb-20">
-      <baseHeaderSection text="Project<br><span class='text-orange-600'>Portfolio</span>" />
+      <baseHeaderSection text="Project<br><span class='text-orange-600'>Portfolio</span><br>Setup" />
       <baseDescription
         text="From residential foundations to complex commercial scale, Hahn Built structures defines endurance with setup." />
     </header>

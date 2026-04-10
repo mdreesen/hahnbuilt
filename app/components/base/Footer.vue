@@ -20,7 +20,7 @@
         <div class="flex flex-col gap-10">
           <span class="text-xs uppercase tracking-widest">Connect</span>
           <div>
-            <a href="https://www.instagram.com/hahnbuilt/">
+            <a href="https://www.instagram.com/hahnbuilt/" name="instagram">
               <Icon name="skill-icons:instagram" class="w-15 h-15 text-zinc-400 group-hover:text-orange-600" />
             </a>
           </div>

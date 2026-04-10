@@ -14035,12 +14035,12 @@ const _routes = [
   {
     name: "projects-pour",
     path: "/projects/pour",
-    component: () => import('./index-BJHT2CKk.mjs')
+    component: () => import('./index-CLbMwguJ.mjs')
   },
   {
     name: "projects-setup",
     path: "/projects/setup",
-    component: () => import('./index-DZqxKqyU.mjs')
+    component: () => import('./index-bHXlqrkV.mjs')
   },
   {
     name: "about",
@@ -21669,7 +21669,7 @@ _sfc_main$3.setup = (props, ctx) => {
 };
 const __nuxt_component_0 = Object.assign(_sfc_main$3, { __name: "UApp" });
 const layouts = {
-  default: defineAsyncComponent(() => import('./default-eZA2EdXn.mjs').then((m) => m.default || m))
+  default: defineAsyncComponent(() => import('./default-CAdjXIea.mjs').then((m) => m.default || m))
 };
 const routeRulesMatcher = _routeRulesMatcher;
 const LayoutLoader = defineComponent({
