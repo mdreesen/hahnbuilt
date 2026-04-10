@@ -14033,9 +14033,19 @@ function getRouteRules(arg) {
 }
 const _routes = [
   {
+    name: "projects-pour",
+    path: "/projects/pour",
+    component: () => import('./index-CK9oHgxs.mjs')
+  },
+  {
+    name: "projects-setup",
+    path: "/projects/setup",
+    component: () => import('./index-4fHMayQ-.mjs')
+  },
+  {
     name: "about",
     path: "/about",
-    component: () => import('./about-BZnwEZ0T.mjs')
+    component: () => import('./about-CGc9YN8q.mjs')
   },
   {
     name: "contact",
@@ -14045,12 +14055,12 @@ const _routes = [
   {
     name: "projects",
     path: "/projects",
-    component: () => import('./projects-Dkp6aRTB.mjs')
+    component: () => import('./index-DxhRlzzA.mjs')
   },
   {
     name: "index",
     path: "/",
-    component: () => import('./index-BPeH1FKr.mjs')
+    component: () => import('./index-DjHYnYQo.mjs')
   }
 ];
 const _wrapInTransition = (props, children) => {
