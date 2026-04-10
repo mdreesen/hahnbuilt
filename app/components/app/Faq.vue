@@ -1,24 +1,6 @@
 <script setup lang="ts">
+import { faqs } from '~/utils/data';
 const activeIndex = ref<number | null>(null);
-
-const faqs = [
-  {
-    q: "What types of concrete projects do you handle?",
-    a: "We specialize in high-durability residential foundations, commercial flatwork, architectural stamped concrete, and structural retaining walls designed for Montana’s freeze-thaw cycles."
-  },
-  {
-    q: "What is your typical service area?",
-    a: "Based in Kalispell, we primarily serve the Flathead Valley, including Kalispell, Whitefish, Columbia Falls, and Bigfork. For large-scale commercial builds, we extend across Western Montana."
-  },
-  {
-    q: "Are you licensed and insured in Montana?",
-    a: "Absolutely. Hahn Built is fully licensed, bonded, and carries comprehensive liability and worker's comp insurance. Safety and compliance are our structural bedrock."
-  },
-  {
-    q: "How do you handle project estimates?",
-    a: "We provide detailed, transparent bids based on site-specific variables. This includes excavation needs, reinforcement requirements, and concrete PSI grades tailored to your project’s load."
-  }
-];
 
 const toggle = (i: number) => {
   activeIndex.value = activeIndex.value === i ? null : i;
@@ -26,7 +8,7 @@ const toggle = (i: number) => {
 </script>
 
 <template>
-  <section class="text-white py-32 px-10">
+  <section class="text-white py-32 px-4">
     <div class="max-w-4xl mx-auto">
       
       <div class="mb-20">

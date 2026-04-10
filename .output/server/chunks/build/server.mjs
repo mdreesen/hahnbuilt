@@ -1,4 +1,4 @@
-import process from 'node:process';globalThis._importMeta_=globalThis._importMeta_||{url:"file:///_entry.js",env:process.env};import { defineComponent, computed, h, shallowRef, getCurrentInstance, provide, cloneVNode, createElementBlock, hasInjectionContext, inject, resolveComponent, ref, useAttrs, useTemplateRef, mergeProps, onServerPrefetch, unref, defineAsyncComponent, toValue, reactive, toRefs, Comment, useSSRContext, shallowReactive, Suspense, Fragment, createApp, watch, nextTick, useModel, withCtx, renderSlot, createVNode, openBlock, createBlock, createTextVNode, toDisplayString, createCommentVNode, mergeModels, resolveDynamicComponent, toRef, renderList, useId, onErrorCaptured, effectScope, camelize, useSlots, withModifiers, normalizeProps, guardReactiveProps, watchEffect, normalizeStyle, getCurrentScope, isRef, markRaw, Teleport, toHandlerKey, isReadonly, isShallow, isReactive, toRaw } from 'vue';
+import process from 'node:process';globalThis._importMeta_=globalThis._importMeta_||{url:"file:///_entry.js",env:process.env};import { defineComponent, shallowRef, getCurrentInstance, provide, cloneVNode, h, createElementBlock, computed, hasInjectionContext, inject, resolveComponent, onServerPrefetch, ref, useAttrs, useTemplateRef, mergeProps, unref, defineAsyncComponent, toValue, reactive, toRefs, Comment, useSSRContext, shallowReactive, Suspense, Fragment, createApp, watch, nextTick, useModel, withCtx, renderSlot, createVNode, openBlock, createBlock, createTextVNode, toDisplayString, createCommentVNode, mergeModels, resolveDynamicComponent, toRef, renderList, useId, onErrorCaptured, effectScope, camelize, useSlots, withModifiers, normalizeProps, guardReactiveProps, watchEffect, normalizeStyle, getCurrentScope, isRef, markRaw, Teleport, toHandlerKey, isReadonly, isShallow, isReactive, toRaw } from 'vue';
 import { s as serialize, k as parseQuery, l as klona, m as hasProtocol, j as joinURL, n as parseURL, o as encodePath, q as decodePath, r as defuFn, w as withQuery, t as isScriptProtocol, v as getContext, x as withTrailingSlash, y as withoutTrailingSlash, z as sanitizeStatusCode, A as defu, B as withLeadingSlash, $ as $fetch$1, C as baseURL, D as hash, e as createError$1, E as isEqual, F as executeAsync, G as encodeParam } from '../nitro/nitro.mjs';
 import { useRoute as useRoute$1, RouterView, createMemoryHistory, createRouter, START_LOCATION } from 'vue-router';
 import { Icon, getIcon, loadIcon as loadIcon$1, _api, addAPIProvider, setCustomIconsLoader } from '@iconify/vue';
@@ -14035,22 +14035,22 @@ const _routes = [
   {
     name: "about",
     path: "/about",
-    component: () => import('./about-BzvGpPdz.mjs')
+    component: () => import('./about-BZnwEZ0T.mjs')
   },
   {
     name: "contact",
     path: "/contact",
-    component: () => import('./contact-ClSCPCHZ.mjs')
+    component: () => import('./contact-IP5R7ZFe.mjs')
   },
   {
     name: "projects",
     path: "/projects",
-    component: () => import('./projects-Digc2Y6o.mjs')
+    component: () => import('./projects-Dkp6aRTB.mjs')
   },
   {
     name: "index",
     path: "/",
-    component: () => import('./index-DxpHEVKv.mjs')
+    component: () => import('./index-BPeH1FKr.mjs')
   }
 ];
 const _wrapInTransition = (props, children) => {
@@ -21659,7 +21659,7 @@ _sfc_main$3.setup = (props, ctx) => {
 };
 const __nuxt_component_0 = Object.assign(_sfc_main$3, { __name: "UApp" });
 const layouts = {
-  default: defineAsyncComponent(() => import('./default-DDHrfXt0.mjs').then((m) => m.default || m))
+  default: defineAsyncComponent(() => import('./default-D3mI2GjK.mjs').then((m) => m.default || m))
 };
 const routeRulesMatcher = _routeRulesMatcher;
 const LayoutLoader = defineComponent({
@@ -22042,5 +22042,5 @@ let entry;
 }
 const entry_default = ((ssrContext) => entry(ssrContext));
 
-export { _export_sfc as _, __nuxt_component_0$3 as a, useSeoMeta as b, __nuxt_component_0$1 as c, __nuxt_component_0$2 as d, entry_default as default, __nuxt_component_0$4 as e, useRoute as f, useHead as u };
+export { _export_sfc as _, __nuxt_component_0$3 as a, useSeoMeta as b, __nuxt_component_0$4 as c, __nuxt_component_0$2 as d, entry_default as default, useRoute as e, __nuxt_component_0$1 as f, useHead as u };
 //# sourceMappingURL=server.mjs.map

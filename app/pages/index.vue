@@ -20,7 +20,7 @@ useHead({
 
     <appHero />
 
-      <appRecentProjects />
+      <!-- <appRecentProjects /> -->
 
       <appDescription />
 

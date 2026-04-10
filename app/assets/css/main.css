@@ -4,4 +4,5 @@
 * {
     --tw-backdrop-blur: none;
     --ui-bg: black;
+    --ui-bg-elevated: transparent;
 }

@@ -28,9 +28,9 @@ const props = defineProps({
         </div>
 
         <div class="flex flex-col items-center">
-            <h3 class="text-xl font-black uppercase italic mb-4 tracking-tight">
+            <span class="text-xl font-black uppercase italic mb-4 tracking-tight">
                 {{ title }}
-            </h3>
+            </span>
             <baseDescription :text="description" />
         </div>
     </div>

@@ -31,6 +31,7 @@ declare global {
   const effectScope: typeof import('vue').effectScope
   const extendLocale: typeof import('../../node_modules/@nuxt/ui/dist/runtime/composables/defineLocale').extendLocale
   const extractShortcuts: typeof import('../../node_modules/@nuxt/ui/dist/runtime/composables/defineShortcuts').extractShortcuts
+  const faqs: typeof import('../../app/utils/data').faqs
   const getAppManifest: typeof import('../../node_modules/nuxt/dist/app/composables/manifest').getAppManifest
   const getCurrentInstance: typeof import('vue').getCurrentInstance
   const getCurrentScope: typeof import('vue').getCurrentScope
@@ -77,6 +78,7 @@ declare global {
   const prerenderRoutes: typeof import('../../node_modules/nuxt/dist/app/composables/ssr').prerenderRoutes
   const provide: typeof import('vue').provide
   const proxyRefs: typeof import('vue').proxyRefs
+  const qualityPoints: typeof import('../../app/utils/data').qualityPoints
   const reactive: typeof import('vue').reactive
   const readonly: typeof import('vue').readonly
   const ref: typeof import('vue').ref
@@ -85,6 +87,8 @@ declare global {
   const reloadNuxtApp: typeof import('../../node_modules/nuxt/dist/app/composables/chunk').reloadNuxtApp
   const requestIdleCallback: typeof import('../../node_modules/nuxt/dist/app/compat/idle-callback').requestIdleCallback
   const resolveComponent: typeof import('vue').resolveComponent
+  const scrollTrigger: typeof import('../../app/utils/gsap').scrollTrigger
+  const services: typeof import('../../app/utils/data').services
   const setInterval: typeof import('../../node_modules/nuxt/dist/app/compat/interval').setInterval
   const setPageLayout: typeof import('../../node_modules/nuxt/dist/app/composables/router').setPageLayout
   const setResponseStatus: typeof import('../../node_modules/nuxt/dist/app/composables/ssr').setResponseStatus
@@ -92,6 +96,9 @@ declare global {
   const shallowReadonly: typeof import('vue').shallowReadonly
   const shallowRef: typeof import('vue').shallowRef
   const showError: typeof import('../../node_modules/nuxt/dist/app/composables/error').showError
+  const slideRight: typeof import('../../app/utils/gsap').slideRight
+  const slideUp: typeof import('../../app/utils/gsap').slideUp
+  const stats: typeof import('../../app/utils/data').stats
   const toRaw: typeof import('vue').toRaw
   const toRef: typeof import('vue').toRef
   const toRefs: typeof import('vue').toRefs
@@ -238,6 +245,7 @@ declare module 'vue' {
     readonly effectScope: UnwrapRef<typeof import('vue')['effectScope']>
     readonly extendLocale: UnwrapRef<typeof import('../../node_modules/@nuxt/ui/dist/runtime/composables/defineLocale')['extendLocale']>
     readonly extractShortcuts: UnwrapRef<typeof import('../../node_modules/@nuxt/ui/dist/runtime/composables/defineShortcuts')['extractShortcuts']>
+    readonly faqs: UnwrapRef<typeof import('../../app/utils/data')['faqs']>
     readonly getAppManifest: UnwrapRef<typeof import('../../node_modules/nuxt/dist/app/composables/manifest')['getAppManifest']>
     readonly getCurrentInstance: UnwrapRef<typeof import('vue')['getCurrentInstance']>
     readonly getCurrentScope: UnwrapRef<typeof import('vue')['getCurrentScope']>
@@ -284,6 +292,7 @@ declare module 'vue' {
     readonly prerenderRoutes: UnwrapRef<typeof import('../../node_modules/nuxt/dist/app/composables/ssr')['prerenderRoutes']>
     readonly provide: UnwrapRef<typeof import('vue')['provide']>
     readonly proxyRefs: UnwrapRef<typeof import('vue')['proxyRefs']>
+    readonly qualityPoints: UnwrapRef<typeof import('../../app/utils/data')['qualityPoints']>
     readonly reactive: UnwrapRef<typeof import('vue')['reactive']>
     readonly readonly: UnwrapRef<typeof import('vue')['readonly']>
     readonly ref: UnwrapRef<typeof import('vue')['ref']>
@@ -292,6 +301,8 @@ declare module 'vue' {
     readonly reloadNuxtApp: UnwrapRef<typeof import('../../node_modules/nuxt/dist/app/composables/chunk')['reloadNuxtApp']>
     readonly requestIdleCallback: UnwrapRef<typeof import('../../node_modules/nuxt/dist/app/compat/idle-callback')['requestIdleCallback']>
     readonly resolveComponent: UnwrapRef<typeof import('vue')['resolveComponent']>
+    readonly scrollTrigger: UnwrapRef<typeof import('../../app/utils/gsap')['scrollTrigger']>
+    readonly services: UnwrapRef<typeof import('../../app/utils/data')['services']>
     readonly setInterval: UnwrapRef<typeof import('../../node_modules/nuxt/dist/app/compat/interval')['setInterval']>
     readonly setPageLayout: UnwrapRef<typeof import('../../node_modules/nuxt/dist/app/composables/router')['setPageLayout']>
     readonly setResponseStatus: UnwrapRef<typeof import('../../node_modules/nuxt/dist/app/composables/ssr')['setResponseStatus']>
@@ -299,6 +310,9 @@ declare module 'vue' {
     readonly shallowReadonly: UnwrapRef<typeof import('vue')['shallowReadonly']>
     readonly shallowRef: UnwrapRef<typeof import('vue')['shallowRef']>
     readonly showError: UnwrapRef<typeof import('../../node_modules/nuxt/dist/app/composables/error')['showError']>
+    readonly slideRight: UnwrapRef<typeof import('../../app/utils/gsap')['slideRight']>
+    readonly slideUp: UnwrapRef<typeof import('../../app/utils/gsap')['slideUp']>
+    readonly stats: UnwrapRef<typeof import('../../app/utils/data')['stats']>
     readonly toRaw: UnwrapRef<typeof import('vue')['toRaw']>
     readonly toRef: UnwrapRef<typeof import('vue')['toRef']>
     readonly toRefs: UnwrapRef<typeof import('vue')['toRefs']>

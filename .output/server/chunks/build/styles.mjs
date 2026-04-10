@@ -1,11 +1,11 @@
 const interopDefault = r => r.default || r || [];
 const styles = {
-  "pages/projects.vue": () => import('./projects-styles.DnjjjMDc.mjs').then(interopDefault),
-  "pages/projects.vue?vue&type=style&index=0&scoped=a3a8a666&lang.css": () => import('./projects-styles.DnjjjMDc.mjs').then(interopDefault),
-  "../node_modules/nuxt/dist/app/components/error-404.vue": () => import('./error-404-styles.DuDrf-v0.mjs').then(interopDefault),
+  "pages/projects.vue": () => import('./projects-styles.-7QipC6p.mjs').then(interopDefault),
+  "pages/projects.vue?vue&type=style&index=0&scoped=83880a14&lang.css": () => import('./projects-styles.-7QipC6p.mjs').then(interopDefault),
   "../node_modules/nuxt/dist/app/components/error-500.vue": () => import('./error-500-styles.8IYEHzz6.mjs').then(interopDefault),
-  "../node_modules/nuxt/dist/app/components/error-404.vue?vue&type=style&index=0&scoped=204d37bf&lang.css": () => import('./error-404-styles.DuDrf-v0.mjs').then(interopDefault),
-  "../node_modules/nuxt/dist/app/components/error-500.vue?vue&type=style&index=0&scoped=d349100d&lang.css": () => import('./error-500-styles.8IYEHzz6.mjs').then(interopDefault)
+  "../node_modules/nuxt/dist/app/components/error-404.vue": () => import('./error-404-styles.DuDrf-v0.mjs').then(interopDefault),
+  "../node_modules/nuxt/dist/app/components/error-500.vue?vue&type=style&index=0&scoped=d349100d&lang.css": () => import('./error-500-styles.8IYEHzz6.mjs').then(interopDefault),
+  "../node_modules/nuxt/dist/app/components/error-404.vue?vue&type=style&index=0&scoped=204d37bf&lang.css": () => import('./error-404-styles.DuDrf-v0.mjs').then(interopDefault)
 };
 
 export { styles as default };

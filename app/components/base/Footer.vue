@@ -1,15 +1,8 @@
 <template>
   <footer class="text-white pt-32 pb-10 px-10 border-t border-white/5 relative overflow-hidden">
 
-    <div class="absolute bottom-0 left-0 right-0 select-none pointer-events-none translate-y-1/4">
-      <!-- <h2 class="text-[25vw] font-black uppercase italic text-zinc-900/30 whitespace-nowrap tracking-tighter">
-        HAHN BUILT.
-      </h2> -->
-      <!-- <baseHeaderSection text="Hahn Built" /> -->
-    </div>
-
     <div class="max-w-7xl mx-auto relative z-10">
-      <div class="grid grid-cols-1 md:grid-cols-12 gap-16 mb-24">
+      <div class="flex flex-col sm:flex-row gap-16 mb-24">
 
         <div class="md:col-span-5">
           <baseImage source="/images/logo_transparent.webp" :style="'w-48 mb-8'" alt="Hahn Built transparent logo" />
@@ -38,15 +31,6 @@
             </li>
           </ul>
         </div>
-
-        <!-- <div class="md:col-span-2">
-          <span class="text-xs font-black uppercase tracking-[0.2em] mb-8 text-zinc-300">Connect</span>
-          <ul class="flex flex-col gap-4 text-sm font-bold uppercase italic tracking-tight text-zinc-400">
-            <li><a href="#" class="hover:text-white transition">Instagram</a></li>
-            <li><a href="#" class="hover:text-white transition">Facebook</a></li>
-            <li><a href="tel:4060000000" class="hover:text-white transition">406.XXX.XXXX</a></li>
-          </ul>
-        </div> -->
 
         <div class="md:col-span-3">
           <div class="p-8 bg-zinc-900/50 border border-white/10 rounded-2xl">
