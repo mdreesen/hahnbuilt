@@ -4,7 +4,7 @@ import { services } from '~/utils/data';
 </script>
 
 <template>
-    <section class="text-white py-32 px-10 border-t border-white/5">
+    <section class="text-white px-4 border-t border-white/5">
         <div class="max-w-7xl mx-auto">
             <div class="mb-24" v-gsap.from="{...slideRight}">
                 <baseHeaderSection text="Everything<br><span class='text-orange-600'>You Need</span>" />

@@ -8,7 +8,7 @@ const toggle = (i: number) => {
 </script>
 
 <template>
-  <section class="text-white py-32 px-4">
+  <section class="text-white px-4">
     <div class="max-w-4xl mx-auto">
       
       <div class="mb-20">

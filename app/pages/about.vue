@@ -13,9 +13,9 @@ useSeoMeta({
 
 <template>
     <div class="min-h-screen pt-40 pb-20 px-4">
-        <div class="max-w-7xl mx-auto">
+        <div class="max-w-7xl mx-auto flex flex-col gap-40">
 
-            <header class="grid grid-cols-1 lg:grid-cols-2 gap-20 mb-32">
+            <header class="grid grid-cols-1 lg:grid-cols-2 gap-20">
                 <div class="relative z-10">
                     <span class="text-orange-600 font-mono text-xs tracking-[0.3em] uppercase mb-4 block">The
                         Mandate</span>
@@ -34,7 +34,7 @@ useSeoMeta({
                 </div>
             </header>
 
-            <section class="grid grid-cols-2 md:grid-cols-4 gap-1 border-y border-white/10 mb-32 bg-white/10">
+            <section class="grid grid-cols-2 md:grid-cols-4 gap-1 border-y border-white/10 bg-white/10">
                 <div v-for="stat in stats" :key="stat.label"
                     class="py-16 flex justify-center items-center text-center group">
                     <baseCard :title="stat.label" :description="stat.value" />
@@ -70,17 +70,17 @@ useSeoMeta({
                 </div>
             </section>
 
-            <section class="text-white py-32 border-y border-white/5 relative overflow-hidden">
+            <section class="text-white border-y border-white/5 relative overflow-hidden">
 
                 <div
-                    class="absolute top-10 right-10 font-mono text-[10px] text-zinc-800 uppercase tracking-[0.5em] hidden lg:block">
+                    class="absolute top-10 right-10 font-mono text-[10px] text-zinc-500 uppercase tracking-[0.5em] hidden lg:block">
                     Spec: ASTM C94/C94M-22a
                 </div>
 
                 <div class="max-w-7xl mx-auto">
-                    <div class="grid grid-cols-1 lg:grid-cols-12 gap-20 items-center">
+                    <div class="flex flex-col sm:flex-row gap-6 items-center">
 
-                        <div class="lg:col-span-5 relative group">
+                        <div class="lg:col-span-5 relative group gap-4">
                             <div class="relative aspect-3/4 overflow-hidden border border-white/10">
                                 <baseImage source="/images/about_one.webp"
                                     :style="`w-full h-full object-cover grayscale opacity-50 group-hover:opacity-100 transition-all duration-1000`"

@@ -29,7 +29,7 @@ const items = computed<NavigationMenuItem[]>(() => [{
       <UNavigationMenu color="neutral" :items="items" />
 
       <template #body>
-        <UNavigationMenu color="neutral" :items="items" orientation="vertical" class="-mx-2.5 bg-black" />
+        <UNavigationMenu color="neutral" :items="items" orientation="vertical" class="-mx-2.5 bg-black italic" />
       </template>
     </UHeader>
   </ClientOnly>

@@ -5,7 +5,7 @@ const projects = [
 ];
 </script>
 <template>
-    <div class="py-32 px-12">
+    <div class="px-4">
         <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
             <div v-for="(project, index) in projects" :key="index" v-gsap.from="{
                 scrollTrigger: {

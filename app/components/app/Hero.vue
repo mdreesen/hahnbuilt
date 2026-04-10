@@ -3,7 +3,7 @@ import { slideRight, slideUp, scrollTrigger } from '~/utils/gsap';
 </script>
 
 <template>
-  <section class="h-screen flex flex-col justify-center px-12 relative overflow-hidden">
+  <section class="h-screen flex flex-col justify-center px-4 relative overflow-hidden">
     <div class="z-10">
       <div v-gsap.from="{...slideRight}">
         <baseHeader text="Built to<br><span class='text-orange-600'>Endure.</span>" />
