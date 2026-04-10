@@ -1,1 +1,0 @@
-import{f as t,o as n,c as a}from"./BohCZZQU.js";const c=["innerHTML"],o=t({__name:"HeaderSection",props:{text:{type:String,default:"One"}},setup(e){return(s,r)=>(n(),a("h2",{class:"text-5xl sm:text-8xl font-black uppercase leading-[0.85] tracking-tighter mb-8 italic",innerHTML:e.text},null,8,c))}}),_=Object.assign(o,{__name:"BaseHeaderSection"});export{_};

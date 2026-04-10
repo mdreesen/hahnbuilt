@@ -14035,12 +14035,12 @@ const _routes = [
   {
     name: "projects-pour",
     path: "/projects/pour",
-    component: () => import('./index-CK9oHgxs.mjs')
+    component: () => import('./index-BJHT2CKk.mjs')
   },
   {
     name: "projects-setup",
     path: "/projects/setup",
-    component: () => import('./index-CUqGYtBU.mjs')
+    component: () => import('./index-DZqxKqyU.mjs')
   },
   {
     name: "about",

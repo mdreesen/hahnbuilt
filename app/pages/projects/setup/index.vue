@@ -1,4 +1,12 @@
 <script setup lang="ts">
+useSeoMeta({
+    title: 'Hahn Built | Projects Setup',
+    description: 'Projects Setup Hahn Built',
+    ogDescription: 'Projects Setup Hahn Built',
+    ogTitle: 'Hahn Built | Projects Setup',
+    ogImage: '/images/logo.webp',
+});
+
 const projects = [
   { id: 1, title: 'Lakeside Lodge (Whitefish)', loc: 'Whitefish', img: 'images/projects/setup/setup_one.webp', span: 'high' },
   { id: 2, title: 'Foundation Pour (Kalispell)', loc: 'Kalispell', img: 'images/projects/setup/setup_two.webp', span: 'mid' },
@@ -26,7 +34,7 @@ const projects = [
           project.span === 'high' ? 'aspect-3/4.5' : project.span === 'mid' ? 'aspect-square' : 'aspect-4/3'
         ]">
           <baseImage :source="project.img"
-            :style="`w-full h-full object-cover grayscale transition-all duration-700 group-hover:grayscale-0 group-hover:scale-110`"
+            :style="`w-full h-full object-cover transition-all duration-700 group-hover:grayscale-0 group-hover:scale-110`"
             alt="Setup Concrete image" />
 
           <div
