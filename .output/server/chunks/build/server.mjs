@@ -14040,7 +14040,7 @@ const _routes = [
   {
     name: "projects-setup",
     path: "/projects/setup",
-    component: () => import('./index-4fHMayQ-.mjs')
+    component: () => import('./index-CUqGYtBU.mjs')
   },
   {
     name: "about",

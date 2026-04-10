@@ -10,7 +10,7 @@ const projects = [
 </script>
 
 <template>
-  <section class="bg-zinc-950 text-white py-24 px-6 md:px-12 border-t border-zinc-800">
+  <section class="py-24 px-6 md:px-12 border-t border-zinc-800">
 
     <header class="mb-20">
       <baseHeaderSection text="Project<br><span class='text-orange-600'>Portfolio</span>" />
