@@ -1,5 +1,5 @@
-import { d as __nuxt_component_0$2 } from './server.mjs';
-import { a as __nuxt_component_1$1 } from './Description-BuATmeBm.mjs';
+import { d as __nuxt_component_1$1 } from './server.mjs';
+import { a as __nuxt_component_1$2 } from './Description-BuATmeBm.mjs';
 import { defineComponent, useSSRContext } from 'vue';
 import { ssrRenderAttrs, ssrInterpolate, ssrRenderComponent } from 'vue/server-renderer';
 
@@ -24,8 +24,8 @@ const _sfc_main = /* @__PURE__ */ defineComponent({
   },
   setup(__props) {
     return (_ctx, _push, _parent, _attrs) => {
-      const _component_Icon = __nuxt_component_0$2;
-      const _component_baseDescription = __nuxt_component_1$1;
+      const _component_Icon = __nuxt_component_1$1;
+      const _component_baseDescription = __nuxt_component_1$2;
       _push(`<div${ssrRenderAttrs(_attrs)}>`);
       if (__props.number || __props.icon) {
         _push(`<div class="flex justify-between items-start mb-12">`);
@@ -143,4 +143,4 @@ const scrollTrigger = {
 };
 
 export { __nuxt_component_1 as _, slideUp as a, stats as b, scrollTrigger as c, services as d, faqs as f, qualityPoints as q, slideRight as s };
-//# sourceMappingURL=gsap-odjvqDsU.mjs.map
+//# sourceMappingURL=gsap-DXBmbmuO.mjs.map

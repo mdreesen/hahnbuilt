@@ -2,7 +2,7 @@
   <footer class="text-white pt-32 pb-10 px-10 border-t border-white/5 relative overflow-hidden">
 
     <div class="max-w-7xl mx-auto relative z-10">
-      <div class="flex flex-col sm:flex-row gap-16 mb-24">
+      <div class="flex flex-col sm:flex-row justify-around gap-16 mb-24">
 
         <div class="md:col-span-5">
           <baseImage source="/images/logo_transparent.webp" :style="'w-48 mb-8'" alt="Hahn Built transparent logo" />
@@ -17,42 +17,23 @@
           </div>
         </div>
 
-        <div class="md:col-span-2">
-          <span class="text-xs font-black uppercase tracking-[0.2em] mb-8 text-zinc-300">Navigation</span>
-          <ul class="flex flex-col gap-4 text-sm font-bold uppercase italic tracking-tight">
-            <li>
-              <baseLink to="/about" :style="'hover:text-orange-600 transition'" text="About" />
-            </li>
-            <li>
-              <baseLink to="/projects" :style="'hover:text-orange-600 transition'" text="Projects" />
-            </li>
-            <li>
-              <baseLink to="/contact" :style="'hover:text-orange-600 transition'" text="Contact" />
-            </li>
-          </ul>
-        </div>
-
-        <div class="md:col-span-3">
-          <div class="p-8 bg-zinc-900/50 border border-white/10 rounded-2xl">
-            <span class="text-xs font-black uppercase tracking-widest mb-4">Ready to Manifest?</span>
-            <p class="text-xs text-zinc-400 mb-6">Launch our interactive project manifest to get a rapid structural
-              estimate.</p>
-            <button
-              class="w-full py-3 bg-white text-black text-[10px] font-black uppercase tracking-widest hover:bg-orange-600 transition-colors">
-              Start Manifest
-            </button>
+        <div class="flex flex-col gap-10">
+          <span class="text-xs uppercase tracking-widest">Connect</span>
+          <div>
+            <a href="https://www.instagram.com/hahnbuilt/">
+              <Icon name="skill-icons:instagram" class="w-15 h-15 text-zinc-400 group-hover:text-orange-600" />
+            </a>
           </div>
+
         </div>
       </div>
 
       <div class="pt-10 border-t border-white/5 flex flex-col md:row items-center justify-between gap-6">
         <p class="text-[10px] font-mono text-zinc-400 uppercase tracking-widest">
-          © 2026 Hahn Built Construction Co. All Rights Reserved.
+          © {{ new Date().getFullYear() }} Hahn Built Construction Co. All Rights Reserved.
         </p>
         <div class="flex gap-8 text-[10px] font-mono text-zinc-400 uppercase tracking-widest">
-          <!-- <a href="#" class="hover:text-white">Privacy</a>
-          <a href="#" class="hover:text-white">Terms</a> -->
-          <span class="text-zinc-400">Site by White Raven</span>
+          <a href="https://www.mdreesen.com/" class="text-zinc-400 hover:underline">Site by White Raven Development</a>
         </div>
       </div>
     </div>

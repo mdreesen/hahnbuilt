@@ -14045,7 +14045,7 @@ const _routes = [
   {
     name: "about",
     path: "/about",
-    component: () => import('./about-CGc9YN8q.mjs')
+    component: () => import('./about-CkfWk3_u.mjs')
   },
   {
     name: "contact",
@@ -14060,7 +14060,7 @@ const _routes = [
   {
     name: "index",
     path: "/",
-    component: () => import('./index-DjHYnYQo.mjs')
+    component: () => import('./index-CafjnNW9.mjs')
   }
 ];
 const _wrapInTransition = (props, children) => {
@@ -15450,7 +15450,7 @@ defineComponent({
   }
 });
 const clientOnlySymbol = /* @__PURE__ */ Symbol.for("nuxt:client-only");
-const __nuxt_component_0$4 = defineComponent({
+const __nuxt_component_0$3 = defineComponent({
   name: "ClientOnly",
   inheritAttrs: false,
   props: ["fallback", "placeholder", "placeholderTag", "fallbackTag"],
@@ -16190,7 +16190,7 @@ function defineNuxtLink(options) {
     }
   });
 }
-const __nuxt_component_0$3 = /* @__PURE__ */ defineNuxtLink(nuxtLinkDefaults);
+const __nuxt_component_0$2 = /* @__PURE__ */ defineNuxtLink(nuxtLinkDefaults);
 function applyTrailingSlashBehavior(to, trailingSlash) {
   const normalizeFn = trailingSlash === "append" ? withTrailingSlash : withoutTrailingSlash;
   const hasProtocolDifferentFromHttp = hasProtocol(to) && !to.startsWith("http");
@@ -18316,7 +18316,7 @@ const NuxtIconSvg = /* @__PURE__ */ defineComponent({
     }, slots);
   }
 });
-const __nuxt_component_0$2 = defineComponent({
+const __nuxt_component_1$1 = defineComponent({
   name: "NuxtIcon",
   props: {
     name: {
@@ -18365,7 +18365,7 @@ const __nuxt_component_0$2 = defineComponent({
 });
 const index = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Object.defineProperty({
   __proto__: null,
-  default: __nuxt_component_0$2
+  default: __nuxt_component_1$1
 }, Symbol.toStringTag, { value: "Module" }));
 const _sfc_main$e = {
   __name: "UIcon",
@@ -18380,7 +18380,7 @@ const _sfc_main$e = {
     const props = __props;
     const iconProps = useForwardProps(reactivePick(props, "mode", "size", "customize"));
     return (_ctx, _push, _parent, _attrs) => {
-      const _component_Icon = __nuxt_component_0$2;
+      const _component_Icon = __nuxt_component_1$1;
       if (typeof __props.name === "string") {
         _push(ssrRenderComponent(_component_Icon, mergeProps({ name: __props.name }, unref(iconProps), _attrs), null, _parent));
       } else {
@@ -19535,7 +19535,7 @@ const _sfc_main$9 = /* @__PURE__ */ Object.assign({ inheritAttrs: false }, {
       return ui.value({ class: props.class, active, disabled: props.disabled });
     }
     return (_ctx, _push, _parent, _attrs) => {
-      const _component_NuxtLink = __nuxt_component_0$3;
+      const _component_NuxtLink = __nuxt_component_0$2;
       _push(ssrRenderComponent(_component_NuxtLink, mergeProps(unref(nuxtLinkProps), {
         to: to.value,
         custom: ""
@@ -21669,7 +21669,7 @@ _sfc_main$3.setup = (props, ctx) => {
 };
 const __nuxt_component_0 = Object.assign(_sfc_main$3, { __name: "UApp" });
 const layouts = {
-  default: defineAsyncComponent(() => import('./default-D3mI2GjK.mjs').then((m) => m.default || m))
+  default: defineAsyncComponent(() => import('./default-eZA2EdXn.mjs').then((m) => m.default || m))
 };
 const routeRulesMatcher = _routeRulesMatcher;
 const LayoutLoader = defineComponent({
@@ -22052,5 +22052,5 @@ let entry;
 }
 const entry_default = ((ssrContext) => entry(ssrContext));
 
-export { _export_sfc as _, __nuxt_component_0$3 as a, useSeoMeta as b, __nuxt_component_0$4 as c, __nuxt_component_0$2 as d, entry_default as default, useRoute as e, __nuxt_component_0$1 as f, useHead as u };
+export { _export_sfc as _, __nuxt_component_0$2 as a, useSeoMeta as b, __nuxt_component_0$3 as c, __nuxt_component_1$1 as d, entry_default as default, useRoute as e, __nuxt_component_0$1 as f, useHead as u };
 //# sourceMappingURL=server.mjs.map

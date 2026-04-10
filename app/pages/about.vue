@@ -28,7 +28,7 @@ useSeoMeta({
                 </div>
 
                 <div class="relative aspect-square bg-zinc-900 overflow-hidden group">
-                    <baseImage source="/images/home_three.webp" alt="Hahn Built personal image"
+                    <baseImage source="/images/dylan.webp" alt="Hahn Built personal image"
                         :style="`w-full h-full object-cover opacity-60 group-hover:scale-105 transition-transform duration-3000`" />
                     <div class="absolute inset-0 border-20 border-[#0c0c0c]"></div>
                 </div>

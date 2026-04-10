@@ -1,6 +1,6 @@
 import { _ as __nuxt_component_0 } from './Image-DzatZBeR.mjs';
 import { _ as __nuxt_component_0$1 } from './Header-CUhTJL-d.mjs';
-import { _ as _export_sfc, b as useSeoMeta, a as __nuxt_component_0$3 } from './server.mjs';
+import { _ as _export_sfc, b as useSeoMeta, a as __nuxt_component_0$2 } from './server.mjs';
 import { defineComponent, ref, mergeProps, unref, withCtx, createVNode, toDisplayString, useSSRContext } from 'vue';
 import { ssrRenderAttrs, ssrRenderComponent, ssrRenderList, ssrInterpolate } from 'vue/server-renderer';
 import '../nitro/nitro.mjs';
@@ -60,7 +60,7 @@ const _sfc_main = /* @__PURE__ */ defineComponent({
     return (_ctx, _push, _parent, _attrs) => {
       const _component_baseImage = __nuxt_component_0;
       const _component_baseHeader = __nuxt_component_0$1;
-      const _component_nuxt_link = __nuxt_component_0$3;
+      const _component_nuxt_link = __nuxt_component_0$2;
       _push(`<div${ssrRenderAttrs(mergeProps({ class: "min-h-screen text-white pt-40 pb-20 relative overflow-hidden" }, _attrs))} data-v-d36a6ab3><div class="fixed inset-0 z-0 transition-all duration-1000 ease-in-out opacity-20 grayscale pointer-events-none" data-v-d36a6ab3>`);
       _push(ssrRenderComponent(_component_baseImage, {
         source: unref(activeBg),

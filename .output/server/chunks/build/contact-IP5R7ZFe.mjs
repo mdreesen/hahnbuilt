@@ -1,4 +1,4 @@
-import { b as useSeoMeta, c as __nuxt_component_0$4 } from './server.mjs';
+import { b as useSeoMeta, c as __nuxt_component_0$3 } from './server.mjs';
 import { defineComponent, ref, mergeProps, useSSRContext } from 'vue';
 import { ssrRenderAttrs, ssrRenderComponent } from 'vue/server-renderer';
 import '../nitro/nitro.mjs';
@@ -49,7 +49,7 @@ const _sfc_main = /* @__PURE__ */ defineComponent({
     });
     ref(false);
     return (_ctx, _push, _parent, _attrs) => {
-      const _component_ClientOnly = __nuxt_component_0$4;
+      const _component_ClientOnly = __nuxt_component_0$3;
       _push(`<div${ssrRenderAttrs(mergeProps({ class: "min-h-screen text-white pt-40 pb-20 px-4 relative overflow-hidden" }, _attrs))}><div class="absolute inset-0 z-0 opacity-10 pointer-events-none"><div class="absolute top-0 left-1/4 w-px h-full bg-white"></div><div class="absolute top-1/3 left-0 w-full h-px bg-white"></div></div>`);
       _push(ssrRenderComponent(_component_ClientOnly, null, {}, _parent));
       _push(`</div>`);

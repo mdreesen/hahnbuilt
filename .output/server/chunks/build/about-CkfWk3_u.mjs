@@ -1,7 +1,7 @@
 import { _ as __nuxt_component_0 } from './Header-CUhTJL-d.mjs';
 import { a as __nuxt_component_1, _ as __nuxt_component_0$2 } from './Description-BuATmeBm.mjs';
 import { _ as __nuxt_component_0$1 } from './Image-DzatZBeR.mjs';
-import { s as slideRight, a as slideUp, b as stats, _ as __nuxt_component_1$1, q as qualityPoints } from './gsap-odjvqDsU.mjs';
+import { s as slideRight, a as slideUp, b as stats, _ as __nuxt_component_1$1, q as qualityPoints } from './gsap-DXBmbmuO.mjs';
 import { defineComponent, resolveDirective, mergeProps, unref, useSSRContext } from 'vue';
 import { ssrRenderAttrs, ssrRenderComponent, ssrGetDirectiveProps, ssrRenderList, ssrInterpolate } from 'vue/server-renderer';
 import { b as useSeoMeta } from './server.mjs';
@@ -56,7 +56,7 @@ const _sfc_main = /* @__PURE__ */ defineComponent({
       _push(ssrRenderComponent(_component_baseDescription, mergeProps({ text: "In Montana, the environment is the ultimate inspector. At Hahn Built, we don't just pour\n                        concrete; we engineer foundations that withstand the shifting frost and heavy loads of the\n                        Flathead Valley." }, ssrGetDirectiveProps(_ctx, _directive_gsap, { ...unref(slideUp) }, void 0, { from: true })), null, _parent));
       _push(`</div><div class="relative aspect-square bg-zinc-900 overflow-hidden group">`);
       _push(ssrRenderComponent(_component_baseImage, {
-        source: "/images/home_three.webp",
+        source: "/images/dylan.webp",
         alt: "Hahn Built personal image",
         style: `w-full h-full object-cover opacity-60 group-hover:scale-105 transition-transform duration-3000`
       }, null, _parent));
@@ -101,4 +101,4 @@ _sfc_main.setup = (props, ctx) => {
 };
 
 export { _sfc_main as default };
-//# sourceMappingURL=about-CGc9YN8q.mjs.map
+//# sourceMappingURL=about-CkfWk3_u.mjs.map
