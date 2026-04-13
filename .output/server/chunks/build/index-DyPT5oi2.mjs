@@ -61,29 +61,29 @@ const _sfc_main = /* @__PURE__ */ defineComponent({
       const _component_baseImage = __nuxt_component_0;
       const _component_baseHeader = __nuxt_component_0$1;
       const _component_nuxt_link = __nuxt_component_0$2;
-      _push(`<div${ssrRenderAttrs(mergeProps({ class: "min-h-screen text-white pt-40 pb-20 relative overflow-hidden" }, _attrs))} data-v-d36a6ab3><div class="fixed inset-0 z-0 transition-all duration-1000 ease-in-out opacity-20 grayscale pointer-events-none" data-v-d36a6ab3>`);
+      _push(`<div${ssrRenderAttrs(mergeProps({ class: "min-h-screen text-white pt-40 pb-20 relative overflow-hidden" }, _attrs))} data-v-7dd3822c><div class="fixed inset-0 z-0 transition-all duration-1000 ease-in-out opacity-20 grayscale pointer-events-none" data-v-7dd3822c>`);
       _push(ssrRenderComponent(_component_baseImage, {
         source: unref(activeBg),
         style: `w-full h-full object-cover scale-110`,
         alt: "Background Preview"
       }, null, _parent));
-      _push(`<div class="absolute inset-0 bg-linear-to-b from-[#0c0c0c] via-transparent to-[#0c0c0c]" data-v-d36a6ab3></div></div><div class="max-w-7xl mx-auto px-10 relative z-10" data-v-d36a6ab3><header class="mb-24" data-v-d36a6ab3><span class="text-orange-600 font-mono text-xs tracking-[0.3em] uppercase mb-4 block" data-v-d36a6ab3>Archive</span>`);
+      _push(`<div class="absolute inset-0 bg-linear-to-b from-[#0c0c0c] via-transparent to-[#0c0c0c]" data-v-7dd3822c></div></div><div class="max-w-7xl mx-auto px-10 relative z-10" data-v-7dd3822c><header class="mb-24" data-v-7dd3822c><span class="text-orange-600 font-mono text-xs tracking-[0.3em] uppercase mb-4 block" data-v-7dd3822c>Archive</span>`);
       _push(ssrRenderComponent(_component_baseHeader, { text: "Projects" }, null, _parent));
-      _push(`</header><div class="flex flex-col border-t border-white/10" data-v-d36a6ab3><!--[-->`);
+      _push(`</header><div class="flex flex-col border-t border-white/10" data-v-7dd3822c><!--[-->`);
       ssrRenderList(projects, (project) => {
-        _push(`<div class="group border-b border-white/10 py-12 cursor-pointer transition-colors hover:bg-white/5 px-4" data-v-d36a6ab3>`);
+        _push(`<div class="group border-b border-white/10 py-12 cursor-pointer transition-colors hover:bg-white/5 px-4" data-v-7dd3822c>`);
         _push(ssrRenderComponent(_component_nuxt_link, {
           to: project.href
         }, {
           default: withCtx((_, _push2, _parent2, _scopeId) => {
             if (_push2) {
-              _push2(`<div class="grid grid-cols-1 md:grid-cols-12 items-center gap-8" data-v-d36a6ab3${_scopeId}><div class="md:col-span-1 font-mono text-zinc-400 group-hover:text-orange-600 transition-colors" data-v-d36a6ab3${_scopeId}>${ssrInterpolate(project.id)}</div><div class="md:col-span-5" data-v-d36a6ab3${_scopeId}><h3 class="text-4xl md:text-6xl font-black uppercase italic tracking-tighter group-hover:translate-x-4 transition-transform duration-500" data-v-d36a6ab3${_scopeId}>${ssrInterpolate(project.title)}</h3></div><div class="md:col-span-3 text-right hidden md:block" data-v-d36a6ab3${_scopeId}></div></div>`);
+              _push2(`<div class="grid grid-cols-1 md:grid-cols-12 items-center gap-8" data-v-7dd3822c${_scopeId}><div class="md:col-span-1 font-mono text-zinc-400 group-hover:text-orange-600 transition-colors" data-v-7dd3822c${_scopeId}>${ssrInterpolate(project.id)}</div><div class="md:col-span-5" data-v-7dd3822c${_scopeId}><span class="text-4xl md:text-6xl font-black uppercase italic tracking-tighter group-hover:translate-x-4 transition-transform duration-500" data-v-7dd3822c${_scopeId}>${ssrInterpolate(project.title)}</span></div><div class="md:col-span-3 text-right hidden md:block" data-v-7dd3822c${_scopeId}></div></div>`);
             } else {
               return [
                 createVNode("div", { class: "grid grid-cols-1 md:grid-cols-12 items-center gap-8" }, [
                   createVNode("div", { class: "md:col-span-1 font-mono text-zinc-400 group-hover:text-orange-600 transition-colors" }, toDisplayString(project.id), 1),
                   createVNode("div", { class: "md:col-span-5" }, [
-                    createVNode("h3", { class: "text-4xl md:text-6xl font-black uppercase italic tracking-tighter group-hover:translate-x-4 transition-transform duration-500" }, toDisplayString(project.title), 1)
+                    createVNode("span", { class: "text-4xl md:text-6xl font-black uppercase italic tracking-tighter group-hover:translate-x-4 transition-transform duration-500" }, toDisplayString(project.title), 1)
                   ]),
                   createVNode("div", { class: "md:col-span-3 text-right hidden md:block" })
                 ])
@@ -94,7 +94,7 @@ const _sfc_main = /* @__PURE__ */ defineComponent({
         }, _parent));
         _push(`</div>`);
       });
-      _push(`<!--]--></div><footer class="mt-32 border-t border-white/5 pt-10 flex justify-between items-center text-zinc-400 font-mono text-[10px] uppercase tracking-widest" data-v-d36a6ab3><span data-v-d36a6ab3>Verified Structural Builds</span><span data-v-d36a6ab3>Montana Licensed #XXXXX</span></footer></div></div>`);
+      _push(`<!--]--></div><footer class="mt-32 border-t border-white/5 pt-10 flex justify-between items-center text-zinc-400 font-mono text-[10px] uppercase tracking-widest" data-v-7dd3822c><span data-v-7dd3822c>Verified Structural Builds</span><span data-v-7dd3822c>Montana Licensed #XXXXX</span></footer></div></div>`);
     };
   }
 });
@@ -104,7 +104,7 @@ _sfc_main.setup = (props, ctx) => {
   (ssrContext.modules || (ssrContext.modules = /* @__PURE__ */ new Set())).add("pages/projects/index.vue");
   return _sfc_setup ? _sfc_setup(props, ctx) : void 0;
 };
-const index = /* @__PURE__ */ _export_sfc(_sfc_main, [["__scopeId", "data-v-d36a6ab3"]]);
+const index = /* @__PURE__ */ _export_sfc(_sfc_main, [["__scopeId", "data-v-7dd3822c"]]);
 
 export { index as default };
-//# sourceMappingURL=index-DxhRlzzA.mjs.map
+//# sourceMappingURL=index-DyPT5oi2.mjs.map

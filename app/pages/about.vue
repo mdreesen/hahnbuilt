@@ -94,7 +94,7 @@ useSeoMeta({
                         </div>
 
                         <div class="lg:col-span-7">
-                            <baseHeaderSection text="Our <span class='text-orange-600'>Standards</span>" />
+                            <baseHeaderSection text="Our<br><span class='text-orange-600'>Standards</span>" />
 
 
                             <div class="space-y-12">

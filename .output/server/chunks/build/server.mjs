@@ -14045,7 +14045,7 @@ const _routes = [
   {
     name: "about",
     path: "/about",
-    component: () => import('./about-CkfWk3_u.mjs')
+    component: () => import('./about-Dbw4M32O.mjs')
   },
   {
     name: "contact",
@@ -14055,7 +14055,7 @@ const _routes = [
   {
     name: "projects",
     path: "/projects",
-    component: () => import('./index-DxhRlzzA.mjs')
+    component: () => import('./index-DyPT5oi2.mjs')
   },
   {
     name: "index",

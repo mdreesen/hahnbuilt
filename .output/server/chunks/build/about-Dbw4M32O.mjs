@@ -73,14 +73,14 @@ const _sfc_main = /* @__PURE__ */ defineComponent({
       _push(ssrRenderComponent(_component_baseDescription, { text: "Hahn Built was founded on the principle that a project is only as good as its base. We\n                        specialize in high-spec commercial foundations and custom residential flatwork where precision\n                        isn't optional—it's the standard." }, null, _parent));
       _push(`</div><div class="lg:col-span-8"><div class="blueprint-img h-px bg-orange-600 mb-10"></div><div class="flex flex-col md:flex-row justify-between gap-10"><div class="max-w-xs"><span class="text-orange-600 font-mono text-[10px] uppercase mb-4 tracking-widest">01. Precision</span><p class="text-sm text-zinc-400">Laser-leveled accuracy on every pour, ensuring a perfect start for every build.</p></div><div class="max-w-xs"><span class="text-orange-600 font-mono text-[10px] uppercase mb-4 tracking-widest">02. Durability</span>`);
       _push(ssrRenderComponent(_component_baseDescription, { text: "Mixed specifically for the local climate to prevent\n                                cracking and structural failure." }, null, _parent));
-      _push(`</div></div></div></section><section class="text-white border-y border-white/5 relative overflow-hidden"><div class="absolute top-10 right-10 font-mono text-[10px] text-zinc-500 uppercase tracking-[0.5em] hidden lg:block"> Spec: ASTM C94/C94M-22a </div><div class="max-w-7xl mx-auto"><div class="flex flex-col sm:flex-row gap-6 items-center"><div class="lg:col-span-5 relative group gap-4"><div class="relative aspect-3/4 overflow-hidden border border-white/10">`);
+      _push(`</div></div></div></section><section class="text-white border-y border-white/5 relative overflow-hidden"><div class="absolute top-10 right-10 font-mono text-[10px] text-zinc-400 uppercase tracking-[0.5em] hidden lg:block"> Spec: ASTM C94/C94M-22a </div><div class="max-w-7xl mx-auto"><div class="flex flex-col sm:flex-row gap-6 items-center"><div class="lg:col-span-5 relative group gap-4"><div class="relative aspect-3/4 overflow-hidden border border-white/10">`);
       _push(ssrRenderComponent(_component_baseImage, {
         source: "/images/about_one.webp",
         style: `w-full h-full object-cover grayscale opacity-50 group-hover:opacity-100 transition-all duration-1000`,
         alt: "About Image with filling concrete"
       }, null, _parent));
       _push(`<div class="absolute top-10 left-10 px-4 py-1 border border-orange-600 text-orange-600 font-mono text-[10px] uppercase tracking-widest -rotate-12"> QC Passed </div></div></div><div class="lg:col-span-7">`);
-      _push(ssrRenderComponent(_component_baseHeaderSection, { text: "Our <span class='text-orange-600'>Standards</span>" }, null, _parent));
+      _push(ssrRenderComponent(_component_baseHeaderSection, { text: "Our<br><span class='text-orange-600'>Standards</span>" }, null, _parent));
       _push(`<div class="space-y-12"><!--[-->`);
       ssrRenderList(unref(qualityPoints), (point, i) => {
         _push(`<div class="quality-point group flex gap-8 items-start border-b border-white/5 pb-8"><div class="text-orange-600 font-mono text-lg pt-1">/0${ssrInterpolate(i + 1)}</div><div><span class="text-xl font-black uppercase italic tracking-tight mb-2 group-hover:text-orange-600 transition-colors">${ssrInterpolate(point.title)}</span>`);
@@ -101,4 +101,4 @@ _sfc_main.setup = (props, ctx) => {
 };
 
 export { _sfc_main as default };
-//# sourceMappingURL=about-CkfWk3_u.mjs.map
+//# sourceMappingURL=about-Dbw4M32O.mjs.map
