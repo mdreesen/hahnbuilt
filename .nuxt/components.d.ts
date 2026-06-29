@@ -14,6 +14,7 @@ type HydrationStrategies = {
 type LazyComponent<T> = DefineComponent<HydrationStrategies, {}, {}, {}, {}, {}, {}, { hydrated: () => void }> & T
 
 
+export const AppContact: typeof import("../app/components/app/Contact.vue")['default']
 export const AppDescription: typeof import("../app/components/app/Description.vue")['default']
 export const AppFaq: typeof import("../app/components/app/Faq.vue")['default']
 export const AppHero: typeof import("../app/components/app/Hero.vue")['default']
@@ -180,6 +181,7 @@ export const Body: typeof import("../node_modules/nuxt/dist/head/runtime/compone
 export const Icon: typeof import("../node_modules/@nuxt/icon/dist/runtime/components/index")['default']
 export const ColorScheme: typeof import("../node_modules/@nuxtjs/color-mode/dist/runtime/component.vue3.vue")['default']
 export const NuxtIsland: typeof import("../node_modules/nuxt/dist/app/components/nuxt-island")['default']
+export const LazyAppContact: LazyComponent<typeof import("../app/components/app/Contact.vue")['default']>
 export const LazyAppDescription: LazyComponent<typeof import("../app/components/app/Description.vue")['default']>
 export const LazyAppFaq: LazyComponent<typeof import("../app/components/app/Faq.vue")['default']>
 export const LazyAppHero: LazyComponent<typeof import("../app/components/app/Hero.vue")['default']>

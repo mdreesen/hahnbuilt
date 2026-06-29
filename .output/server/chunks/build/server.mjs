@@ -14035,32 +14035,32 @@ const _routes = [
   {
     name: "projects-pour",
     path: "/projects/pour",
-    component: () => import('./index-CLbMwguJ.mjs')
+    component: () => import('./index-CSteclss.mjs')
   },
   {
     name: "projects-setup",
     path: "/projects/setup",
-    component: () => import('./index-bHXlqrkV.mjs')
+    component: () => import('./index-BYBLN_wW.mjs')
   },
   {
     name: "about",
     path: "/about",
-    component: () => import('./about-Dbw4M32O.mjs')
+    component: () => import('./about-DIly0yx5.mjs')
   },
   {
     name: "contact",
     path: "/contact",
-    component: () => import('./contact-IP5R7ZFe.mjs')
+    component: () => import('./contact-Cf1atyV8.mjs')
   },
   {
     name: "projects",
     path: "/projects",
-    component: () => import('./index-DyPT5oi2.mjs')
+    component: () => import('./index-CG1_UMZ_.mjs')
   },
   {
     name: "index",
     path: "/",
-    component: () => import('./index-CafjnNW9.mjs')
+    component: () => import('./index-sW9_rVW_.mjs')
   }
 ];
 const _wrapInTransition = (props, children) => {
@@ -21669,7 +21669,7 @@ _sfc_main$3.setup = (props, ctx) => {
 };
 const __nuxt_component_0 = Object.assign(_sfc_main$3, { __name: "UApp" });
 const layouts = {
-  default: defineAsyncComponent(() => import('./default-D9JIg_WM.mjs').then((m) => m.default || m))
+  default: defineAsyncComponent(() => import('./default-Ccj5SfeQ.mjs').then((m) => m.default || m))
 };
 const routeRulesMatcher = _routeRulesMatcher;
 const LayoutLoader = defineComponent({
@@ -22052,5 +22052,5 @@ let entry;
 }
 const entry_default = ((ssrContext) => entry(ssrContext));
 
-export { _export_sfc as _, __nuxt_component_0$2 as a, useSeoMeta as b, __nuxt_component_0$3 as c, __nuxt_component_1$1 as d, entry_default as default, useRoute as e, __nuxt_component_0$1 as f, useHead as u };
+export { _export_sfc as _, __nuxt_component_0$2 as a, useSeoMeta as b, __nuxt_component_0$3 as c, useRuntimeConfig as d, entry_default as default, __nuxt_component_1$1 as e, useRoute as f, __nuxt_component_0$1 as g, useHead as u };
 //# sourceMappingURL=server.mjs.map

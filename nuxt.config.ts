@@ -15,6 +15,11 @@ export default defineNuxtConfig({
   devtools: { enabled: true },
   css: ["~/assets/css/main.css"],
   modules: ['v-gsap-nuxt', '@nuxt/ui', '@nuxt/image'],
+  runtimeConfig: {
+    public: {
+      formSpreeKey: process.env.FORM_SPREE_KEY, // Exposes the key to the client side
+    }
+  },
   app: {
     head: {
       title: 'Hahn Built', // default fallback title

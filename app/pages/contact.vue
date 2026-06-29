@@ -5,7 +5,9 @@ useSeoMeta({
   ogDescription: 'Contact Hahn Built',
   ogTitle: 'Hahn Built | Contact',
   ogImage: '/images/logo.webp',
-})
+});
+const config = useRuntimeConfig();
+const formKey = config.public.formSpreeKey;
 
 const formData = ref({
   name: '',
@@ -18,12 +20,26 @@ const formData = ref({
 const isSubmitting = ref(false);
 
 const submitManifest = async () => {
-  isSubmitting.value = true;
-  // Integrate your GhostForm logic here
-  setTimeout(() => {
-    isSubmitting.value = false;
-    alert('Project Data Transmitted.');
-  }, 2000);
+  isSubmitting.value = true
+  
+  try {
+    await $fetch(`https://formspree.io/f/${formKey}`, {
+      method: 'POST',
+      body: {
+        name: formData.value.name,
+        email: formData.value.email,
+        projectType: formData.value.projectType,
+        location: formData.value.location,
+        message: formData.value.details
+      },
+      headers: {
+        'Accept': 'application/json'
+      }
+    })
+
+  } catch (error) {
+    console.error('Submission failed:', error)
+  }
 };
 </script>
 
@@ -57,6 +73,12 @@ const submitManifest = async () => {
                   <div class="space-y-2">
                     <label class="text-[10px] font-mono uppercase tracking-widest text-zinc-400">Contact Email</label>
                     <input v-model="formData.email" type="email" placeholder="Email Address"
+                      class="w-full bg-transparent border-b border-white/10 py-4 outline-none focus:border-orange-600 transition-colors font-bold uppercase italic" />
+                  </div>
+
+                  <div class="space-y-2">
+                    <label class="text-[10px] font-mono uppercase tracking-widest text-zinc-400">Address</label>
+                    <input v-model="formData.location" type="text" placeholder="Address"
                       class="w-full bg-transparent border-b border-white/10 py-4 outline-none focus:border-orange-600 transition-colors font-bold uppercase italic" />
                   </div>
                 </div>

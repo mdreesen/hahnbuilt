@@ -955,6 +955,7 @@ const _inlineRuntimeConfig = {
     }
   },
   "public": {
+    "formSpreeKey": "mqevllvp",
     "vgsap": {}
   },
   "icon": {

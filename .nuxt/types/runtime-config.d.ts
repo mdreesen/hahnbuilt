@@ -19,6 +19,8 @@ import { RuntimeConfig as UserRuntimeConfig, PublicRuntimeConfig as UserPublicRu
    },
   }
   interface SharedPublicRuntimeConfig {
+   formSpreeKey: string,
+
    vgsap: any,
   }
 declare module '@nuxt/schema' {
