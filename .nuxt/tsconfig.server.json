@@ -113,11 +113,20 @@
       "#unhead/composables": [
         "../node_modules/nuxt/dist/head/runtime/composables"
       ],
-      "#color-mode-options": [
-        "./color-mode-options.mjs"
-      ],
       "#nuxt-icon-server-bundle": [
         "./nuxt-icon-server-bundle"
+      ],
+      "#app/island-hash": [
+        "../node_modules/nuxt/dist/app/island-hash"
+      ],
+      "#app/island-props": [
+        "../node_modules/nuxt/dist/app/island-props"
+      ],
+      "#app/internal/*": [
+        "../node_modules/nuxt/dist/app/internal/*"
+      ],
+      "#app/types": [
+        "../node_modules/nuxt/dist/app/types"
       ]
     },
     "lib": [
@@ -126,7 +135,8 @@
       "dom.iterable"
     ],
     "noUncheckedIndexedAccess": true,
-    "allowArbitraryExtensions": true
+    "allowArbitraryExtensions": true,
+    "allowImportingTsExtensions": true
   },
   "include": [
     "./types/nitro-nuxt.d.ts",

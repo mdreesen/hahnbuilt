@@ -100,11 +100,13 @@ export const UInput: typeof import("../node_modules/@nuxt/ui/dist/runtime/compon
 export const UInputDate: typeof import("../node_modules/@nuxt/ui/dist/runtime/components/InputDate.vue")['default']
 export const UInputMenu: typeof import("../node_modules/@nuxt/ui/dist/runtime/components/InputMenu.vue")['default']
 export const UInputNumber: typeof import("../node_modules/@nuxt/ui/dist/runtime/components/InputNumber.vue")['default']
+export const UInputRating: typeof import("../node_modules/@nuxt/ui/dist/runtime/components/InputRating.vue")['default']
 export const UInputTags: typeof import("../node_modules/@nuxt/ui/dist/runtime/components/InputTags.vue")['default']
 export const UInputTime: typeof import("../node_modules/@nuxt/ui/dist/runtime/components/InputTime.vue")['default']
 export const UKbd: typeof import("../node_modules/@nuxt/ui/dist/runtime/components/Kbd.vue")['default']
 export const ULink: typeof import("../node_modules/@nuxt/ui/dist/runtime/components/Link.vue")['default']
 export const ULinkBase: typeof import("../node_modules/@nuxt/ui/dist/runtime/components/LinkBase.vue")['default']
+export const UListbox: typeof import("../node_modules/@nuxt/ui/dist/runtime/components/Listbox.vue")['default']
 export const UMain: typeof import("../node_modules/@nuxt/ui/dist/runtime/components/Main.vue")['default']
 export const UMarquee: typeof import("../node_modules/@nuxt/ui/dist/runtime/components/Marquee.vue")['default']
 export const UModal: typeof import("../node_modules/@nuxt/ui/dist/runtime/components/Modal.vue")['default']
@@ -179,7 +181,7 @@ export const Head: typeof import("../node_modules/nuxt/dist/head/runtime/compone
 export const Html: typeof import("../node_modules/nuxt/dist/head/runtime/components")['Html']
 export const Body: typeof import("../node_modules/nuxt/dist/head/runtime/components")['Body']
 export const Icon: typeof import("../node_modules/@nuxt/icon/dist/runtime/components/index")['default']
-export const ColorScheme: typeof import("../node_modules/@nuxtjs/color-mode/dist/runtime/component.vue3.vue")['default']
+export const ColorScheme: typeof import("../node_modules/@nuxtjs/color-mode/dist/runtime/component.vue")['default']
 export const NuxtIsland: typeof import("../node_modules/nuxt/dist/app/components/nuxt-island")['default']
 export const LazyAppContact: LazyComponent<typeof import("../app/components/app/Contact.vue")['default']>
 export const LazyAppDescription: LazyComponent<typeof import("../app/components/app/Description.vue")['default']>
@@ -267,11 +269,13 @@ export const LazyUInput: LazyComponent<typeof import("../node_modules/@nuxt/ui/d
 export const LazyUInputDate: LazyComponent<typeof import("../node_modules/@nuxt/ui/dist/runtime/components/InputDate.vue")['default']>
 export const LazyUInputMenu: LazyComponent<typeof import("../node_modules/@nuxt/ui/dist/runtime/components/InputMenu.vue")['default']>
 export const LazyUInputNumber: LazyComponent<typeof import("../node_modules/@nuxt/ui/dist/runtime/components/InputNumber.vue")['default']>
+export const LazyUInputRating: LazyComponent<typeof import("../node_modules/@nuxt/ui/dist/runtime/components/InputRating.vue")['default']>
 export const LazyUInputTags: LazyComponent<typeof import("../node_modules/@nuxt/ui/dist/runtime/components/InputTags.vue")['default']>
 export const LazyUInputTime: LazyComponent<typeof import("../node_modules/@nuxt/ui/dist/runtime/components/InputTime.vue")['default']>
 export const LazyUKbd: LazyComponent<typeof import("../node_modules/@nuxt/ui/dist/runtime/components/Kbd.vue")['default']>
 export const LazyULink: LazyComponent<typeof import("../node_modules/@nuxt/ui/dist/runtime/components/Link.vue")['default']>
 export const LazyULinkBase: LazyComponent<typeof import("../node_modules/@nuxt/ui/dist/runtime/components/LinkBase.vue")['default']>
+export const LazyUListbox: LazyComponent<typeof import("../node_modules/@nuxt/ui/dist/runtime/components/Listbox.vue")['default']>
 export const LazyUMain: LazyComponent<typeof import("../node_modules/@nuxt/ui/dist/runtime/components/Main.vue")['default']>
 export const LazyUMarquee: LazyComponent<typeof import("../node_modules/@nuxt/ui/dist/runtime/components/Marquee.vue")['default']>
 export const LazyUModal: LazyComponent<typeof import("../node_modules/@nuxt/ui/dist/runtime/components/Modal.vue")['default']>
@@ -346,7 +350,7 @@ export const LazyHead: LazyComponent<typeof import("../node_modules/nuxt/dist/he
 export const LazyHtml: LazyComponent<typeof import("../node_modules/nuxt/dist/head/runtime/components")['Html']>
 export const LazyBody: LazyComponent<typeof import("../node_modules/nuxt/dist/head/runtime/components")['Body']>
 export const LazyIcon: LazyComponent<typeof import("../node_modules/@nuxt/icon/dist/runtime/components/index")['default']>
-export const LazyColorScheme: LazyComponent<typeof import("../node_modules/@nuxtjs/color-mode/dist/runtime/component.vue3.vue")['default']>
+export const LazyColorScheme: LazyComponent<typeof import("../node_modules/@nuxtjs/color-mode/dist/runtime/component.vue")['default']>
 export const LazyNuxtIsland: LazyComponent<typeof import("../node_modules/nuxt/dist/app/components/nuxt-island")['default']>
 
 export const componentNames: string[]

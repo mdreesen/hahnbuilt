@@ -115,11 +115,8 @@
       "#imports": [
         "./imports"
       ],
-      "#color-mode-options": [
-        "./color-mode-options.mjs"
-      ],
       "#app-manifest": [
-        "./manifest/meta/dev"
+        "./manifest/meta/dev.json"
       ],
       "#build": [
         "."
@@ -132,6 +129,7 @@
     "skipLibCheck": true,
     "target": "ESNext",
     "allowJs": true,
+    "allowImportingTsExtensions": true,
     "resolveJsonModule": true,
     "moduleDetection": "force",
     "isolatedModules": true,

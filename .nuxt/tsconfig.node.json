@@ -54,12 +54,16 @@
       ],
       "crossws": [
         "../node_modules/crossws"
+      ],
+      "#app/types": [
+        "../node_modules/nuxt/dist/app/types"
       ]
     },
     "esModuleInterop": true,
     "skipLibCheck": true,
     "target": "ESNext",
     "allowJs": true,
+    "allowImportingTsExtensions": true,
     "resolveJsonModule": true,
     "moduleDetection": "force",
     "isolatedModules": true,
@@ -84,7 +88,8 @@
     "../.config/nuxt.*",
     "../layers/*/nuxt.config.*",
     "../layers/*/.config/nuxt.*",
-    "../layers/*/modules/**/*",
+    "../layers/*/modules/*.*",
+    "../layers/*/modules/*/*.*",
     "../nuxt.schema.*",
     "../layers/*/nuxt.schema.*"
   ],

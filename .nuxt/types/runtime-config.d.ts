@@ -10,10 +10,6 @@ import { RuntimeConfig as UserRuntimeConfig, PublicRuntimeConfig as UserPublicRu
       cdnURL: string,
    },
 
-   nitro: {
-      envPrefix: string,
-   },
-
    icon: {
       serverKnownCssClasses: Array<any>,
    },

@@ -8,7 +8,7 @@ import { createHash } from 'node:crypto';
 import { fileURLToPath } from 'node:url';
 import { getIcons } from '@iconify/utils';
 import { consola } from 'consola';
-import { ipxFSStorage, ipxHttpStorage, createIPX, createIPXH3Handler } from 'ipx';
+import { ipxFSStorage, ipxHttpStorage, createIPX, createIPXNodeHandler, parseIPXURL } from 'ipx';
 
 const suspectProtoRx = /"(?:_|\\u0{2}5[Ff]){2}(?:p|\\u0{2}70)(?:r|\\u0{2}72)(?:o|\\u0{2}6[Ff])(?:t|\\u0{2}74)(?:o|\\u0{2}6[Ff])(?:_|\\u0{2}5[Ff]){2}"\s*:/;
 const suspectConstructorRx = /"(?:c|\\u0063)(?:o|\\u006[Ff])(?:n|\\u006[Ee])(?:s|\\u0073)(?:t|\\u0074)(?:r|\\u0072)(?:u|\\u0075)(?:c|\\u0063)(?:t|\\u0074)(?:o|\\u006[Ff])(?:r|\\u0072)"\s*:/;
@@ -258,8 +258,8 @@ function withoutBase(input, base) {
   if (nextChar && nextChar !== "/" && nextChar !== "?") {
     return input;
   }
-  const trimmed = input.slice(_base.length);
-  return trimmed[0] === "/" ? trimmed : "/" + trimmed;
+  const trimmed = input.slice(_base.length).replace(/^\/+/, "");
+  return "/" + trimmed;
 }
 function withQuery(input, query) {
   const parsed = parseURL(input);
@@ -678,25 +678,7 @@ const defuFn = createDefu((object, key, currentValue) => {
   }
 });
 
-function o(n){throw new Error(`${n} is not implemented yet!`)}let i$1 = class i extends EventEmitter{__unenv__={};readableEncoding=null;readableEnded=true;readableFlowing=false;readableHighWaterMark=0;readableLength=0;readableObjectMode=false;readableAborted=false;readableDidRead=false;closed=false;errored=null;readable=false;destroyed=false;static from(e,t){return new i(t)}constructor(e){super();}_read(e){}read(e){}setEncoding(e){return this}pause(){return this}resume(){return this}isPaused(){return  true}unpipe(e){return this}unshift(e,t){}wrap(e){return this}push(e,t){return  false}_destroy(e,t){this.removeAllListeners();}destroy(e){return this.destroyed=true,this._destroy(e),this}pipe(e,t){return {}}compose(e,t){throw new Error("Method not implemented.")}[Symbol.asyncDispose](){return this.destroy(),Promise.resolve()}async*[Symbol.asyncIterator](){throw o("Readable.asyncIterator")}iterator(e){throw o("Readable.iterator")}map(e,t){throw o("Readable.map")}filter(e,t){throw o("Readable.filter")}forEach(e,t){throw o("Readable.forEach")}reduce(e,t,r){throw o("Readable.reduce")}find(e,t){throw o("Readable.find")}findIndex(e,t){throw o("Readable.findIndex")}some(e,t){throw o("Readable.some")}toArray(e){throw o("Readable.toArray")}every(e,t){throw o("Readable.every")}flatMap(e,t){throw o("Readable.flatMap")}drop(e,t){throw o("Readable.drop")}take(e,t){throw o("Readable.take")}asIndexedPairs(e){throw o("Readable.asIndexedPairs")}};let l$1 = class l extends EventEmitter{__unenv__={};writable=true;writableEnded=false;writableFinished=false;writableHighWaterMark=0;writableLength=0;writableObjectMode=false;writableCorked=0;closed=false;errored=null;writableNeedDrain=false;writableAborted=false;destroyed=false;_data;_encoding="utf8";constructor(e){super();}pipe(e,t){return {}}_write(e,t,r){if(this.writableEnded){r&&r();return}if(this._data===void 0)this._data=e;else {const s=typeof this._data=="string"?Buffer$1.from(this._data,this._encoding||t||"utf8"):this._data,a=typeof e=="string"?Buffer$1.from(e,t||this._encoding||"utf8"):e;this._data=Buffer$1.concat([s,a]);}this._encoding=t,r&&r();}_writev(e,t){}_destroy(e,t){}_final(e){}write(e,t,r){const s=typeof t=="string"?this._encoding:"utf8",a=typeof t=="function"?t:typeof r=="function"?r:void 0;return this._write(e,s,a),true}setDefaultEncoding(e){return this}end(e,t,r){const s=typeof e=="function"?e:typeof t=="function"?t:typeof r=="function"?r:void 0;if(this.writableEnded)return s&&s(),this;const a=e===s?void 0:e;if(a){const u=t===s?void 0:t;this.write(a,u,s);}return this.writableEnded=true,this.writableFinished=true,this.emit("close"),this.emit("finish"),this}cork(){}uncork(){}destroy(e){return this.destroyed=true,delete this._data,this.removeAllListeners(),this}compose(e,t){throw new Error("Method not implemented.")}[Symbol.asyncDispose](){return Promise.resolve()}};const c$1=class c{allowHalfOpen=true;_destroy;constructor(e=new i$1,t=new l$1){Object.assign(this,e),Object.assign(this,t),this._destroy=m(e._destroy,t._destroy);}};function _(){return Object.assign(c$1.prototype,i$1.prototype),Object.assign(c$1.prototype,l$1.prototype),c$1}function m(...n){return function(...e){for(const t of n)t(...e);}}const g=_();class A extends g{__unenv__={};bufferSize=0;bytesRead=0;bytesWritten=0;connecting=false;destroyed=false;pending=false;localAddress="";localPort=0;remoteAddress="";remoteFamily="";remotePort=0;autoSelectFamilyAttemptedAddresses=[];readyState="readOnly";constructor(e){super();}write(e,t,r){return  false}connect(e,t,r){return this}end(e,t,r){return this}setEncoding(e){return this}pause(){return this}resume(){return this}setTimeout(e,t){return this}setNoDelay(e){return this}setKeepAlive(e,t){return this}address(){return {}}unref(){return this}ref(){return this}destroySoon(){this.destroy();}resetAndDestroy(){const e=new Error("ERR_SOCKET_CLOSED");return e.code="ERR_SOCKET_CLOSED",this.destroy(e),this}}class y extends i$1{aborted=false;httpVersion="1.1";httpVersionMajor=1;httpVersionMinor=1;complete=true;connection;socket;headers={};trailers={};method="GET";url="/";statusCode=200;statusMessage="";closed=false;errored=null;readable=false;constructor(e){super(),this.socket=this.connection=e||new A;}get rawHeaders(){const e=this.headers,t=[];for(const r in e)if(Array.isArray(e[r]))for(const s of e[r])t.push(r,s);else t.push(r,e[r]);return t}get rawTrailers(){return []}setTimeout(e,t){return this}get headersDistinct(){return p(this.headers)}get trailersDistinct(){return p(this.trailers)}}function p(n){const e={};for(const[t,r]of Object.entries(n))t&&(e[t]=(Array.isArray(r)?r:[r]).filter(Boolean));return e}class w extends l$1{statusCode=200;statusMessage="";upgrading=false;chunkedEncoding=false;shouldKeepAlive=false;useChunkedEncodingByDefault=false;sendDate=false;finished=false;headersSent=false;strictContentLength=false;connection=null;socket=null;req;_headers={};constructor(e){super(),this.req=e;}assignSocket(e){e._httpMessage=this,this.socket=e,this.connection=e,this.emit("socket",e),this._flush();}_flush(){this.flushHeaders();}detachSocket(e){}writeContinue(e){}writeHead(e,t,r){e&&(this.statusCode=e),typeof t=="string"&&(this.statusMessage=t,t=void 0);const s=r||t;if(s&&!Array.isArray(s))for(const a in s)this.setHeader(a,s[a]);return this.headersSent=true,this}writeProcessing(){}setTimeout(e,t){return this}appendHeader(e,t){e=e.toLowerCase();const r=this._headers[e],s=[...Array.isArray(r)?r:[r],...Array.isArray(t)?t:[t]].filter(Boolean);return this._headers[e]=s.length>1?s:s[0],this}setHeader(e,t){return this._headers[e.toLowerCase()]=t,this}setHeaders(e){for(const[t,r]of Object.entries(e))this.setHeader(t,r);return this}getHeader(e){return this._headers[e.toLowerCase()]}getHeaders(){return this._headers}getHeaderNames(){return Object.keys(this._headers)}hasHeader(e){return e.toLowerCase()in this._headers}removeHeader(e){delete this._headers[e.toLowerCase()];}addTrailers(e){}flushHeaders(){}writeEarlyHints(e,t){typeof t=="function"&&t();}}const E=(()=>{const n=function(){};return n.prototype=Object.create(null),n})();function R(n={}){const e=new E,t=Array.isArray(n)||H(n)?n:Object.entries(n);for(const[r,s]of t)if(s){if(e[r]===void 0){e[r]=s;continue}e[r]=[...Array.isArray(e[r])?e[r]:[e[r]],...Array.isArray(s)?s:[s]];}return e}function H(n){return typeof n?.entries=="function"}function v(n={}){if(n instanceof Headers)return n;const e=new Headers;for(const[t,r]of Object.entries(n))if(r!==void 0){if(Array.isArray(r)){for(const s of r)e.append(t,String(s));continue}e.set(t,String(r));}return e}const S=new Set([101,204,205,304]);async function b(n,e){const t=new y,r=new w(t);t.url=e.url?.toString()||"/";let s;if(!t.url.startsWith("/")){const d=new URL(t.url);s=d.host,t.url=d.pathname+d.search+d.hash;}t.method=e.method||"GET",t.headers=R(e.headers||{}),t.headers.host||(t.headers.host=e.host||s||"localhost"),t.connection.encrypted=t.connection.encrypted||e.protocol==="https",t.body=e.body||null,t.__unenv__=e.context,await n(t,r);let a=r._data;(S.has(r.statusCode)||t.method.toUpperCase()==="HEAD")&&(a=null,delete r._headers["content-length"]);const u={status:r.statusCode,statusText:r.statusMessage,headers:r._headers,body:a};return t.destroy(),r.destroy(),u}async function C(n,e,t={}){try{const r=await b(n,{url:e,...t});return new Response(r.body,{status:r.status,statusText:r.statusText,headers:v(r.headers)})}catch(r){return new Response(r.toString(),{status:Number.parseInt(r.statusCode||r.code)||500,statusText:r.statusText})}}
-
-function useBase(base, handler) {
-  base = withoutTrailingSlash(base);
-  if (!base || base === "/") {
-    return handler;
-  }
-  return eventHandler(async (event) => {
-    event.node.req.originalUrl = event.node.req.originalUrl || event.node.req.url || "/";
-    const _path = event._path || event.node.req.url || "/";
-    event._path = withoutBase(event.path || "/", base);
-    event.node.req.url = event._path;
-    try {
-      return await handler(event);
-    } finally {
-      event._path = event.node.req.url = _path;
-    }
-  });
-}
+function o(n){throw new Error(`${n} is not implemented yet!`)}let i$1 = class i extends EventEmitter{__unenv__={};readableEncoding=null;readableEnded=true;readableFlowing=false;readableHighWaterMark=0;readableLength=0;readableObjectMode=false;readableAborted=false;readableDidRead=false;closed=false;errored=null;readable=false;destroyed=false;static from(e,t){return new i(t)}constructor(e){super();}_read(e){}read(e){}setEncoding(e){return this}pause(){return this}resume(){return this}isPaused(){return  true}unpipe(e){return this}unshift(e,t){}wrap(e){return this}push(e,t){return  false}_destroy(e,t){this.removeAllListeners();}destroy(e){return this.destroyed=true,this._destroy(e),this}pipe(e,t){return {}}compose(e,t){throw new Error("Method not implemented.")}[Symbol.asyncDispose](){return this.destroy(),Promise.resolve()}async*[Symbol.asyncIterator](){throw o("Readable.asyncIterator")}iterator(e){throw o("Readable.iterator")}map(e,t){throw o("Readable.map")}filter(e,t){throw o("Readable.filter")}forEach(e,t){throw o("Readable.forEach")}reduce(e,t,r){throw o("Readable.reduce")}find(e,t){throw o("Readable.find")}findIndex(e,t){throw o("Readable.findIndex")}some(e,t){throw o("Readable.some")}toArray(e){throw o("Readable.toArray")}every(e,t){throw o("Readable.every")}flatMap(e,t){throw o("Readable.flatMap")}drop(e,t){throw o("Readable.drop")}take(e,t){throw o("Readable.take")}asIndexedPairs(e){throw o("Readable.asIndexedPairs")}};let l$1 = class l extends EventEmitter{__unenv__={};writable=true;writableEnded=false;writableFinished=false;writableHighWaterMark=0;writableLength=0;writableObjectMode=false;writableCorked=0;closed=false;errored=null;writableNeedDrain=false;writableAborted=false;destroyed=false;_data;_encoding="utf8";constructor(e){super();}pipe(e,t){return {}}_write(e,t,r){if(this.writableEnded){r&&r();return}if(this._data===void 0)this._data=e;else {const s=typeof this._data=="string"?Buffer$1.from(this._data,this._encoding||t||"utf8"):this._data,a=typeof e=="string"?Buffer$1.from(e,t||this._encoding||"utf8"):e;this._data=Buffer$1.concat([s,a]);}this._encoding=t,r&&r();}_writev(e,t){}_destroy(e,t){}_final(e){}write(e,t,r){const s=typeof t=="string"?this._encoding:"utf8",a=typeof t=="function"?t:typeof r=="function"?r:void 0;return this._write(e,s,a),true}setDefaultEncoding(e){return this}end(e,t,r){const s=typeof e=="function"?e:typeof t=="function"?t:typeof r=="function"?r:void 0;if(this.writableEnded)return s&&s(),this;const a=e===s?void 0:e;if(a){const u=t===s?void 0:t;this.write(a,u);}return this.writableEnded=true,this.writableFinished=true,this.emit("close"),this.emit("finish"),s&&s(),this}cork(){}uncork(){}destroy(e){return this.destroyed=true,delete this._data,this.removeAllListeners(),this}compose(e,t){throw new Error("Method not implemented.")}[Symbol.asyncDispose](){return Promise.resolve()}};const c$1=class c{allowHalfOpen=true;_destroy;constructor(e=new i$1,t=new l$1){Object.assign(this,e),Object.assign(this,t),this._destroy=m(e._destroy,t._destroy);}};function _(){return Object.assign(c$1.prototype,i$1.prototype),Object.assign(c$1.prototype,l$1.prototype),c$1}function m(...n){return function(...e){for(const t of n)t(...e);}}const g=_();class A extends g{__unenv__={};bufferSize=0;bytesRead=0;bytesWritten=0;connecting=false;destroyed=false;pending=false;localAddress="";localPort=0;remoteAddress="";remoteFamily="";remotePort=0;autoSelectFamilyAttemptedAddresses=[];readyState="readOnly";constructor(e){super();}write(e,t,r){return  false}connect(e,t,r){return this}end(e,t,r){return this}setEncoding(e){return this}pause(){return this}resume(){return this}setTimeout(e,t){return this}setNoDelay(e){return this}setKeepAlive(e,t){return this}address(){return {}}unref(){return this}ref(){return this}destroySoon(){this.destroy();}resetAndDestroy(){const e=new Error("ERR_SOCKET_CLOSED");return e.code="ERR_SOCKET_CLOSED",this.destroy(e),this}}class y extends i$1{aborted=false;httpVersion="1.1";httpVersionMajor=1;httpVersionMinor=1;complete=true;connection;socket;headers={};trailers={};method="GET";url="/";statusCode=200;statusMessage="";closed=false;errored=null;readable=false;constructor(e){super(),this.socket=this.connection=e||new A;}get rawHeaders(){const e=this.headers,t=[];for(const r in e)if(Array.isArray(e[r]))for(const s of e[r])t.push(r,s);else t.push(r,e[r]);return t}get rawTrailers(){return []}setTimeout(e,t){return this}get headersDistinct(){return p(this.headers)}get trailersDistinct(){return p(this.trailers)}}function p(n){const e={};for(const[t,r]of Object.entries(n))t&&(e[t]=(Array.isArray(r)?r:[r]).filter(Boolean));return e}class w extends l$1{statusCode=200;statusMessage="";upgrading=false;chunkedEncoding=false;shouldKeepAlive=false;useChunkedEncodingByDefault=false;sendDate=false;finished=false;headersSent=false;strictContentLength=false;connection=null;socket=null;req;_headers={};constructor(e){super(),this.req=e;}assignSocket(e){e._httpMessage=this,this.socket=e,this.connection=e,this.emit("socket",e),this._flush();}_flush(){this.flushHeaders();}detachSocket(e){}writeContinue(e){}writeHead(e,t,r){e&&(this.statusCode=e),typeof t=="string"&&(this.statusMessage=t,t=void 0);const s=r||t;if(s&&!Array.isArray(s))for(const a in s)this.setHeader(a,s[a]);return this.headersSent=true,this}writeProcessing(){}setTimeout(e,t){return this}appendHeader(e,t){e=e.toLowerCase();const r=this._headers[e],s=[...Array.isArray(r)?r:[r],...Array.isArray(t)?t:[t]].filter(Boolean);return this._headers[e]=s.length>1?s:s[0],this}setHeader(e,t){return this._headers[e.toLowerCase()]=t,this}setHeaders(e){for(const[t,r]of Object.entries(e))this.setHeader(t,r);return this}getHeader(e){return this._headers[e.toLowerCase()]}getHeaders(){return this._headers}getHeaderNames(){return Object.keys(this._headers)}hasHeader(e){return e.toLowerCase()in this._headers}removeHeader(e){delete this._headers[e.toLowerCase()];}addTrailers(e){}flushHeaders(){}writeEarlyHints(e,t){typeof t=="function"&&t();}}const E=(()=>{const n=function(){};return n.prototype=Object.create(null),n})();function R(n={}){const e=new E,t=Array.isArray(n)||H(n)?n:Object.entries(n);for(const[r,s]of t)if(s){if(e[r]===void 0){e[r]=s;continue}e[r]=[...Array.isArray(e[r])?e[r]:[e[r]],...Array.isArray(s)?s:[s]];}return e}function H(n){return typeof n?.entries=="function"}function v(n={}){if(n instanceof Headers)return n;const e=new Headers;for(const[t,r]of Object.entries(n))if(r!==void 0){if(Array.isArray(r)){for(const s of r)e.append(t,String(s));continue}e.set(t,String(r));}return e}const S=new Set([101,204,205,304]);async function b(n,e){const t=new y,r=new w(t);t.url=e.url?.toString()||"/";let s;if(!t.url.startsWith("/")){const d=new URL(t.url);s=d.host,t.url=d.pathname+d.search+d.hash;}t.method=e.method||"GET",t.headers=R(e.headers||{}),t.headers.host||(t.headers.host=e.host||s||"localhost"),t.connection.encrypted=t.connection.encrypted||e.protocol==="https",t.body=e.body||null,t.__unenv__=e.context,await n(t,r);let a=r._data;(S.has(r.statusCode)||t.method.toUpperCase()==="HEAD")&&(a=null,delete r._headers["content-length"]);const u={status:r.statusCode,statusText:r.statusMessage,headers:r._headers,body:a};return t.destroy(),r.destroy(),u}async function C(n,e,t={}){try{const r=await b(n,{url:e,...t});return new Response(r.body,{status:r.status,statusText:r.statusText,headers:v(r.headers)})}catch(r){return new Response(r.toString(),{status:Number.parseInt(r.statusCode||r.code)||500,statusText:r.statusText})}}
 
 function hasProp(obj, prop) {
   try {
@@ -1949,6 +1931,24 @@ function createRouter(opts = {}) {
   };
   return router;
 }
+function fromNodeMiddleware(handler) {
+  if (isEventHandler(handler)) {
+    return handler;
+  }
+  if (typeof handler !== "function") {
+    throw new TypeError(
+      "Invalid handler. It should be a function:",
+      handler
+    );
+  }
+  return eventHandler((event) => {
+    return callNodeListener(
+      handler,
+      event.node.req,
+      event.node.res
+    );
+  });
+}
 function toNodeListener(app) {
   const toNodeHandle = async function(req, res) {
     const event = createEvent(req, res);
@@ -1979,6 +1979,29 @@ function toNodeListener(app) {
     }
   };
   return toNodeHandle;
+}
+function callNodeListener(handler, req, res) {
+  const isMiddleware = handler.length > 2;
+  return new Promise((resolve, reject) => {
+    const next = (err) => {
+      if (isMiddleware) {
+        res.off("close", next);
+        res.off("error", next);
+      }
+      return err ? reject(createError$1(err)) : resolve(void 0);
+    };
+    try {
+      const returned = handler(req, res, next);
+      if (isMiddleware && returned === void 0) {
+        res.once("close", next);
+        res.once("error", next);
+      } else {
+        resolve(returned);
+      }
+    } catch (error) {
+      next(error);
+    }
+  });
 }
 
 function flatHooks(configHooks, hooks = {}, parentName) {
@@ -2554,7 +2577,7 @@ const fetch$1 = globalThis.fetch ? (...args) => globalThis.fetch(...args) : crea
 const Headers$1 = globalThis.Headers || s$1;
 const AbortController = globalThis.AbortController || i;
 const ofetch = createFetch({ fetch: fetch$1, Headers: Headers$1, AbortController });
-const $fetch$1 = ofetch;
+const $fetch = ofetch;
 
 function wrapToPromise(value) {
   if (!value || typeof value.then !== "function") {
@@ -3958,305 +3981,7 @@ function klona(x) {
 	return x;
 }
 
-const inlineAppConfig = {
-  "nuxt": {},
-  "ui": {
-    "colors": {
-      "primary": "green",
-      "secondary": "blue",
-      "success": "green",
-      "info": "blue",
-      "warning": "yellow",
-      "error": "red",
-      "neutral": "slate"
-    },
-    "icons": {
-      "arrowDown": "i-lucide-arrow-down",
-      "arrowLeft": "i-lucide-arrow-left",
-      "arrowRight": "i-lucide-arrow-right",
-      "arrowUp": "i-lucide-arrow-up",
-      "caution": "i-lucide-circle-alert",
-      "check": "i-lucide-check",
-      "chevronDoubleLeft": "i-lucide-chevrons-left",
-      "chevronDoubleRight": "i-lucide-chevrons-right",
-      "chevronDown": "i-lucide-chevron-down",
-      "chevronLeft": "i-lucide-chevron-left",
-      "chevronRight": "i-lucide-chevron-right",
-      "chevronUp": "i-lucide-chevron-up",
-      "close": "i-lucide-x",
-      "copy": "i-lucide-copy",
-      "copyCheck": "i-lucide-copy-check",
-      "dark": "i-lucide-moon",
-      "drag": "i-lucide-grip-vertical",
-      "ellipsis": "i-lucide-ellipsis",
-      "error": "i-lucide-circle-x",
-      "external": "i-lucide-arrow-up-right",
-      "eye": "i-lucide-eye",
-      "eyeOff": "i-lucide-eye-off",
-      "file": "i-lucide-file",
-      "folder": "i-lucide-folder",
-      "folderOpen": "i-lucide-folder-open",
-      "hash": "i-lucide-hash",
-      "info": "i-lucide-info",
-      "light": "i-lucide-sun",
-      "loading": "i-lucide-loader-circle",
-      "menu": "i-lucide-menu",
-      "minus": "i-lucide-minus",
-      "panelClose": "i-lucide-panel-left-close",
-      "panelOpen": "i-lucide-panel-left-open",
-      "plus": "i-lucide-plus",
-      "reload": "i-lucide-rotate-ccw",
-      "search": "i-lucide-search",
-      "stop": "i-lucide-square",
-      "success": "i-lucide-circle-check",
-      "system": "i-lucide-monitor",
-      "tip": "i-lucide-lightbulb",
-      "upload": "i-lucide-upload",
-      "warning": "i-lucide-triangle-alert"
-    },
-    "tv": {
-      "twMergeConfig": {}
-    }
-  },
-  "icon": {
-    "provider": "server",
-    "class": "",
-    "aliases": {},
-    "iconifyApiEndpoint": "https://api.iconify.design",
-    "localApiEndpoint": "/api/_nuxt_icon",
-    "fallbackToApi": true,
-    "cssSelectorPrefix": "i-",
-    "cssWherePseudo": true,
-    "cssLayer": "base",
-    "mode": "css",
-    "attrs": {
-      "aria-hidden": true
-    },
-    "collections": [
-      "academicons",
-      "akar-icons",
-      "ant-design",
-      "arcticons",
-      "basil",
-      "bi",
-      "bitcoin-icons",
-      "bpmn",
-      "brandico",
-      "bx",
-      "bxl",
-      "bxs",
-      "bytesize",
-      "carbon",
-      "catppuccin",
-      "cbi",
-      "charm",
-      "ci",
-      "cib",
-      "cif",
-      "cil",
-      "circle-flags",
-      "circum",
-      "clarity",
-      "codex",
-      "codicon",
-      "covid",
-      "cryptocurrency",
-      "cryptocurrency-color",
-      "cuida",
-      "dashicons",
-      "devicon",
-      "devicon-plain",
-      "dinkie-icons",
-      "duo-icons",
-      "ei",
-      "el",
-      "emojione",
-      "emojione-monotone",
-      "emojione-v1",
-      "entypo",
-      "entypo-social",
-      "eos-icons",
-      "ep",
-      "et",
-      "eva",
-      "f7",
-      "fa",
-      "fa-brands",
-      "fa-regular",
-      "fa-solid",
-      "fa6-brands",
-      "fa6-regular",
-      "fa6-solid",
-      "fa7-brands",
-      "fa7-regular",
-      "fa7-solid",
-      "fad",
-      "famicons",
-      "fe",
-      "feather",
-      "file-icons",
-      "flag",
-      "flagpack",
-      "flat-color-icons",
-      "flat-ui",
-      "flowbite",
-      "fluent",
-      "fluent-color",
-      "fluent-emoji",
-      "fluent-emoji-flat",
-      "fluent-emoji-high-contrast",
-      "fluent-mdl2",
-      "fontelico",
-      "fontisto",
-      "formkit",
-      "foundation",
-      "fxemoji",
-      "gala",
-      "game-icons",
-      "garden",
-      "geo",
-      "gg",
-      "gis",
-      "gravity-ui",
-      "gridicons",
-      "grommet-icons",
-      "guidance",
-      "healthicons",
-      "heroicons",
-      "heroicons-outline",
-      "heroicons-solid",
-      "hugeicons",
-      "humbleicons",
-      "ic",
-      "icomoon-free",
-      "icon-park",
-      "icon-park-outline",
-      "icon-park-solid",
-      "icon-park-twotone",
-      "iconamoon",
-      "iconoir",
-      "icons8",
-      "il",
-      "ion",
-      "iwwa",
-      "ix",
-      "jam",
-      "la",
-      "lets-icons",
-      "line-md",
-      "lineicons",
-      "logos",
-      "ls",
-      "lsicon",
-      "lucide",
-      "lucide-lab",
-      "mage",
-      "majesticons",
-      "maki",
-      "map",
-      "marketeq",
-      "material-icon-theme",
-      "material-symbols",
-      "material-symbols-light",
-      "mdi",
-      "mdi-light",
-      "medical-icon",
-      "memory",
-      "meteocons",
-      "meteor-icons",
-      "mi",
-      "mingcute",
-      "mono-icons",
-      "mynaui",
-      "nimbus",
-      "nonicons",
-      "noto",
-      "noto-v1",
-      "nrk",
-      "octicon",
-      "oi",
-      "ooui",
-      "openmoji",
-      "oui",
-      "pajamas",
-      "pepicons",
-      "pepicons-pencil",
-      "pepicons-pop",
-      "pepicons-print",
-      "ph",
-      "picon",
-      "pixel",
-      "pixelarticons",
-      "prime",
-      "proicons",
-      "ps",
-      "qlementine-icons",
-      "quill",
-      "radix-icons",
-      "raphael",
-      "ri",
-      "rivet-icons",
-      "roentgen",
-      "si",
-      "si-glyph",
-      "sidekickicons",
-      "simple-icons",
-      "simple-line-icons",
-      "skill-icons",
-      "solar",
-      "stash",
-      "streamline",
-      "streamline-block",
-      "streamline-color",
-      "streamline-cyber",
-      "streamline-cyber-color",
-      "streamline-emojis",
-      "streamline-flex",
-      "streamline-flex-color",
-      "streamline-freehand",
-      "streamline-freehand-color",
-      "streamline-kameleon-color",
-      "streamline-logos",
-      "streamline-pixel",
-      "streamline-plump",
-      "streamline-plump-color",
-      "streamline-sharp",
-      "streamline-sharp-color",
-      "streamline-stickies-color",
-      "streamline-ultimate",
-      "streamline-ultimate-color",
-      "subway",
-      "svg-spinners",
-      "system-uicons",
-      "tabler",
-      "tdesign",
-      "teenyicons",
-      "temaki",
-      "token",
-      "token-branded",
-      "topcoat",
-      "twemoji",
-      "typcn",
-      "uil",
-      "uim",
-      "uis",
-      "uit",
-      "uiw",
-      "unjs",
-      "vaadin",
-      "vs",
-      "vscode-icons",
-      "websymbol",
-      "weui",
-      "whh",
-      "wi",
-      "wpf",
-      "zmdi",
-      "zondicons"
-    ],
-    "fetchTimeout": 1500
-  }
-};
+const inlineAppConfig = {};
 
 
 
@@ -4358,7 +4083,7 @@ function _expandFromEnv(value) {
 const _inlineRuntimeConfig = {
   "app": {
     "baseURL": "/",
-    "buildId": "83d86f34-6014-4080-b2be-aff8cff29a5f",
+    "buildId": "72a379ef-d362-4bed-b256-3fa56ee5aa5f",
     "buildAssetsDir": "/_nuxt/",
     "cdnURL": ""
   },
@@ -4391,7 +4116,7 @@ const _inlineRuntimeConfig = {
     }
   },
   "public": {
-    "formSpreeKey": "mqevllvp",
+    "formSpreeKey": "xkjwyolp",
     "vgsap": {}
   },
   "icon": {
@@ -4428,12 +4153,7 @@ function useRuntimeConfig(event) {
   event.context.nitro.runtimeConfig = runtimeConfig;
   return runtimeConfig;
 }
-const _sharedAppConfig = _deepFreeze(klona(appConfig));
-function useAppConfig(event) {
-  {
-    return _sharedAppConfig;
-  }
-}
+_deepFreeze(klona(appConfig));
 function _deepFreeze(object) {
   const propNames = Object.getOwnPropertyNames(object);
   for (const name of propNames) {
@@ -4552,33 +4272,22 @@ const defaultNamespace = _globalThis[globalKey] || (_globalThis[globalKey] = cre
 const getContext = (key, opts = {}) => defaultNamespace.get(key, opts);
 const asyncHandlersKey = "__unctx_async_handlers__";
 const asyncHandlers = _globalThis[asyncHandlersKey] || (_globalThis[asyncHandlersKey] = /* @__PURE__ */ new Set());
-function executeAsync(function_) {
-  const restores = [];
-  for (const leaveHandler of asyncHandlers) {
-    const restore2 = leaveHandler();
-    if (restore2) {
-      restores.push(restore2);
-    }
-  }
-  const restore = () => {
-    for (const restore2 of restores) {
-      restore2();
-    }
-  };
-  let awaitable = function_();
-  if (awaitable && typeof awaitable === "object" && "catch" in awaitable) {
-    awaitable = awaitable.catch((error) => {
-      restore();
-      throw error;
-    });
-  }
-  return [awaitable, restore];
-}
 
 getContext("nitro-app", {
   asyncContext: false,
   AsyncLocalStorage: void 0
 });
+
+function isPathInScope(pathname, base) {
+  let canonical;
+  try {
+    const pre = pathname.replace(/%2f/gi, "/").replace(/%5c/gi, "\\");
+    canonical = new URL(pre, "http://_").pathname;
+  } catch {
+    return false;
+  }
+  return !base || canonical === base || canonical.startsWith(base + "/");
+}
 
 const config = useRuntimeConfig();
 const _routeRulesMatcher = toRouteMatcher(
@@ -4596,7 +4305,12 @@ function createRouteRulesHandler(ctx) {
         let targetPath = event.path;
         const strpBase = routeRules.redirect._redirectStripBase;
         if (strpBase) {
+          if (!isPathInScope(event.path.split("?")[0], strpBase)) {
+            throw createError$1({ statusCode: 400 });
+          }
           targetPath = withoutBase(targetPath, strpBase);
+        } else if (targetPath.startsWith("//")) {
+          targetPath = targetPath.replace(/^\/+/, "/");
         }
         target = joinURL(target.slice(0, -3), targetPath);
       } else if (event.path.includes("?")) {
@@ -4611,7 +4325,12 @@ function createRouteRulesHandler(ctx) {
         let targetPath = event.path;
         const strpBase = routeRules.proxy._proxyStripBase;
         if (strpBase) {
+          if (!isPathInScope(event.path.split("?")[0], strpBase)) {
+            throw createError$1({ statusCode: 400 });
+          }
           targetPath = withoutBase(targetPath, strpBase);
+        } else if (targetPath.startsWith("//")) {
+          targetPath = targetPath.replace(/^\/+/, "/");
         }
         target = joinURL(target.slice(0, -3), targetPath);
       } else if (event.path.includes("?")) {
@@ -4682,14 +4401,12 @@ function normalizeCookieHeaders(headers) {
   return outgoingHeaders;
 }
 
+//#region src/runtime/utils/error.ts
 /**
 * Nitro internal functions extracted from https://github.com/nitrojs/nitro/blob/v2/src/runtime/internal/utils.ts
 */
 function isJsonRequest(event) {
-	// If the client specifically requests HTML, then avoid classifying as JSON.
-	if (hasReqHeader(event, "accept", "text/html")) {
-		return false;
-	}
+	if (hasReqHeader(event, "accept", "text/html")) return false;
 	return hasReqHeader(event, "accept", "application/json") || hasReqHeader(event, "user-agent", "curl/") || hasReqHeader(event, "user-agent", "httpie/") || hasReqHeader(event, "sec-fetch-mode", "cors") || event.path.startsWith("/api/") || event.path.endsWith(".json");
 }
 function hasReqHeader(event, name, includes) {
@@ -4697,14 +4414,10 @@ function hasReqHeader(event, name, includes) {
 	return !!(value && typeof value === "string" && value.toLowerCase().includes(includes));
 }
 
-const errorHandler$0 = (async function errorhandler(error, event, { defaultHandler }) {
-	if (event.handled || isJsonRequest(event)) {
-		// let Nitro handle JSON errors
-		return;
-	}
-	// invoke default Nitro error handler (which will log appropriately if required)
+//#region src/runtime/handlers/error.ts
+var error_default = async function errorhandler(error, event, { defaultHandler }) {
+	if (event.handled || isJsonRequest(event)) return;
 	const defaultRes = await defaultHandler(error, event, { json: true });
-	// let Nitro handle redirect if appropriate
 	const status = error.status || error.statusCode || 500;
 	if (status === 404 && defaultRes.status === 302) {
 		setResponseHeaders(event, defaultRes.headers);
@@ -4712,33 +4425,23 @@ const errorHandler$0 = (async function errorhandler(error, event, { defaultHandl
 		return send(event, JSON.stringify(defaultRes.body, null, 2));
 	}
 	const errorObject = defaultRes.body;
-	// remove proto/hostname/port from URL
 	const url = new URL(errorObject.url);
 	errorObject.url = withoutBase(url.pathname, useRuntimeConfig(event).app.baseURL) + url.search + url.hash;
-	// add default server message (keep sanitized for unhandled errors)
 	errorObject.message = error.unhandled ? errorObject.message || "Server Error" : error.message || errorObject.message || "Server Error";
-	// we will be rendering this error internally so we can pass along the error.data safely
 	errorObject.data ||= error.data;
 	errorObject.statusText ||= error.statusText || error.statusMessage;
 	delete defaultRes.headers["content-type"];
 	delete defaultRes.headers["content-security-policy"];
 	setResponseHeaders(event, defaultRes.headers);
-	// Access request headers
 	const reqHeaders = getRequestHeaders(event);
-	// Detect to avoid recursion in SSR rendering of errors
-	const isRenderingError = event.path.startsWith("/__nuxt_error") || !!reqHeaders["x-nuxt-error"];
-	// HTML response (via SSR)
-	const res = isRenderingError ? null : await useNitroApp().localFetch(withQuery(joinURL(useRuntimeConfig(event).app.baseURL, "/__nuxt_error"), errorObject), {
+	const res = event.path.startsWith("/__nuxt_error") || !!reqHeaders["x-nuxt-error"] ? null : await useNitroApp().localFetch(withQuery(joinURL(useRuntimeConfig(event).app.baseURL, "/__nuxt_error"), errorObject), {
 		headers: {
 			...reqHeaders,
 			"x-nuxt-error": "true"
 		},
 		redirect: "manual"
 	}).catch(() => null);
-	if (event.handled) {
-		return;
-	}
-	// Fallback to static rendered error page
+	if (event.handled) return;
 	if (!res) {
 		const { template } = await import('../_/error-500.mjs');
 		setResponseHeader(event, "Content-Type", "text/html;charset=UTF-8");
@@ -4754,7 +4457,7 @@ const errorHandler$0 = (async function errorhandler(error, event, { defaultHandl
 	}
 	setResponseStatus(event, res.status && res.status !== 200 ? res.status : defaultRes.status, res.statusText || defaultRes.statusText);
 	return send(event, html);
-});
+};
 
 function defineNitroErrorHandler(handler) {
   return handler;
@@ -4821,7 +4524,7 @@ function defaultHandler(error, event, opts) {
   };
 }
 
-const errorHandlers = [errorHandler$0, errorHandler$1];
+const errorHandlers = [error_default, errorHandler$1];
 
 async function errorHandler(error, event) {
   for (const handler of errorHandlers) {
@@ -4838,354 +4541,452 @@ async function errorHandler(error, event) {
   // H3 will handle fallback
 }
 
-const script = "\"use strict\";(()=>{const t=window,e=document.documentElement,c=[\"dark\",\"light\"],n=getStorageValue(\"localStorage\",\"nuxt-color-mode\")||\"system\";let i=n===\"system\"?u():n;const r=e.getAttribute(\"data-color-mode-forced\");r&&(i=r),l(i),t[\"__NUXT_COLOR_MODE__\"]={preference:n,value:i,getColorScheme:u,addColorScheme:l,removeColorScheme:d};function l(o){const s=\"\"+o+\"\",a=\"theme\";e.classList?e.classList.add(s):e.className+=\" \"+s,a&&e.setAttribute(\"data-\"+a,o)}function d(o){const s=\"\"+o+\"\",a=\"theme\";e.classList?e.classList.remove(s):e.className=e.className.replace(new RegExp(s,\"g\"),\"\"),a&&e.removeAttribute(\"data-\"+a)}function f(o){return t.matchMedia(\"(prefers-color-scheme\"+o+\")\")}function u(){if(t.matchMedia&&f(\"\").media!==\"not all\"){for(const o of c)if(f(\":\"+o).matches)return o}return\"light\"}})();function getStorageValue(t,e){switch(t){case\"localStorage\":return window.localStorage.getItem(e);case\"sessionStorage\":return window.sessionStorage.getItem(e);case\"cookie\":return getCookie(e);default:return null}}function getCookie(t){const c=(\"; \"+window.document.cookie).split(\"; \"+t+\"=\");if(c.length===2)return c.pop()?.split(\";\").shift()}";
+const script = "\"use strict\";(()=>{const o=window,e=document.documentElement,c=[\"dark\",\"light\"],s=getStorageValue(\"localStorage\",\"nuxt-color-mode\")||\"system\";let r=s===\"system\"?f():s;const l=e.getAttribute(\"data-color-mode-forced\");l&&(r=l),i(r),o[\"__NUXT_COLOR_MODE__\"]={preference:s,value:r,getColorScheme:f,addColorScheme:i,removeColorScheme:d};function i(t){const a=\"\"+t+\"\",n=\"theme\";e.classList?e.classList.add(a):e.className+=\" \"+a,n&&e.setAttribute(\"data-\"+n,t)}function d(t){const a=\"\"+t+\"\",n=\"theme\";e.classList?e.classList.remove(a):e.className=e.className.replace(new RegExp(a,\"g\"),\"\"),n&&e.removeAttribute(\"data-\"+n)}function u(t){return o.matchMedia(\"(prefers-color-scheme\"+t+\")\")}function f(){if(o.matchMedia&&u(\"\").media!==\"not all\"){for(const t of c)if(u(\":\"+t).matches)return t}return\"light\"}})();function getStorageValue(o,e){switch(o){case\"localStorage\":try{return window.localStorage.getItem(e)}catch{return null}case\"sessionStorage\":try{return window.sessionStorage.getItem(e)}catch{return null}case\"cookie\":try{return getCookie(e)}catch{return null}default:return null}}function getCookie(o){const c=(\"; \"+window.document.cookie).split(\"; \"+o+\"=\");if(c.length===2){const s=c.pop();return s?s.split(\";\").shift():null}}";
 
-const _Jo6p2eFDV9j4wMUuRSNXDk47i_Qx89zXcBGbUlLiCw = (function(nitro) {
+const _a4x7mWFZjUIzCrg4MaQObCMo2bvEmOHEKznZm0wL8M = (function(nitro) {
   nitro.hooks.hook("render:html", (htmlContext) => {
     htmlContext.head.push(`<script>${script}<\/script>`);
   });
 });
 
 const plugins = [
-  _Jo6p2eFDV9j4wMUuRSNXDk47i_Qx89zXcBGbUlLiCw
+  _a4x7mWFZjUIzCrg4MaQObCMo2bvEmOHEKznZm0wL8M
 ];
 
 const assets = {
-  "/robots.txt": {
-    "type": "text/plain; charset=utf-8",
-    "etag": "\"18-j8OIsL9qGDmNZ+lHhp2tyH4XtaE\"",
-    "mtime": "2026-06-29T14:04:14.815Z",
-    "size": 24,
-    "path": "../public/robots.txt"
-  },
-  "/_nuxt/0dSwZP1M.js": {
-    "type": "text/javascript; charset=utf-8",
-    "etag": "\"1251-hH0ruab4fVal1cr5NIxVCfrKZrk\"",
-    "mtime": "2026-06-29T14:04:14.799Z",
-    "size": 4689,
-    "path": "../public/_nuxt/0dSwZP1M.js"
-  },
   "/favicon.ico": {
     "type": "image/vnd.microsoft.icon",
     "etag": "\"6af0-0x+HwO1worB1BaN6wnq3gBdDKFA\"",
-    "mtime": "2026-06-29T14:04:14.817Z",
+    "mtime": "2026-08-20T16:50:53.404Z",
     "size": 27376,
     "path": "../public/favicon.ico"
   },
-  "/_nuxt/8c2yfxsK.js": {
-    "type": "text/javascript; charset=utf-8",
-    "etag": "\"19b-X48IU0N9pC+e9owXygYnHorZMWU\"",
-    "mtime": "2026-06-29T14:04:14.799Z",
-    "size": 411,
-    "path": "../public/_nuxt/8c2yfxsK.js"
-  },
-  "/_nuxt/BL4_M3OB.js": {
-    "type": "text/javascript; charset=utf-8",
-    "etag": "\"b86-Mm8BDTnD0LOSHBzkyts8TZkYyJY\"",
-    "mtime": "2026-06-29T14:04:14.799Z",
-    "size": 2950,
-    "path": "../public/_nuxt/BL4_M3OB.js"
-  },
-  "/_nuxt/B7Iq25oa.js": {
-    "type": "text/javascript; charset=utf-8",
-    "etag": "\"99c-HcEL5gDn440Kszb95Qz7tiCALww\"",
-    "mtime": "2026-06-29T14:04:14.799Z",
-    "size": 2460,
-    "path": "../public/_nuxt/B7Iq25oa.js"
-  },
-  "/_nuxt/BTHsZuOp.js": {
-    "type": "text/javascript; charset=utf-8",
-    "etag": "\"181-XSrjiwhmi2yIcT4tIokatHTt0Lk\"",
-    "mtime": "2026-06-29T14:04:14.800Z",
-    "size": 385,
-    "path": "../public/_nuxt/BTHsZuOp.js"
-  },
-  "/_nuxt/BWNNtI5C.js": {
-    "type": "text/javascript; charset=utf-8",
-    "etag": "\"100e-X6LANn6jtyPaBER95IFGirDBFEw\"",
-    "mtime": "2026-06-29T14:04:14.800Z",
-    "size": 4110,
-    "path": "../public/_nuxt/BWNNtI5C.js"
-  },
-  "/_nuxt/BdGg1E6K.js": {
-    "type": "text/javascript; charset=utf-8",
-    "etag": "\"d7b-auLTD9DZ0YLfrDXN96hpyEqX+O4\"",
-    "mtime": "2026-06-29T14:04:14.800Z",
-    "size": 3451,
-    "path": "../public/_nuxt/BdGg1E6K.js"
-  },
-  "/_nuxt/BvheP4Ry.js": {
-    "type": "text/javascript; charset=utf-8",
-    "etag": "\"1b5-6B5efk91Nimvt9R+/wiGgYMr5So\"",
-    "mtime": "2026-06-29T14:04:14.800Z",
-    "size": 437,
-    "path": "../public/_nuxt/BvheP4Ry.js"
-  },
-  "/_nuxt/C7Secj5x.js": {
-    "type": "text/javascript; charset=utf-8",
-    "etag": "\"167-FOoTplxP6lHFjTHHxmjECm++MY0\"",
-    "mtime": "2026-06-29T14:04:14.800Z",
-    "size": 359,
-    "path": "../public/_nuxt/C7Secj5x.js"
-  },
-  "/_nuxt/CT_Ode9k.js": {
-    "type": "text/javascript; charset=utf-8",
-    "etag": "\"171c-+FE9Rkp+Z3svGvsxEpDkLDZAqRs\"",
-    "mtime": "2026-06-29T14:04:14.800Z",
-    "size": 5916,
-    "path": "../public/_nuxt/CT_Ode9k.js"
-  },
-  "/_nuxt/ClWzWAwr.js": {
-    "type": "text/javascript; charset=utf-8",
-    "etag": "\"df4-Qn8ai8UBPC91GHzlDlycGO7IvXw\"",
-    "mtime": "2026-06-29T14:04:14.800Z",
-    "size": 3572,
-    "path": "../public/_nuxt/ClWzWAwr.js"
-  },
-  "/_nuxt/BnkCsX4J.js": {
-    "type": "text/javascript; charset=utf-8",
-    "etag": "\"b87-8vB84F3OKQeXyB1DXGFz/vPcjKg\"",
-    "mtime": "2026-06-29T14:04:14.800Z",
-    "size": 2951,
-    "path": "../public/_nuxt/BnkCsX4J.js"
-  },
-  "/_nuxt/DQDhUFER.js": {
-    "type": "text/javascript; charset=utf-8",
-    "etag": "\"e99-LoplJad09fVBgQXoM5B4hpsL6GU\"",
-    "mtime": "2026-06-29T14:04:14.800Z",
-    "size": 3737,
-    "path": "../public/_nuxt/DQDhUFER.js"
-  },
-  "/_nuxt/error-404.C-Ezrlz-.css": {
-    "type": "text/css; charset=utf-8",
-    "etag": "\"97e-YLcQ2HBNLea0KJoUeqSqSCendIU\"",
-    "mtime": "2026-06-29T14:04:14.800Z",
-    "size": 2430,
-    "path": "../public/_nuxt/error-404.C-Ezrlz-.css"
-  },
-  "/_nuxt/error-500.DBWf9FGj.css": {
-    "type": "text/css; charset=utf-8",
-    "etag": "\"773-9MNIE+ztUss3x7HN62QKMFz0rhs\"",
-    "mtime": "2026-06-29T14:04:14.800Z",
-    "size": 1907,
-    "path": "../public/_nuxt/error-500.DBWf9FGj.css"
-  },
-  "/_nuxt/index.joM8tCeR.css": {
-    "type": "text/css; charset=utf-8",
-    "etag": "\"58-eGT5cTjpYqYby0jEeJirRDHiZSw\"",
-    "mtime": "2026-06-29T14:04:14.801Z",
-    "size": 88,
-    "path": "../public/_nuxt/index.joM8tCeR.css"
-  },
-  "/_nuxt/index.DoDCC8mZ.css": {
-    "type": "text/css; charset=utf-8",
-    "etag": "\"58-BUeHYS9QUOxVQ49UAJiQGLAclfk\"",
-    "mtime": "2026-06-29T14:04:14.801Z",
-    "size": 88,
-    "path": "../public/_nuxt/index.DoDCC8mZ.css"
-  },
-  "/_nuxt/index.BTnNSyM4.css": {
-    "type": "text/css; charset=utf-8",
-    "etag": "\"b1-Dq2glaAF07otHfcLEVcIlHJNf00\"",
-    "mtime": "2026-06-29T14:04:14.801Z",
-    "size": 177,
-    "path": "../public/_nuxt/index.BTnNSyM4.css"
-  },
-  "/_nuxt/Gf2dmb5q.js": {
-    "type": "text/javascript; charset=utf-8",
-    "etag": "\"2cc26-mHwzO0c5SrxPEOFwxx3gK/r0F88\"",
-    "mtime": "2026-06-29T14:04:14.801Z",
-    "size": 183334,
-    "path": "../public/_nuxt/Gf2dmb5q.js"
-  },
-  "/_nuxt/entry.BflbYqyD.css": {
-    "type": "text/css; charset=utf-8",
-    "etag": "\"2e4a0-5ehNvyvfxOfgNndwRXAb3bBbM84\"",
-    "mtime": "2026-06-29T14:04:14.802Z",
-    "size": 189600,
-    "path": "../public/_nuxt/entry.BflbYqyD.css"
+  "/robots.txt": {
+    "type": "text/plain; charset=utf-8",
+    "etag": "\"18-j8OIsL9qGDmNZ+lHhp2tyH4XtaE\"",
+    "mtime": "2026-08-20T16:50:53.404Z",
+    "size": 24,
+    "path": "../public/robots.txt"
   },
   "/images/about_one.webp": {
     "type": "image/webp",
     "etag": "\"6e26-Y/IV75Ckjb1PYGXVlm6rxOtROT4\"",
-    "mtime": "2026-06-29T14:04:14.806Z",
+    "mtime": "2026-08-20T16:50:53.403Z",
     "size": 28198,
     "path": "../public/images/about_one.webp"
   },
   "/images/dylan.webp": {
     "type": "image/webp",
     "etag": "\"20c1c-WzK92Bu/1WR9ynBCoDbjdS/f7yU\"",
-    "mtime": "2026-06-29T14:04:14.808Z",
+    "mtime": "2026-08-20T16:50:53.403Z",
     "size": 134172,
     "path": "../public/images/dylan.webp"
-  },
-  "/_nuxt/1_sqdjVP.js": {
-    "type": "text/javascript; charset=utf-8",
-    "etag": "\"88841-/rOk+7enmf4p7PN/p+XGjEc+zD0\"",
-    "mtime": "2026-06-29T14:04:14.802Z",
-    "size": 559169,
-    "path": "../public/_nuxt/1_sqdjVP.js"
-  },
-  "/images/home_three.webp": {
-    "type": "image/webp",
-    "etag": "\"26e3a-VsdqHZe1H8Un/EepNkwmKKl7xVY\"",
-    "mtime": "2026-06-29T14:04:14.809Z",
-    "size": 159290,
-    "path": "../public/images/home_three.webp"
-  },
-  "/images/home_two.webp": {
-    "type": "image/webp",
-    "etag": "\"ffe4-VqQ3LDxmdmBXOMqvtmaFXLNER8w\"",
-    "mtime": "2026-06-29T14:04:14.807Z",
-    "size": 65508,
-    "path": "../public/images/home_two.webp"
   },
   "/images/home_one.webp": {
     "type": "image/webp",
     "etag": "\"3a8d6-8hr29QJKEWWQ0QGQIEfGo0aLXOo\"",
-    "mtime": "2026-06-29T14:04:14.811Z",
+    "mtime": "2026-08-20T16:50:53.403Z",
     "size": 239830,
     "path": "../public/images/home_one.webp"
   },
-  "/_nuxt/builds/latest.json": {
-    "type": "application/json",
-    "etag": "\"47-4rVYlDH+vojx11QySzPeF/mGzVE\"",
-    "mtime": "2026-06-29T14:04:14.796Z",
-    "size": 71,
-    "path": "../public/_nuxt/builds/latest.json"
-  },
-  "/_nuxt/builds/meta/83d86f34-6014-4080-b2be-aff8cff29a5f.json": {
-    "type": "application/json",
-    "etag": "\"58-Yq1/pHrA2zmUsK4yrWGrTNgrJ6I\"",
-    "mtime": "2026-06-29T14:04:14.793Z",
-    "size": 88,
-    "path": "../public/_nuxt/builds/meta/83d86f34-6014-4080-b2be-aff8cff29a5f.json"
-  },
-  "/images/projects/pour/pour_five.webp": {
+  "/images/home_three.webp": {
     "type": "image/webp",
-    "etag": "\"6de8-O8hfdSq3RU4ClkRsdB0Rpf6Qri8\"",
-    "mtime": "2026-06-29T14:04:14.812Z",
-    "size": 28136,
-    "path": "../public/images/projects/pour/pour_five.webp"
+    "etag": "\"26e3a-VsdqHZe1H8Un/EepNkwmKKl7xVY\"",
+    "mtime": "2026-08-20T16:50:53.403Z",
+    "size": 159290,
+    "path": "../public/images/home_three.webp"
   },
-  "/images/projects/pour/pour_eight.webp": {
-    "type": "image/webp",
-    "etag": "\"ae28-Aj6uYtfF5JYA7S4dy//dU1AZTuM\"",
-    "mtime": "2026-06-29T14:04:14.814Z",
-    "size": 44584,
-    "path": "../public/images/projects/pour/pour_eight.webp"
+  "/_nuxt/B4pGG8rJ.js": {
+    "type": "text/javascript; charset=utf-8",
+    "etag": "\"180-iUqx+pSfUD4W4SiRMTRZLowDULI\"",
+    "mtime": "2026-08-20T16:50:53.395Z",
+    "size": 384,
+    "path": "../public/_nuxt/B4pGG8rJ.js"
   },
-  "/images/logo.webp": {
-    "type": "image/webp",
-    "etag": "\"6af0-0x+HwO1worB1BaN6wnq3gBdDKFA\"",
-    "mtime": "2026-06-29T14:04:14.808Z",
-    "size": 27376,
-    "path": "../public/images/logo.webp"
-  },
-  "/images/projects/pour/pour_seven.webp": {
-    "type": "image/webp",
-    "etag": "\"6200-ZaYIC3eeDXbCzeOgep0p0c1jsAg\"",
-    "mtime": "2026-06-29T14:04:14.813Z",
-    "size": 25088,
-    "path": "../public/images/projects/pour/pour_seven.webp"
-  },
-  "/images/projects/pour/pour_one.webp": {
-    "type": "image/webp",
-    "etag": "\"737a-zESuXthfZS+bp0OeOV0zTue/iQ0\"",
-    "mtime": "2026-06-29T14:04:14.813Z",
-    "size": 29562,
-    "path": "../public/images/projects/pour/pour_one.webp"
-  },
-  "/images/projects/pour/pour_three.webp": {
-    "type": "image/webp",
-    "etag": "\"775c-8c6XdWX2CxwKaoxVs6Lu074dj/U\"",
-    "mtime": "2026-06-29T14:04:14.814Z",
-    "size": 30556,
-    "path": "../public/images/projects/pour/pour_three.webp"
+  "/_nuxt/BDNMzG2s.js": {
+    "type": "text/javascript; charset=utf-8",
+    "etag": "\"54-MasMfSk/A98C3Gn9uIOxtFxkWNw\"",
+    "mtime": "2026-08-20T16:50:53.395Z",
+    "size": 84,
+    "path": "../public/_nuxt/BDNMzG2s.js"
   },
   "/images/logo_transparent.webp": {
     "type": "image/webp",
     "etag": "\"a80a-Wyr90xXsx1DDn9zJ6g3fPTia93Q\"",
-    "mtime": "2026-06-29T14:04:14.811Z",
+    "mtime": "2026-08-20T16:50:53.404Z",
     "size": 43018,
     "path": "../public/images/logo_transparent.webp"
+  },
+  "/_nuxt/BM32HWeR.js": {
+    "type": "text/javascript; charset=utf-8",
+    "etag": "\"166-Zg/Jf0HagyzS475ONZdZcdbC4og\"",
+    "mtime": "2026-08-20T16:50:53.395Z",
+    "size": 358,
+    "path": "../public/_nuxt/BM32HWeR.js"
+  },
+  "/images/home_two.webp": {
+    "type": "image/webp",
+    "etag": "\"ffe4-VqQ3LDxmdmBXOMqvtmaFXLNER8w\"",
+    "mtime": "2026-08-20T16:50:53.404Z",
+    "size": 65508,
+    "path": "../public/images/home_two.webp"
+  },
+  "/_nuxt/BZ0G-Vfb.js": {
+    "type": "text/javascript; charset=utf-8",
+    "etag": "\"2a0-S7VEnaua+yvC8RvuRPVrH0ymDdU\"",
+    "mtime": "2026-08-20T16:50:53.395Z",
+    "size": 672,
+    "path": "../public/_nuxt/BZ0G-Vfb.js"
+  },
+  "/images/logo.webp": {
+    "type": "image/webp",
+    "etag": "\"6af0-0x+HwO1worB1BaN6wnq3gBdDKFA\"",
+    "mtime": "2026-08-20T16:50:53.403Z",
+    "size": 27376,
+    "path": "../public/images/logo.webp"
+  },
+  "/_nuxt/BpFT1mT6.js": {
+    "type": "text/javascript; charset=utf-8",
+    "etag": "\"1bba-9qLjK33bJskhmBtbx7mUTa8Bb/c\"",
+    "mtime": "2026-08-20T16:50:53.396Z",
+    "size": 7098,
+    "path": "../public/_nuxt/BpFT1mT6.js"
+  },
+  "/_nuxt/BoWDYQiE.js": {
+    "type": "text/javascript; charset=utf-8",
+    "etag": "\"1164-XwwYs6TwFRvRESWKOAvqj3mkyBc\"",
+    "mtime": "2026-08-20T16:50:53.396Z",
+    "size": 4452,
+    "path": "../public/_nuxt/BoWDYQiE.js"
+  },
+  "/_nuxt/BuhQS8Mn.js": {
+    "type": "text/javascript; charset=utf-8",
+    "etag": "\"1c8-Jv57USzerUeH0j0PGST5pZs6elc\"",
+    "mtime": "2026-08-20T16:50:53.396Z",
+    "size": 456,
+    "path": "../public/_nuxt/BuhQS8Mn.js"
+  },
+  "/_nuxt/BZ6d9FCq.js": {
+    "type": "text/javascript; charset=utf-8",
+    "etag": "\"2e610-7z+X7+aIELlPPYXjyPHtOacmCjc\"",
+    "mtime": "2026-08-20T16:50:53.396Z",
+    "size": 189968,
+    "path": "../public/_nuxt/BZ6d9FCq.js"
+  },
+  "/_nuxt/Bus7VEY7.js": {
+    "type": "text/javascript; charset=utf-8",
+    "etag": "\"eb2-QNE1Hu0Ifm1EEB0uUsC9dJIytHM\"",
+    "mtime": "2026-08-20T16:50:53.396Z",
+    "size": 3762,
+    "path": "../public/_nuxt/Bus7VEY7.js"
+  },
+  "/_nuxt/BzHtZfa_.js": {
+    "type": "text/javascript; charset=utf-8",
+    "etag": "\"ba9-7RbDSZK1LWW3At6f4uLgYo2f+3k\"",
+    "mtime": "2026-08-20T16:50:53.396Z",
+    "size": 2985,
+    "path": "../public/_nuxt/BzHtZfa_.js"
+  },
+  "/_nuxt/C3RfcKuh.js": {
+    "type": "text/javascript; charset=utf-8",
+    "etag": "\"16ff-Kn2Tzhf4YPSPKkdmbUUaDUtzh8I\"",
+    "mtime": "2026-08-20T16:50:53.396Z",
+    "size": 5887,
+    "path": "../public/_nuxt/C3RfcKuh.js"
+  },
+  "/_nuxt/CCOPyijO.js": {
+    "type": "text/javascript; charset=utf-8",
+    "etag": "\"ba8-gOjAiaaxftvZuuGXotSQEcXQT/0\"",
+    "mtime": "2026-08-20T16:50:53.397Z",
+    "size": 2984,
+    "path": "../public/_nuxt/CCOPyijO.js"
+  },
+  "/_nuxt/CBCv_A23.js": {
+    "type": "text/javascript; charset=utf-8",
+    "etag": "\"d8d9-sglJAuab74CioVrfBbG7JBEPqXs\"",
+    "mtime": "2026-08-20T16:50:53.397Z",
+    "size": 55513,
+    "path": "../public/_nuxt/CBCv_A23.js"
+  },
+  "/_nuxt/CIh3PBL8.js": {
+    "type": "text/javascript; charset=utf-8",
+    "etag": "\"d55-KlC4q/EzRUUSioSk29PKZ14XVIE\"",
+    "mtime": "2026-08-20T16:50:53.397Z",
+    "size": 3413,
+    "path": "../public/_nuxt/CIh3PBL8.js"
+  },
+  "/_nuxt/CJ4SAQdY.js": {
+    "type": "text/javascript; charset=utf-8",
+    "etag": "\"2012-A5pnVoePXGVFIRdEwL/krHAEaJg\"",
+    "mtime": "2026-08-20T16:50:53.397Z",
+    "size": 8210,
+    "path": "../public/_nuxt/CJ4SAQdY.js"
+  },
+  "/_nuxt/CNTcIl-7.js": {
+    "type": "text/javascript; charset=utf-8",
+    "etag": "\"9d0-Xf5fU3N16qtR8qjP+IJcqnKibmg\"",
+    "mtime": "2026-08-20T16:50:53.397Z",
+    "size": 2512,
+    "path": "../public/_nuxt/CNTcIl-7.js"
+  },
+  "/_nuxt/CbPed12Q.js": {
+    "type": "text/javascript; charset=utf-8",
+    "etag": "\"3714-AwD7FVuk0qYeCb9RzAGTzpSqcJ4\"",
+    "mtime": "2026-08-20T16:50:53.397Z",
+    "size": 14100,
+    "path": "../public/_nuxt/CbPed12Q.js"
+  },
+  "/_nuxt/CuL7CJwM.js": {
+    "type": "text/javascript; charset=utf-8",
+    "etag": "\"7981-+OQdWrEhLKro5VrIrJU323JSobQ\"",
+    "mtime": "2026-08-20T16:50:53.397Z",
+    "size": 31105,
+    "path": "../public/_nuxt/CuL7CJwM.js"
+  },
+  "/_nuxt/D-YIq0Gb.js": {
+    "type": "text/javascript; charset=utf-8",
+    "etag": "\"1c9e-FWSuK93mgnz4YzgKZC8lQaczeQk\"",
+    "mtime": "2026-08-20T16:50:53.397Z",
+    "size": 7326,
+    "path": "../public/_nuxt/D-YIq0Gb.js"
+  },
+  "/_nuxt/DK3Fl9T5.js": {
+    "type": "text/javascript; charset=utf-8",
+    "etag": "\"9e-/3ZreeJJ1QByVcY6NKPe1BzCjpo\"",
+    "mtime": "2026-08-20T16:50:53.398Z",
+    "size": 158,
+    "path": "../public/_nuxt/DK3Fl9T5.js"
+  },
+  "/_nuxt/DW5p4sQ0.js": {
+    "type": "text/javascript; charset=utf-8",
+    "etag": "\"e08-ekNmOzRhTqigPbHcSetLrCCJpPM\"",
+    "mtime": "2026-08-20T16:50:53.397Z",
+    "size": 3592,
+    "path": "../public/_nuxt/DW5p4sQ0.js"
+  },
+  "/_nuxt/Ii3Jcw9f.js": {
+    "type": "text/javascript; charset=utf-8",
+    "etag": "\"102b-vsmj1jW6HaCXaI5MZQBQzHM1/jw\"",
+    "mtime": "2026-08-20T16:50:53.398Z",
+    "size": 4139,
+    "path": "../public/_nuxt/Ii3Jcw9f.js"
+  },
+  "/_nuxt/DlnpSbuu.js": {
+    "type": "text/javascript; charset=utf-8",
+    "etag": "\"16d1b-ssh2Vm/DSKbWAJvZUkuQwL9qFWs\"",
+    "mtime": "2026-08-20T16:50:53.398Z",
+    "size": 93467,
+    "path": "../public/_nuxt/DlnpSbuu.js"
+  },
+  "/_nuxt/dsTCVHZ9.js": {
+    "type": "text/javascript; charset=utf-8",
+    "etag": "\"148a-83M3XqTaMGTejvCzqB/1F+9lGJE\"",
+    "mtime": "2026-08-20T16:50:53.398Z",
+    "size": 5258,
+    "path": "../public/_nuxt/dsTCVHZ9.js"
+  },
+  "/_nuxt/e7iTZ8-y.js": {
+    "type": "text/javascript; charset=utf-8",
+    "etag": "\"19e-EjgHquBbuLDFsOwBsz3xBWlOawE\"",
+    "mtime": "2026-08-20T16:50:53.398Z",
+    "size": 414,
+    "path": "../public/_nuxt/e7iTZ8-y.js"
+  },
+  "/_nuxt/cYMpsPbg.js": {
+    "type": "text/javascript; charset=utf-8",
+    "etag": "\"187ba-M65bO/rDgtoge0+NeUCkZ0XXj9o\"",
+    "mtime": "2026-08-20T16:50:53.398Z",
+    "size": 100282,
+    "path": "../public/_nuxt/cYMpsPbg.js"
+  },
+  "/_nuxt/error-404.Bb87HomL.css": {
+    "type": "text/css; charset=utf-8",
+    "etag": "\"97d-4h9VfBznldxjqagfMldh1hDncR0\"",
+    "mtime": "2026-08-20T16:50:53.398Z",
+    "size": 2429,
+    "path": "../public/_nuxt/error-404.Bb87HomL.css"
+  },
+  "/_nuxt/error-500.Bwd7zAaE.css": {
+    "type": "text/css; charset=utf-8",
+    "etag": "\"772-nqXXACYtFiPK+D42BNu4uEECARA\"",
+    "mtime": "2026-08-20T16:50:53.398Z",
+    "size": 1906,
+    "path": "../public/_nuxt/error-500.Bwd7zAaE.css"
+  },
+  "/_nuxt/l_4rmTED.js": {
+    "type": "text/javascript; charset=utf-8",
+    "etag": "\"123b-veTrV9KazJCVOmD6SIZH5l2C0Ws\"",
+    "mtime": "2026-08-20T16:50:53.399Z",
+    "size": 4667,
+    "path": "../public/_nuxt/l_4rmTED.js"
+  },
+  "/_nuxt/pour.DoDCC8mZ.css": {
+    "type": "text/css; charset=utf-8",
+    "etag": "\"58-BUeHYS9QUOxVQ49UAJiQGLAclfk\"",
+    "mtime": "2026-08-20T16:50:53.399Z",
+    "size": 88,
+    "path": "../public/_nuxt/pour.DoDCC8mZ.css"
+  },
+  "/_nuxt/entry.yYJ8Yj4D.css": {
+    "type": "text/css; charset=utf-8",
+    "etag": "\"319fc-yOjJtj34pYaTUoWi3SQa3aRl9ZI\"",
+    "mtime": "2026-08-20T16:50:53.398Z",
+    "size": 203260,
+    "path": "../public/_nuxt/entry.yYJ8Yj4D.css"
+  },
+  "/_nuxt/rxhDcyfF.js": {
+    "type": "text/javascript; charset=utf-8",
+    "etag": "\"91-u3+2U1AitRrBZETAFy9stHB47QE\"",
+    "mtime": "2026-08-20T16:50:53.399Z",
+    "size": 145,
+    "path": "../public/_nuxt/rxhDcyfF.js"
+  },
+  "/_nuxt/projects.cTEnctIV.css": {
+    "type": "text/css; charset=utf-8",
+    "etag": "\"ac-FM7baCALNHGeJCFH0hCpgHhUl3A\"",
+    "mtime": "2026-08-20T16:50:53.399Z",
+    "size": 172,
+    "path": "../public/_nuxt/projects.cTEnctIV.css"
+  },
+  "/_nuxt/setup.joM8tCeR.css": {
+    "type": "text/css; charset=utf-8",
+    "etag": "\"58-eGT5cTjpYqYby0jEeJirRDHiZSw\"",
+    "mtime": "2026-08-20T16:50:53.399Z",
+    "size": 88,
+    "path": "../public/_nuxt/setup.joM8tCeR.css"
+  },
+  "/_nuxt/lNA5bf1c.js": {
+    "type": "text/javascript; charset=utf-8",
+    "etag": "\"45cc3-uWxAukGIdo2Cp5t0BoVIhRCkZy0\"",
+    "mtime": "2026-08-20T16:50:53.399Z",
+    "size": 285891,
+    "path": "../public/_nuxt/lNA5bf1c.js"
+  },
+  "/_nuxt/builds/latest.json": {
+    "type": "application/json",
+    "etag": "\"47-72laXNDAiK8cQNVcT5IPDiBBKUY\"",
+    "mtime": "2026-08-20T16:50:53.388Z",
+    "size": 71,
+    "path": "../public/_nuxt/builds/latest.json"
+  },
+  "/images/projects/pour/pour_eight.webp": {
+    "type": "image/webp",
+    "etag": "\"ae28-Aj6uYtfF5JYA7S4dy//dU1AZTuM\"",
+    "mtime": "2026-08-20T16:50:53.405Z",
+    "size": 44584,
+    "path": "../public/images/projects/pour/pour_eight.webp"
+  },
+  "/images/projects/pour/pour_five.webp": {
+    "type": "image/webp",
+    "etag": "\"6de8-O8hfdSq3RU4ClkRsdB0Rpf6Qri8\"",
+    "mtime": "2026-08-20T16:50:53.404Z",
+    "size": 28136,
+    "path": "../public/images/projects/pour/pour_five.webp"
   },
   "/images/projects/pour/pour_four.webp": {
     "type": "image/webp",
     "etag": "\"89a2-ydYEmE4jePIvo7zkpHA4SKkgVFg\"",
-    "mtime": "2026-06-29T14:04:14.813Z",
+    "mtime": "2026-08-20T16:50:53.404Z",
     "size": 35234,
     "path": "../public/images/projects/pour/pour_four.webp"
+  },
+  "/images/projects/pour/pour_one.webp": {
+    "type": "image/webp",
+    "etag": "\"737a-zESuXthfZS+bp0OeOV0zTue/iQ0\"",
+    "mtime": "2026-08-20T16:50:53.404Z",
+    "size": 29562,
+    "path": "../public/images/projects/pour/pour_one.webp"
+  },
+  "/images/projects/pour/pour_seven.webp": {
+    "type": "image/webp",
+    "etag": "\"6200-ZaYIC3eeDXbCzeOgep0p0c1jsAg\"",
+    "mtime": "2026-08-20T16:50:53.404Z",
+    "size": 25088,
+    "path": "../public/images/projects/pour/pour_seven.webp"
   },
   "/images/projects/pour/pour_six.webp": {
     "type": "image/webp",
     "etag": "\"b41e-v7KiRuced4OfqLul/VNjTJEOe5g\"",
-    "mtime": "2026-06-29T14:04:14.814Z",
+    "mtime": "2026-08-20T16:50:53.405Z",
     "size": 46110,
     "path": "../public/images/projects/pour/pour_six.webp"
+  },
+  "/images/projects/pour/pour_three.webp": {
+    "type": "image/webp",
+    "etag": "\"775c-8c6XdWX2CxwKaoxVs6Lu074dj/U\"",
+    "mtime": "2026-08-20T16:50:53.404Z",
+    "size": 30556,
+    "path": "../public/images/projects/pour/pour_three.webp"
   },
   "/images/projects/pour/pour_two.webp": {
     "type": "image/webp",
     "etag": "\"51e0-B+i6RmN3/0ozq55/y1NEp10k6LQ\"",
-    "mtime": "2026-06-29T14:04:14.814Z",
+    "mtime": "2026-08-20T16:50:53.406Z",
     "size": 20960,
     "path": "../public/images/projects/pour/pour_two.webp"
   },
   "/images/projects/setup/setup_eight.webp": {
     "type": "image/webp",
     "etag": "\"837a-x6hpidgTG4XwO6SPNqLZgfk19Ag\"",
-    "mtime": "2026-06-29T14:04:14.812Z",
+    "mtime": "2026-08-20T16:50:53.404Z",
     "size": 33658,
     "path": "../public/images/projects/setup/setup_eight.webp"
-  },
-  "/images/projects/setup/setup_four.webp": {
-    "type": "image/webp",
-    "etag": "\"8564-MpJy6xMhpOLvz3RR+MOSo8oxzSA\"",
-    "mtime": "2026-06-29T14:04:14.814Z",
-    "size": 34148,
-    "path": "../public/images/projects/setup/setup_four.webp"
-  },
-  "/images/projects/setup/setup_seven.webp": {
-    "type": "image/webp",
-    "etag": "\"8e7e-9br40EZbojSmNq3hTegP4jImqKI\"",
-    "mtime": "2026-06-29T14:04:14.815Z",
-    "size": 36478,
-    "path": "../public/images/projects/setup/setup_seven.webp"
-  },
-  "/images/projects/setup/setup_one.webp": {
-    "type": "image/webp",
-    "etag": "\"10be4-hmBtubut7vYOzXeRsV16xnNnUgc\"",
-    "mtime": "2026-06-29T14:04:14.815Z",
-    "size": 68580,
-    "path": "../public/images/projects/setup/setup_one.webp"
-  },
-  "/images/projects/setup/setup_six.webp": {
-    "type": "image/webp",
-    "etag": "\"aac2-1FoOvFHf1k1ifRglwpTQReU/tgk\"",
-    "mtime": "2026-06-29T14:04:14.817Z",
-    "size": 43714,
-    "path": "../public/images/projects/setup/setup_six.webp"
-  },
-  "/images/projects/setup/setup_two.webp": {
-    "type": "image/webp",
-    "etag": "\"6bbe-T0x3fk2yv7sfNPKvv+WpmPpAzg4\"",
-    "mtime": "2026-06-29T14:04:14.816Z",
-    "size": 27582,
-    "path": "../public/images/projects/setup/setup_two.webp"
-  },
-  "/images/projects/setup/setup_three.webp": {
-    "type": "image/webp",
-    "etag": "\"c308-OqiSshGrHk7/uUPmOdRVRFyOU4w\"",
-    "mtime": "2026-06-29T14:04:14.818Z",
-    "size": 49928,
-    "path": "../public/images/projects/setup/setup_three.webp"
   },
   "/images/projects/setup/setup_five.webp": {
     "type": "image/webp",
     "etag": "\"c774-uXwfCLNaa/07+7shro8G4AU14JI\"",
-    "mtime": "2026-06-29T14:04:14.814Z",
+    "mtime": "2026-08-20T16:50:53.405Z",
     "size": 51060,
     "path": "../public/images/projects/setup/setup_five.webp"
+  },
+  "/images/projects/setup/setup_four.webp": {
+    "type": "image/webp",
+    "etag": "\"8564-MpJy6xMhpOLvz3RR+MOSo8oxzSA\"",
+    "mtime": "2026-08-20T16:50:53.405Z",
+    "size": 34148,
+    "path": "../public/images/projects/setup/setup_four.webp"
+  },
+  "/images/projects/setup/setup_one.webp": {
+    "type": "image/webp",
+    "etag": "\"10be4-hmBtubut7vYOzXeRsV16xnNnUgc\"",
+    "mtime": "2026-08-20T16:50:53.406Z",
+    "size": 68580,
+    "path": "../public/images/projects/setup/setup_one.webp"
+  },
+  "/images/projects/setup/setup_seven.webp": {
+    "type": "image/webp",
+    "etag": "\"8e7e-9br40EZbojSmNq3hTegP4jImqKI\"",
+    "mtime": "2026-08-20T16:50:53.405Z",
+    "size": 36478,
+    "path": "../public/images/projects/setup/setup_seven.webp"
+  },
+  "/images/projects/setup/setup_six.webp": {
+    "type": "image/webp",
+    "etag": "\"aac2-1FoOvFHf1k1ifRglwpTQReU/tgk\"",
+    "mtime": "2026-08-20T16:50:53.405Z",
+    "size": 43714,
+    "path": "../public/images/projects/setup/setup_six.webp"
+  },
+  "/images/projects/setup/setup_three.webp": {
+    "type": "image/webp",
+    "etag": "\"c308-OqiSshGrHk7/uUPmOdRVRFyOU4w\"",
+    "mtime": "2026-08-20T16:50:53.405Z",
+    "size": 49928,
+    "path": "../public/images/projects/setup/setup_three.webp"
+  },
+  "/images/projects/setup/setup_two.webp": {
+    "type": "image/webp",
+    "etag": "\"6bbe-T0x3fk2yv7sfNPKvv+WpmPpAzg4\"",
+    "mtime": "2026-08-20T16:50:53.405Z",
+    "size": 27582,
+    "path": "../public/images/projects/setup/setup_two.webp"
+  },
+  "/_nuxt/builds/meta/72a379ef-d362-4bed-b256-3fa56ee5aa5f.json": {
+    "type": "application/json",
+    "etag": "\"58-K1yH9WevbwKkz6/xVj5uttern3s\"",
+    "mtime": "2026-08-20T16:50:53.385Z",
+    "size": 88,
+    "path": "../public/_nuxt/builds/meta/72a379ef-d362-4bed-b256-3fa56ee5aa5f.json"
   }
 };
 
@@ -5198,6 +4999,7 @@ function normalizeWindowsPath(input = "") {
 }
 const _IS_ABSOLUTE_RE = /^[/\\](?![/\\])|^[/\\]{2}(?!\.)|^[A-Za-z]:[/\\]/;
 const _DRIVE_LETTER_RE = /^[A-Za-z]:$/;
+const _ROOT_FOLDER_RE = /^\/([A-Za-z]:)?$/;
 function cwd() {
   if (typeof process !== "undefined" && typeof process.cwd === "function") {
     return process.cwd().replace(/\\/g, "/");
@@ -5284,24 +5086,28 @@ function normalizeString(path, allowAboveRoot) {
 const isAbsolute = function(p) {
   return _IS_ABSOLUTE_RE.test(p);
 };
+const relative = function(from, to) {
+  const _from = resolve(from).replace(_ROOT_FOLDER_RE, "$1").split("/");
+  const _to = resolve(to).replace(_ROOT_FOLDER_RE, "$1").split("/");
+  if (_to[0][1] === ":" && _from[0][1] === ":" && _from[0] !== _to[0]) {
+    return _to.join("/");
+  }
+  const _fromCopy = [..._from];
+  for (const segment of _fromCopy) {
+    if (_to[0] !== segment) {
+      break;
+    }
+    _from.shift();
+    _to.shift();
+  }
+  return [..._from.map(() => ".."), ..._to].join("/");
+};
 const dirname = function(p) {
   const segments = normalizeWindowsPath(p).replace(/\/$/, "").split("/").slice(0, -1);
   if (segments.length === 1 && _DRIVE_LETTER_RE.test(segments[0])) {
     segments[0] += "/";
   }
   return segments.join("/") || (isAbsolute(p) ? "/" : ".");
-};
-const basename = function(p, extension) {
-  const segments = normalizeWindowsPath(p).split("/");
-  let lastSegment = "";
-  for (let i = segments.length - 1; i >= 0; i--) {
-    const val = segments[i];
-    if (val) {
-      lastSegment = val;
-      break;
-    }
-  }
-  return extension && lastSegment.endsWith(extension) ? lastSegment.slice(0, -extension.length) : lastSegment;
 };
 
 function readAsset (id) {
@@ -5327,7 +5133,7 @@ function getAsset (id) {
 
 const METHODS = /* @__PURE__ */ new Set(["HEAD", "GET"]);
 const EncodingMap = { gzip: ".gz", br: ".br" };
-const _yda3k6 = eventHandler((event) => {
+const _Yjn7d4 = eventHandler((event) => {
   if (event.method && !METHODS.has(event.method)) {
     return;
   }
@@ -5391,6 +5197,58 @@ const _yda3k6 = eventHandler((event) => {
   return readAsset(id);
 });
 
+const options = {"iconifyApiEndpoint":"https://api.iconify.design"};
+
+const collections = {
+  'lucide': () => import('../_/icons.mjs').then(m => m.default),
+};
+
+const _cOAeqR = defineCachedEventHandler(async (event) => {
+  const collectionName = event.context.params?.collection?.replace(/\.json$/, "");
+  const collection = collectionName && Object.hasOwn(collections, collectionName) ? await collections[collectionName]?.() : null;
+  const apiEndPoint = options.iconifyApiEndpoint;
+  const icons = String(parseQuery(parsePath(event.path).search).icons || "").split(",");
+  if (!collectionName) return createError$1({ status: 400, message: "No collection specified" });
+  if (!icons.length) return createError$1({ status: 400, message: "No icons specified" });
+  if (collection) {
+    const data = getIcons(
+      collection,
+      icons
+    );
+    consola.debug(`[Icon] serving ${icons.map((i) => "`" + collectionName + ":" + i + "`").join(",")} from bundled collection`);
+    return data;
+  }
+  {
+    const apiUrl = new URL(`./${collectionName}.json?icons=${icons.join(",")}`, apiEndPoint);
+    consola.debug(`[Icon] fetching ${icons.map((i) => "`" + collectionName + ":" + i + "`").join(",")} from iconify api`);
+    if (apiUrl.host !== new URL(apiEndPoint).host) {
+      return createError$1({ status: 400, message: "Invalid icon request" });
+    }
+    try {
+      const response = await fetch(apiUrl);
+      if (!response.ok) {
+        return response.status === 404 ? createError$1({ status: 404 }) : createError$1({ status: 500, message: "Failed to fetch fallback icon" });
+      }
+      return response.json();
+    } catch (e) {
+      consola.error(e);
+      return createError$1({ status: 500, message: "Failed to fetch fallback icon" });
+    }
+  }
+  return createError$1({ status: 404 });
+}, {
+  group: "nuxt",
+  name: "icon",
+  getKey(event) {
+    const collection = event.context.params?.collection?.replace(/\.json$/, "") || "unknown";
+    const icons = String(parseQuery(parsePath(event.path).search).icons || "").split(",");
+    return `${collection}_${icons[0]}_${icons.length}_${hash$1(icons.join(","))}`;
+  },
+  swr: true,
+  maxAge: 60 * 60 * 24 * 7
+  // 1 week
+});
+
 const _SxA8c9 = defineEventHandler(() => {});
 
 function defineRenderHandler(render) {
@@ -5432,80 +5290,23 @@ function defineRenderHandler(render) {
   });
 }
 
+//#region src/runtime/utils/paths.ts
 function baseURL() {
-	// TODO: support passing event to `useRuntimeConfig`
 	return useRuntimeConfig().app.baseURL;
 }
 function buildAssetsDir() {
-	// TODO: support passing event to `useRuntimeConfig`
 	return useRuntimeConfig().app.buildAssetsDir;
 }
 function buildAssetsURL(...path) {
 	return joinRelativeURL(publicAssetsURL(), buildAssetsDir(), ...path);
 }
 function publicAssetsURL(...path) {
-	// TODO: support passing event to `useRuntimeConfig`
 	const app = useRuntimeConfig().app;
 	const publicBase = app.cdnURL || app.baseURL;
 	return path.length ? joinRelativeURL(publicBase, ...path) : publicBase;
 }
 
-const collections = {
-  'lucide': () => import('../_/icons.mjs').then(m => m.default),
-};
-
-const DEFAULT_ENDPOINT = "https://api.iconify.design";
-const _oVz2aI = defineCachedEventHandler(async (event) => {
-  const url = getRequestURL(event);
-  if (!url)
-    return createError$1({ status: 400, message: "Invalid icon request" });
-  const options = useAppConfig().icon;
-  const collectionName = event.context.params?.collection?.replace(/\.json$/, "");
-  const collection = collectionName ? await collections[collectionName]?.() : null;
-  const apiEndPoint = options.iconifyApiEndpoint || DEFAULT_ENDPOINT;
-  const icons = url.searchParams.get("icons")?.split(",");
-  if (collection) {
-    if (icons?.length) {
-      const data = getIcons(
-        collection,
-        icons
-      );
-      consola.debug(`[Icon] serving ${(icons || []).map((i) => "`" + collectionName + ":" + i + "`").join(",")} from bundled collection`);
-      return data;
-    }
-  }
-  if (options.fallbackToApi === true || options.fallbackToApi === "server-only") {
-    const apiUrl = new URL("./" + basename(url.pathname) + url.search, apiEndPoint);
-    consola.debug(`[Icon] fetching ${(icons || []).map((i) => "`" + collectionName + ":" + i + "`").join(",")} from iconify api`);
-    if (apiUrl.host !== new URL(apiEndPoint).host) {
-      return createError$1({ status: 400, message: "Invalid icon request" });
-    }
-    try {
-      const data = await $fetch(apiUrl.href);
-      return data;
-    } catch (e) {
-      consola.error(e);
-      if (e.status === 404)
-        return createError$1({ status: 404 });
-      else
-        return createError$1({ status: 500, message: "Failed to fetch fallback icon" });
-    }
-  }
-  return createError$1({ status: 404 });
-}, {
-  group: "nuxt",
-  name: "icon",
-  getKey(event) {
-    const collection = event.context.params?.collection?.replace(/\.json$/, "") || "unknown";
-    const icons = String(getQuery(event).icons || "");
-    return `${collection}_${icons.split(",")[0]}_${icons.length}_${hash$1(icons)}`;
-  },
-  swr: true,
-  maxAge: 60 * 60 * 24 * 7
-  // 1 week
-});
-
-const _718KLh = lazyEventHandler(() => {
+const _IEUD6t = lazyEventHandler(() => {
   const opts = useRuntimeConfig().ipx || {};
   const fsDir = opts?.fs?.dir ? (Array.isArray(opts.fs.dir) ? opts.fs.dir : [opts.fs.dir]).map((dir) => isAbsolute(dir) ? dir : fileURLToPath(new URL(dir, globalThis._importMeta_.url))) : void 0;
   const fsStorage = opts.fs?.dir ? ipxFSStorage({ ...opts.fs, dir: fsDir }) : void 0;
@@ -5518,20 +5319,30 @@ const _718KLh = lazyEventHandler(() => {
     storage: fsStorage || httpStorage,
     httpStorage
   };
+  const baseURL = (opts.baseURL || "/_ipx").replace(/\/+$/, "");
   const ipx = createIPX(ipxOptions);
-  const ipxHandler = createIPXH3Handler(ipx);
-  return useBase(opts.baseURL, ipxHandler);
+  const nodeHandler = createIPXNodeHandler(ipx, {
+    parseURL(url) {
+      const parsedURL = new URL(url);
+      let pathname = parsedURL.pathname;
+      if (baseURL && (pathname === baseURL || pathname.startsWith(`${baseURL}/`))) {
+        pathname = pathname.slice(baseURL.length) || "/";
+      }
+      return parseIPXURL(parsedURL.origin + pathname + parsedURL.search);
+    }
+  });
+  return fromNodeMiddleware(nodeHandler);
 });
 
-const _lazy_sTeX3W = () => import('../routes/renderer.mjs').then(function (n) { return n.r; });
+const _lazy_guG0YV = () => import('../routes/renderer.mjs');
 
 const handlers = [
-  { route: '', handler: _yda3k6, lazy: false, middleware: true, method: undefined },
-  { route: '/__nuxt_error', handler: _lazy_sTeX3W, lazy: true, middleware: false, method: undefined },
+  { route: '', handler: _Yjn7d4, lazy: false, middleware: true, method: undefined },
+  { route: '/__nuxt_error', handler: _lazy_guG0YV, lazy: true, middleware: false, method: undefined },
+  { route: '/api/_nuxt_icon/:collection', handler: _cOAeqR, lazy: false, middleware: false, method: undefined },
   { route: '/__nuxt_island/**', handler: _SxA8c9, lazy: false, middleware: false, method: undefined },
-  { route: '/api/_nuxt_icon/:collection', handler: _oVz2aI, lazy: false, middleware: false, method: undefined },
-  { route: '/_ipx/**', handler: _718KLh, lazy: false, middleware: false, method: undefined },
-  { route: '/**', handler: _lazy_sTeX3W, lazy: true, middleware: false, method: undefined }
+  { route: '/_ipx/**', handler: _IEUD6t, lazy: false, middleware: false, method: undefined },
+  { route: '/**', handler: _lazy_guG0YV, lazy: true, middleware: false, method: undefined }
 ];
 
 function createNitroApp() {
@@ -5947,5 +5758,5 @@ trapUnhandledNodeErrors();
 setupGracefulShutdown(listener, nitroApp);
 const nodeServer = {};
 
-export { $fetch$1 as $, defu as A, withLeadingSlash as B, baseURL as C, hash$1 as D, isEqual as E, executeAsync as F, encodeParam as G, nodeServer as H, getResponseStatus as a, buildAssetsURL as b, getQuery as c, defineRenderHandler as d, createError$1 as e, destr as f, getResponseStatusText as g, getRouteRules as h, useNitroApp as i, joinURL as j, parseQuery as k, klona as l, hasProtocol as m, parseURL as n, encodePath as o, publicAssetsURL as p, decodePath as q, defuFn as r, serialize$1 as s, isScriptProtocol as t, useRuntimeConfig as u, getContext as v, withQuery as w, withTrailingSlash as x, withoutTrailingSlash as y, sanitizeStatusCode as z };
+export { $fetch as $, isEqual as A, parseQuery as B, withLeadingSlash as C, withTrailingSlash as D, withoutTrailingSlash as E, encodeParam as F, nodeServer as G, destr as a, buildAssetsURL as b, createError$1 as c, defineRenderHandler as d, encodePath as e, getRouteRules as f, getQuery as g, getResponseStatusText as h, getResponseStatus as i, joinURL as j, useNitroApp as k, hasProtocol as l, parseURL as m, decodePath as n, isScriptProtocol as o, publicAssetsURL as p, baseURL as q, relative as r, sanitizeStatusCode as s, defu as t, useRuntimeConfig as u, serialize$1 as v, withQuery as w, klona as x, defuFn as y, hash$1 as z };
 //# sourceMappingURL=nitro.mjs.map

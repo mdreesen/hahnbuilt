@@ -115,11 +115,8 @@
       "#imports": [
         "./imports"
       ],
-      "#color-mode-options": [
-        "./color-mode-options.mjs"
-      ],
       "#app-manifest": [
-        "./manifest/meta/dev"
+        "./manifest/meta/dev.json"
       ],
       "#components": [
         "./components"
@@ -135,6 +132,7 @@
     "skipLibCheck": true,
     "target": "ESNext",
     "allowJs": true,
+    "allowImportingTsExtensions": true,
     "resolveJsonModule": true,
     "moduleDetection": "force",
     "isolatedModules": true,
@@ -152,6 +150,7 @@
       "dom.iterable",
       "webworker"
     ],
+    "libReplacement": false,
     "jsx": "preserve",
     "jsxImportSource": "vue",
     "types": [],
@@ -179,7 +178,8 @@
     "../.config/nuxt.*",
     "../layers/*/nuxt.config.*",
     "../layers/*/.config/nuxt.*",
-    "../layers/*/modules/**/*",
+    "../layers/*/modules/*.*",
+    "../layers/*/modules/*/*.*",
     "../shared/**/*",
     "../modules/*/shared/**/*",
     "../layers/*/shared/**/*",

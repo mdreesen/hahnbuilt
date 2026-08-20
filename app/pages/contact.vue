@@ -35,7 +35,10 @@ const submitManifest = async () => {
       headers: {
         'Accept': 'application/json'
       }
-    })
+    });
+
+      isSubmitting.value = false;
+
 
   } catch (error) {
     console.error('Submission failed:', error)
@@ -104,10 +107,10 @@ const submitManifest = async () => {
                 </div>
 
                 <button @click="submitManifest" :disabled="isSubmitting"
-                  class="group relative w-full py-6 bg-white text-black font-black uppercase tracking-widest italic overflow-hidden">
-                  <span v-if="!isSubmitting"
-                    class="relative z-10 group-hover:text-white transition-colors duration-500">Transmit Data</span>
-                  <span v-else class="relative z-10 animate-pulse">Processing...</span>
+                  class="group relative w-full py-6 bg-white text-black uppercase tracking-widest italic overflow-hidden">
+                  <span :class="`${isSubmitting ? 'text-black relative z-10 animate-pulse' : 'relative z-10 text-black group-hover:text-white transition-colors duration-500'}`">
+                    {{isSubmitting ? 'Sending' : 'submit' }}
+                  </span>
                   <div
                     class="absolute inset-0 bg-orange-600 translate-y-full group-hover:translate-y-0 transition-transform duration-500 ease-out">
                   </div>

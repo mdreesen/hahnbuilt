@@ -1,9 +1,9 @@
 {
-  "_hash": "i906dvbcmIrW1jM0ayHzYsyDiLUv-bd52TMZfZS-KAM",
+  "_hash": "UBpXZ4XUMD8o3PuwOVWPYInEJM-sipbzDH4Y4yhgu50",
   "project": {
-    "rootDir": "/Users/mdreesen/Documents/Programming/business-projects/hahnbuilt"
+    "rootDir": "/Users/mdreesen/projects/hahnbuilt"
   },
   "versions": {
-    "nuxt": "4.4.2"
+    "nuxt": "4.5.2"
   }
 }
