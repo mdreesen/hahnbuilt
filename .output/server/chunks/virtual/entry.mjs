@@ -14473,7 +14473,7 @@ var virtual_nuxt_node_modules_2F_cache_2Fnuxt_2F_nuxt_2Froutes_default = [
 	{
 		name: "projects-pour",
 		path: "/projects/pour",
-		component: () => import('../build/pour-BS1KMZrE.mjs')
+		component: () => import('../build/pour-CNZShJ43.mjs')
 	},
 	{
 		name: "projects-setup",

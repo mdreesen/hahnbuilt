@@ -84,24 +84,31 @@ var index_vue_vue_type_script_setup_true_lang_default = /*@__PURE__*/ defineComp
 				loc: "Evergreen",
 				img: "images/projects/pour/pour_six.webp",
 				span: "low"
+			},
+			{
+				id: 7,
+				title: "Structural Steel (Evergreen)",
+				loc: "Evergreen",
+				img: "images/projects/pour/pour_nine.webp",
+				span: "low"
 			}
 		];
 		return (_ctx, _push, _parent, _attrs) => {
 			const _component_baseHeaderSection = HeaderSection_default;
 			const _component_baseDescription = Description_default;
 			const _component_baseImage = Image_default;
-			_push(`<section${ssrRenderAttrs(mergeProps({ class: "py-24 px-6 md:px-12 border-t border-zinc-800" }, _attrs))} data-v-b0710d43><header class="mb-20" data-v-b0710d43>`);
+			_push(`<section${ssrRenderAttrs(mergeProps({ class: "py-24 px-6 md:px-12 border-t border-zinc-800" }, _attrs))} data-v-3c9b9677><header class="mb-20" data-v-3c9b9677>`);
 			_push(ssrRenderComponent(_component_baseHeaderSection, { text: "Project<br><span class='text-orange-600'>Portfolio</span><br>Process" }, null, _parent));
 			_push(ssrRenderComponent(_component_baseDescription, { text: "From residential foundations to complex commercial scale, Hahn Built structures defines endurance with the finished product." }, null, _parent));
-			_push(`</header><div class="columns-1 sm:columns-2 lg:columns-3 xl:columns-4 gap-8 space-y-8" data-v-b0710d43><!--[-->`);
+			_push(`</header><div class="columns-1 sm:columns-2 lg:columns-3 xl:columns-4 gap-8 space-y-8" data-v-3c9b9677><!--[-->`);
 			ssrRenderList(projects, (project) => {
-				_push(`<div class="break-inside-avoid group relative overflow-hidden bg-zinc-900 border border-zinc-800 rounded-sm shadow-xl transition-all duration-300 hover:border-orange-600/30 hover:-translate-y-2 hover:shadow-2xl hover:shadow-orange-600/5" data-v-b0710d43><div class="${ssrRenderClass(["relative overflow-hidden", project.span === "high" ? "aspect-3/4.5" : project.span === "mid" ? "aspect-square" : "aspect-4/3"])}" data-v-b0710d43>`);
+				_push(`<div class="break-inside-avoid group relative overflow-hidden bg-zinc-900 border border-zinc-800 rounded-sm shadow-xl transition-all duration-300 hover:border-orange-600/30 hover:-translate-y-2 hover:shadow-2xl hover:shadow-orange-600/5" data-v-3c9b9677><div class="${ssrRenderClass(["relative overflow-hidden", project.span === "high" ? "aspect-3/4.5" : project.span === "mid" ? "aspect-square" : "aspect-4/3"])}" data-v-3c9b9677>`);
 				_push(ssrRenderComponent(_component_baseImage, {
 					source: project.img,
 					style: `w-full h-full object-cover transition-all duration-700 group-hover:grayscale-0 group-hover:scale-110`,
 					alt: "Setup Concrete image"
 				}, null, _parent));
-				_push(`<div class="absolute inset-0 bg-linear-to-t from-black via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-8" data-v-b0710d43><span class="text-orange-500 font-mono text-xs uppercase tracking-widest mb-2" data-v-b0710d43>Hahn Built Verified</span></div> 1/div&gt; <div class="p-5 flex justify-between items-center bg-zinc-900 border-t border-zinc-800" data-v-b0710d43><span class="font-bold text-xs uppercase tracking-[0.2em] text-zinc-400 group-hover:text-white transition-colors duration-300" data-v-b0710d43>${ssrInterpolate(project.title)}</span><div class="w-8 h-0.5 bg-zinc-700 group-hover:w-16 group-hover:bg-orange-600 transition-all duration-300" data-v-b0710d43></div></div></div></div>`);
+				_push(`<div class="absolute inset-0 bg-linear-to-t from-black via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-8" data-v-3c9b9677><span class="text-orange-500 font-mono text-xs uppercase tracking-widest mb-2" data-v-3c9b9677>Hahn Built Verified</span></div> 1/div&gt; <div class="p-5 flex justify-between items-center bg-zinc-900 border-t border-zinc-800" data-v-3c9b9677><span class="font-bold text-xs uppercase tracking-[0.2em] text-zinc-400 group-hover:text-white transition-colors duration-300" data-v-3c9b9677>${ssrInterpolate(project.title)}</span><div class="w-8 h-0.5 bg-zinc-700 group-hover:w-16 group-hover:bg-orange-600 transition-all duration-300" data-v-3c9b9677></div></div></div></div>`);
 			});
 			_push(`<!--]--></div></section>`);
 		};
@@ -115,7 +122,7 @@ index_vue_vue_type_script_setup_true_lang_default.setup = (props, ctx) => {
 	(ssrContext.modules || (ssrContext.modules = /* @__PURE__ */ new Set())).add("pages/projects/pour/index.vue");
 	return _sfc_setup ? _sfc_setup(props, ctx) : void 0;
 };
-var pour_default = /*#__PURE__*/ _plugin_vue_export_helper_default(index_vue_vue_type_script_setup_true_lang_default, [["__scopeId", "data-v-b0710d43"]]);
+var pour_default = /*#__PURE__*/ _plugin_vue_export_helper_default(index_vue_vue_type_script_setup_true_lang_default, [["__scopeId", "data-v-3c9b9677"]]);
 
 export { pour_default as default };
-//# sourceMappingURL=pour-BS1KMZrE.mjs.map
+//# sourceMappingURL=pour-CNZShJ43.mjs.map

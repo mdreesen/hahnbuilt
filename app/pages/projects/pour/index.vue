@@ -14,6 +14,7 @@ const projects = [
   { id: 4, title: 'Mountain Retreat (Bigfork)', loc: 'Bigfork', img: 'images/projects/pour/pour_four.webp', span: 'high' },
   { id: 5, title: 'Mill Creek Bridge', loc: 'Remote MT', img: 'images/projects/pour/pour_five.webp', span: 'mid' },
   { id: 6, title: 'Structural Steel (Evergreen)', loc: 'Evergreen', img: 'images/projects/pour/pour_six.webp', span: 'low' },
+  { id: 7, title: 'Structural Steel (Evergreen)', loc: 'Evergreen', img: 'images/projects/pour/pour_nine.webp', span: 'low' },
 ];
 </script>
 
