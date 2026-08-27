@@ -24,6 +24,8 @@ useHead({
 
       <appDescription />
 
+      <!-- Put some google reviews -->
+
       <appFaq />
 
   </div>
