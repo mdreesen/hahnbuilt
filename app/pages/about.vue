@@ -34,7 +34,7 @@ useSeoMeta({
                 </div>
             </header>
 
-            <section class="grid grid-cols-2 md:grid-cols-4 gap-1 border-y border-white/10 bg-white/10">
+            <section class="grid grid-cols-1 md:grid-cols-3 gap-1 border-y border-white/10 bg-white/10">
                 <div v-for="stat in stats" :key="stat.label"
                     class="py-16 flex justify-center items-center text-center group">
                     <baseCard :title="stat.label" :description="stat.value" />

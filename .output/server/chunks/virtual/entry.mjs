@@ -14483,7 +14483,7 @@ var virtual_nuxt_node_modules_2F_cache_2Fnuxt_2F_nuxt_2Froutes_default = [
 	{
 		name: "about",
 		path: "/about",
-		component: () => import('../build/about-GRB-G6_5.mjs')
+		component: () => import('../build/about-BHLWePHs.mjs')
 	},
 	{
 		name: "contact",
@@ -14498,7 +14498,7 @@ var virtual_nuxt_node_modules_2F_cache_2Fnuxt_2F_nuxt_2Froutes_default = [
 	{
 		name: "index",
 		path: "/",
-		component: () => import('../build/pages-DK3oNrU3.mjs')
+		component: () => import('../build/pages-CV-RFa-j.mjs')
 	}
 ];
 //#endregion

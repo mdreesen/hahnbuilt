@@ -95,10 +95,6 @@ var faqs = [
 ];
 var stats = [
 	{
-		label: "PSI Strength",
-		value: "4500+"
-	},
-	{
 		label: "Licensed In",
 		value: "Montana"
 	},
@@ -107,8 +103,8 @@ var stats = [
 		value: "Kalispell"
 	},
 	{
-		label: "Years Experience",
-		value: "15+"
+		label: "Years of building",
+		value: "10+"
 	}
 ];
 var qualityPoints = [
@@ -150,4 +146,4 @@ var scrollTrigger = {
 };
 
 export { Card_default as C, slideUp as a, stats as b, scrollTrigger as c, services as d, faqs as f, qualityPoints as q, slideRight as s };
-//# sourceMappingURL=gsap-kMz7EYr2.mjs.map
+//# sourceMappingURL=gsap-DA4kK-XR.mjs.map

@@ -128,8 +128,8 @@ const submitManifest = async () => {
                   Kalispell, Montana<br />
                   Flathead Valley
                 </p>
-                <baseDescription text="Kalispell, Montana<br />
-                Flathead Valley" />
+                <!-- <baseDescription text="Kalispell, Montana<br />
+                Flathead Valley" /> -->
 
               </div>
 
@@ -138,7 +138,7 @@ const submitManifest = async () => {
                 <p class="text-3xl font-bold uppercase italic leading-tight hover:text-orange-600 transition-colors">
                   <a href="tel:4063002052" aria-label="Phone number for Hahn Built">(406) 300-2052</a>
                 </p>
-                <baseDescription :text="`<a href='tel:4063002052'>(406) 300-2052</a>`" />
+                <!-- <baseDescription :text="`<a href='tel:4063002052'>(406) 300-2052</a>`" /> -->
                 <p class="text-sm text-zinc-400 mt-2 font-mono uppercase">Mon — Fri / 07:00 — 17:00</p>
               </div>
             </div>

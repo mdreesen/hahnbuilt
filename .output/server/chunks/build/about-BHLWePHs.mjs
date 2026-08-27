@@ -2,7 +2,7 @@ import { u as useSeoMeta$1 } from '../virtual/entry.mjs';
 import { I as Image_default } from './Image-B8_MsMSW.mjs';
 import { H as Header_default } from './Header-Dp8mUxuU.mjs';
 import { D as Description_default, H as HeaderSection_default } from './HeaderSection-BT_zWOrm.mjs';
-import { s as slideRight, a as slideUp, b as stats, C as Card_default, q as qualityPoints } from './gsap-kMz7EYr2.mjs';
+import { s as slideRight, a as slideUp, b as stats, C as Card_default, q as qualityPoints } from './gsap-DA4kK-XR.mjs';
 import { defineComponent, resolveDirective, mergeProps, unref, useSSRContext } from 'vue';
 import { ssrRenderAttrs, ssrRenderComponent, ssrGetDirectiveProps, ssrRenderList, ssrInterpolate } from 'vue/server-renderer';
 import 'nostics';
@@ -60,7 +60,7 @@ var about_vue_vue_type_script_setup_true_lang_default = /*@__PURE__*/ defineComp
 				alt: "Hahn Built personal image",
 				style: `w-full h-full object-cover opacity-60 group-hover:scale-105 transition-transform duration-3000`
 			}, null, _parent));
-			_push(`<div class="absolute inset-0 border-20 border-[#0c0c0c]"></div></div></header><section class="grid grid-cols-2 md:grid-cols-4 gap-1 border-y border-white/10 bg-white/10"><!--[-->`);
+			_push(`<div class="absolute inset-0 border-20 border-[#0c0c0c]"></div></div></header><section class="grid grid-cols-1 md:grid-cols-3 gap-1 border-y border-white/10 bg-white/10"><!--[-->`);
 			ssrRenderList(unref(stats), (stat) => {
 				_push(`<div class="py-16 flex justify-center items-center text-center group">`);
 				_push(ssrRenderComponent(_component_baseCard, {
@@ -102,4 +102,4 @@ about_vue_vue_type_script_setup_true_lang_default.setup = (props, ctx) => {
 var about_default = about_vue_vue_type_script_setup_true_lang_default;
 
 export { about_default as default };
-//# sourceMappingURL=about-GRB-G6_5.mjs.map
+//# sourceMappingURL=about-BHLWePHs.mjs.map

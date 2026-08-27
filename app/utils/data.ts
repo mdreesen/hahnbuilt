@@ -41,10 +41,10 @@ export const faqs = [
 ];
 
 export const stats = [
-    { label: 'PSI Strength', value: '4500+' },
+    // { label: 'PSI Strength', value: '4500+' },
     { label: 'Licensed In', value: 'Montana' },
     { label: 'Core Team', value: 'Kalispell' },
-    { label: 'Years Experience', value: '15+' }
+    { label: 'Years of building', value: '10+' }
 ];
 
 export const qualityPoints = [
